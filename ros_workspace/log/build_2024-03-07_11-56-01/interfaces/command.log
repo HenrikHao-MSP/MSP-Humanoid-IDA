@@ -1,0 +1,4 @@
+Invoking command in '/home/henrik/ros_workspace/build/interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/henrik/ros_workspace/install/mic_pkg:/opt/ros/foxy /usr/bin/cmake --build /home/henrik/ros_workspace/build/interfaces -- -j20 -l20
+Invoked command in '/home/henrik/ros_workspace/build/interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/henrik/ros_workspace/install/mic_pkg:/opt/ros/foxy /usr/bin/cmake --build /home/henrik/ros_workspace/build/interfaces -- -j20 -l20
+Invoking command in '/home/henrik/ros_workspace/build/interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/henrik/ros_workspace/install/mic_pkg:/opt/ros/foxy /usr/bin/cmake --install /home/henrik/ros_workspace/build/interfaces
+Invoked command in '/home/henrik/ros_workspace/build/interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/henrik/ros_workspace/install/mic_pkg:/opt/ros/foxy /usr/bin/cmake --install /home/henrik/ros_workspace/build/interfaces

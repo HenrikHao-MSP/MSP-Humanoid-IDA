@@ -1,0 +1,24 @@
+[1.398s] Invoking command in '/home/henrik/ros_workspace/src/mic_pkg': PYTHONPATH=/home/henrik/ros_workspace/src/build/mic_pkg/prefix_override:/home/henrik/ros_workspace/src/install/mic_pkg/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/mic_pkg build --build-base /home/henrik/ros_workspace/src/build/mic_pkg/build install --record /home/henrik/ros_workspace/src/build/mic_pkg/install.log --install-scripts $base/lib/mic_pkg --single-version-externally-managed
+[1.515s] running egg_info
+[1.515s] writing ../build/mic_pkg/mic_pkg.egg-info/PKG-INFO
+[1.516s] writing dependency_links to ../build/mic_pkg/mic_pkg.egg-info/dependency_links.txt
+[1.516s] writing entry points to ../build/mic_pkg/mic_pkg.egg-info/entry_points.txt
+[1.516s] writing requirements to ../build/mic_pkg/mic_pkg.egg-info/requires.txt
+[1.517s] writing top-level names to ../build/mic_pkg/mic_pkg.egg-info/top_level.txt
+[1.538s] reading manifest file '../build/mic_pkg/mic_pkg.egg-info/SOURCES.txt'
+[1.539s] writing manifest file '../build/mic_pkg/mic_pkg.egg-info/SOURCES.txt'
+[1.539s] running build
+[1.540s] running build_py
+[1.540s] copying constants.py -> /home/henrik/ros_workspace/src/build/mic_pkg/build/lib
+[1.541s] running install
+[1.542s] running install_lib
+[1.542s] copying /home/henrik/ros_workspace/src/build/mic_pkg/build/lib/constants.py -> /home/henrik/ros_workspace/src/install/mic_pkg/lib/python3.8/site-packages
+[1.542s] byte-compiling /home/henrik/ros_workspace/src/install/mic_pkg/lib/python3.8/site-packages/constants.py to constants.cpython-38.pyc
+[1.543s] running install_data
+[1.544s] running install_egg_info
+[1.544s] removing '/home/henrik/ros_workspace/src/install/mic_pkg/lib/python3.8/site-packages/mic_pkg-0.0.0-py3.8.egg-info' (and everything under it)
+[1.545s] Copying ../build/mic_pkg/mic_pkg.egg-info to /home/henrik/ros_workspace/src/install/mic_pkg/lib/python3.8/site-packages/mic_pkg-0.0.0-py3.8.egg-info
+[1.545s] running install_scripts
+[1.549s] Installing mic_node script to /home/henrik/ros_workspace/src/install/mic_pkg/lib/mic_pkg
+[1.549s] writing list of installed files to '/home/henrik/ros_workspace/src/build/mic_pkg/install.log'
+[1.938s] Invoked command in '/home/henrik/ros_workspace/src/mic_pkg' returned '0': PYTHONPATH=/home/henrik/ros_workspace/src/build/mic_pkg/prefix_override:/home/henrik/ros_workspace/src/install/mic_pkg/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/mic_pkg build --build-base /home/henrik/ros_workspace/src/build/mic_pkg/build install --record /home/henrik/ros_workspace/src/build/mic_pkg/install.log --install-scripts $base/lib/mic_pkg --single-version-externally-managed

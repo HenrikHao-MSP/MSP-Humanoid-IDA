@@ -1,0 +1,21 @@
+[2.143s] Invoking command in '/home/henrik/ros_workspace/src/mic_pkg': PYTHONPATH=/home/henrik/ros_workspace/build/mic_pkg/prefix_override:/home/henrik/ros_workspace/install/mic_pkg/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/mic_pkg build --build-base /home/henrik/ros_workspace/build/mic_pkg/build install --record /home/henrik/ros_workspace/build/mic_pkg/install.log --install-scripts $base/lib/mic_pkg --single-version-externally-managed
+[2.260s] running egg_info
+[2.260s] writing ../../build/mic_pkg/mic_pkg.egg-info/PKG-INFO
+[2.260s] writing dependency_links to ../../build/mic_pkg/mic_pkg.egg-info/dependency_links.txt
+[2.261s] writing entry points to ../../build/mic_pkg/mic_pkg.egg-info/entry_points.txt
+[2.261s] writing requirements to ../../build/mic_pkg/mic_pkg.egg-info/requires.txt
+[2.261s] writing top-level names to ../../build/mic_pkg/mic_pkg.egg-info/top_level.txt
+[2.280s] reading manifest file '../../build/mic_pkg/mic_pkg.egg-info/SOURCES.txt'
+[2.281s] writing manifest file '../../build/mic_pkg/mic_pkg.egg-info/SOURCES.txt'
+[2.281s] running build
+[2.281s] running build_py
+[2.281s] running install
+[2.282s] running install_lib
+[2.282s] running install_data
+[2.282s] running install_egg_info
+[2.283s] removing '/home/henrik/ros_workspace/install/mic_pkg/lib/python3.8/site-packages/mic_pkg-0.0.0-py3.8.egg-info' (and everything under it)
+[2.284s] Copying ../../build/mic_pkg/mic_pkg.egg-info to /home/henrik/ros_workspace/install/mic_pkg/lib/python3.8/site-packages/mic_pkg-0.0.0-py3.8.egg-info
+[2.284s] running install_scripts
+[2.294s] Installing mic_node script to /home/henrik/ros_workspace/install/mic_pkg/lib/mic_pkg
+[2.295s] writing list of installed files to '/home/henrik/ros_workspace/build/mic_pkg/install.log'
+[2.989s] Invoked command in '/home/henrik/ros_workspace/src/mic_pkg' returned '0': PYTHONPATH=/home/henrik/ros_workspace/build/mic_pkg/prefix_override:/home/henrik/ros_workspace/install/mic_pkg/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/mic_pkg build --build-base /home/henrik/ros_workspace/build/mic_pkg/build install --record /home/henrik/ros_workspace/build/mic_pkg/install.log --install-scripts $base/lib/mic_pkg --single-version-externally-managed

@@ -1,0 +1,31 @@
+[1.989s] Invoking command in '/home/henrik/ros_workspace/src/motion_control_pkg': PYTHONPATH=/home/henrik/ros_workspace/src/build/motion_control_pkg/prefix_override:/home/henrik/ros_workspace/src/install/motion_control_pkg/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/motion_control_pkg build --build-base /home/henrik/ros_workspace/src/build/motion_control_pkg/build install --record /home/henrik/ros_workspace/src/build/motion_control_pkg/install.log --install-scripts $base/lib/motion_control_pkg --single-version-externally-managed
+[2.099s] running egg_info
+[2.100s] creating ../build/motion_control_pkg/motion_control_pkg.egg-info
+[2.101s] writing ../build/motion_control_pkg/motion_control_pkg.egg-info/PKG-INFO
+[2.101s] writing dependency_links to ../build/motion_control_pkg/motion_control_pkg.egg-info/dependency_links.txt
+[2.101s] writing entry points to ../build/motion_control_pkg/motion_control_pkg.egg-info/entry_points.txt
+[2.102s] writing requirements to ../build/motion_control_pkg/motion_control_pkg.egg-info/requires.txt
+[2.102s] writing top-level names to ../build/motion_control_pkg/motion_control_pkg.egg-info/top_level.txt
+[2.103s] writing manifest file '../build/motion_control_pkg/motion_control_pkg.egg-info/SOURCES.txt'
+[2.122s] reading manifest file '../build/motion_control_pkg/motion_control_pkg.egg-info/SOURCES.txt'
+[2.123s] writing manifest file '../build/motion_control_pkg/motion_control_pkg.egg-info/SOURCES.txt'
+[2.123s] running build
+[2.123s] running build_py
+[2.124s] creating /home/henrik/ros_workspace/src/build/motion_control_pkg/build
+[2.124s] creating /home/henrik/ros_workspace/src/build/motion_control_pkg/build/lib
+[2.124s] creating /home/henrik/ros_workspace/src/build/motion_control_pkg/build/lib/motion_control_pkg
+[2.124s] copying motion_control_pkg/__init__.py -> /home/henrik/ros_workspace/src/build/motion_control_pkg/build/lib/motion_control_pkg
+[2.124s] copying motion_control_pkg/arm_control_node.py -> /home/henrik/ros_workspace/src/build/motion_control_pkg/build/lib/motion_control_pkg
+[2.124s] running install
+[2.124s] running install_lib
+[2.124s] creating /home/henrik/ros_workspace/src/install/motion_control_pkg/lib/python3.8/site-packages/motion_control_pkg
+[2.124s] copying /home/henrik/ros_workspace/src/build/motion_control_pkg/build/lib/motion_control_pkg/__init__.py -> /home/henrik/ros_workspace/src/install/motion_control_pkg/lib/python3.8/site-packages/motion_control_pkg
+[2.125s] copying /home/henrik/ros_workspace/src/build/motion_control_pkg/build/lib/motion_control_pkg/arm_control_node.py -> /home/henrik/ros_workspace/src/install/motion_control_pkg/lib/python3.8/site-packages/motion_control_pkg
+[2.125s] byte-compiling /home/henrik/ros_workspace/src/install/motion_control_pkg/lib/python3.8/site-packages/motion_control_pkg/__init__.py to __init__.cpython-38.pyc
+[2.125s] error: can't copy 'resource/motion_control_pkg': doesn't exist or not a regular file
+[2.125s] byte-compiling /home/henrik/ros_workspace/src/install/motion_control_pkg/lib/python3.8/site-packages/motion_control_pkg/arm_control_node.py to arm_control_node.cpython-38.pyc
+[2.125s] running install_data
+[2.125s] creating /home/henrik/ros_workspace/src/install/motion_control_pkg/share/ament_index
+[2.125s] creating /home/henrik/ros_workspace/src/install/motion_control_pkg/share/ament_index/resource_index
+[2.125s] creating /home/henrik/ros_workspace/src/install/motion_control_pkg/share/ament_index/resource_index/packages
+[2.654s] Invoked command in '/home/henrik/ros_workspace/src/motion_control_pkg' returned '1': PYTHONPATH=/home/henrik/ros_workspace/src/build/motion_control_pkg/prefix_override:/home/henrik/ros_workspace/src/install/motion_control_pkg/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/motion_control_pkg build --build-base /home/henrik/ros_workspace/src/build/motion_control_pkg/build install --record /home/henrik/ros_workspace/src/build/motion_control_pkg/install.log --install-scripts $base/lib/motion_control_pkg --single-version-externally-managed

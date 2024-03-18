@@ -1,0 +1,3 @@
+[console_scripts]
+arm_control_node = motion_control_pkg.arm_control_node:main
+

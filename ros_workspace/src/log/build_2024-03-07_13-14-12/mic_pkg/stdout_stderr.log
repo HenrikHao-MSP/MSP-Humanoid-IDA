@@ -1,0 +1,23 @@
+running egg_info
+writing ../build/mic_pkg/mic_pkg.egg-info/PKG-INFO
+writing dependency_links to ../build/mic_pkg/mic_pkg.egg-info/dependency_links.txt
+writing entry points to ../build/mic_pkg/mic_pkg.egg-info/entry_points.txt
+writing requirements to ../build/mic_pkg/mic_pkg.egg-info/requires.txt
+writing top-level names to ../build/mic_pkg/mic_pkg.egg-info/top_level.txt
+file constants.py (for module constants) not found
+reading manifest file '../build/mic_pkg/mic_pkg.egg-info/SOURCES.txt'
+writing manifest file '../build/mic_pkg/mic_pkg.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+file constants.py (for module constants) not found
+file constants.py (for module constants) not found
+running install_lib
+running install_data
+running install_egg_info
+removing '/home/henrik/ros_workspace/src/install/mic_pkg/lib/python3.8/site-packages/mic_pkg-0.0.0-py3.8.egg-info' (and everything under it)
+Copying ../build/mic_pkg/mic_pkg.egg-info to /home/henrik/ros_workspace/src/install/mic_pkg/lib/python3.8/site-packages/mic_pkg-0.0.0-py3.8.egg-info
+running install_scripts
+Installing mic_node script to /home/henrik/ros_workspace/src/install/mic_pkg/lib/mic_pkg
+file constants.py (for module constants) not found
+writing list of installed files to '/home/henrik/ros_workspace/src/build/mic_pkg/install.log'

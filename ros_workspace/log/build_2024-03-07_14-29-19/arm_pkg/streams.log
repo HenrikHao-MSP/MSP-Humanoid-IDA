@@ -1,0 +1,37 @@
+[0.865s] Invoking command in '/home/henrik/ros_workspace/src/arm_pkg': PYTHONPATH=/home/henrik/ros_workspace/build/arm_pkg/prefix_override:/home/henrik/ros_workspace/install/arm_pkg/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/arm_pkg build --build-base /home/henrik/ros_workspace/build/arm_pkg/build install --record /home/henrik/ros_workspace/build/arm_pkg/install.log --install-scripts $base/lib/arm_pkg --single-version-externally-managed
+[0.973s] running egg_info
+[0.973s] creating ../../build/arm_pkg/arm_pkg.egg-info
+[0.974s] writing ../../build/arm_pkg/arm_pkg.egg-info/PKG-INFO
+[0.974s] writing dependency_links to ../../build/arm_pkg/arm_pkg.egg-info/dependency_links.txt
+[0.974s] writing entry points to ../../build/arm_pkg/arm_pkg.egg-info/entry_points.txt
+[0.974s] writing requirements to ../../build/arm_pkg/arm_pkg.egg-info/requires.txt
+[0.974s] writing top-level names to ../../build/arm_pkg/arm_pkg.egg-info/top_level.txt
+[0.974s] writing manifest file '../../build/arm_pkg/arm_pkg.egg-info/SOURCES.txt'
+[0.992s] reading manifest file '../../build/arm_pkg/arm_pkg.egg-info/SOURCES.txt'
+[0.992s] writing manifest file '../../build/arm_pkg/arm_pkg.egg-info/SOURCES.txt'
+[0.992s] running build
+[0.992s] running build_py
+[0.992s] creating /home/henrik/ros_workspace/build/arm_pkg/build
+[0.993s] creating /home/henrik/ros_workspace/build/arm_pkg/build/lib
+[0.993s] creating /home/henrik/ros_workspace/build/arm_pkg/build/lib/arm_pkg
+[0.993s] copying arm_pkg/__init__.py -> /home/henrik/ros_workspace/build/arm_pkg/build/lib/arm_pkg
+[0.993s] copying arm_pkg/arm_control_node.py -> /home/henrik/ros_workspace/build/arm_pkg/build/lib/arm_pkg
+[0.993s] running install
+[0.993s] running install_lib
+[0.994s] creating /home/henrik/ros_workspace/install/arm_pkg/lib/python3.8/site-packages/arm_pkg
+[0.994s] copying /home/henrik/ros_workspace/build/arm_pkg/build/lib/arm_pkg/__init__.py -> /home/henrik/ros_workspace/install/arm_pkg/lib/python3.8/site-packages/arm_pkg
+[0.994s] copying /home/henrik/ros_workspace/build/arm_pkg/build/lib/arm_pkg/arm_control_node.py -> /home/henrik/ros_workspace/install/arm_pkg/lib/python3.8/site-packages/arm_pkg
+[0.994s] byte-compiling /home/henrik/ros_workspace/install/arm_pkg/lib/python3.8/site-packages/arm_pkg/__init__.py to __init__.cpython-38.pyc
+[0.994s] byte-compiling /home/henrik/ros_workspace/install/arm_pkg/lib/python3.8/site-packages/arm_pkg/arm_control_node.py to arm_control_node.cpython-38.pyc
+[0.994s] running install_data
+[0.995s] creating /home/henrik/ros_workspace/install/arm_pkg/share/ament_index
+[0.995s] creating /home/henrik/ros_workspace/install/arm_pkg/share/ament_index/resource_index
+[0.995s] creating /home/henrik/ros_workspace/install/arm_pkg/share/ament_index/resource_index/packages
+[0.995s] copying resource/arm_pkg -> /home/henrik/ros_workspace/install/arm_pkg/share/ament_index/resource_index/packages
+[0.995s] copying package.xml -> /home/henrik/ros_workspace/install/arm_pkg/share/arm_pkg
+[0.995s] running install_egg_info
+[0.996s] Copying ../../build/arm_pkg/arm_pkg.egg-info to /home/henrik/ros_workspace/install/arm_pkg/lib/python3.8/site-packages/arm_pkg-0.0.0-py3.8.egg-info
+[0.996s] running install_scripts
+[1.005s] Installing arm_control_node script to /home/henrik/ros_workspace/install/arm_pkg/lib/arm_pkg
+[1.005s] writing list of installed files to '/home/henrik/ros_workspace/build/arm_pkg/install.log'
+[1.015s] Invoked command in '/home/henrik/ros_workspace/src/arm_pkg' returned '0': PYTHONPATH=/home/henrik/ros_workspace/build/arm_pkg/prefix_override:/home/henrik/ros_workspace/install/arm_pkg/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/arm_pkg build --build-base /home/henrik/ros_workspace/build/arm_pkg/build install --record /home/henrik/ros_workspace/build/arm_pkg/install.log --install-scripts $base/lib/arm_pkg --single-version-externally-managed

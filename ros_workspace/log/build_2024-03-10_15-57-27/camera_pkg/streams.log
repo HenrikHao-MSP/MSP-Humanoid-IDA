@@ -1,0 +1,40 @@
+[2.981s] Invoking command in '/home/henrik/ros_workspace/src/camera_pkg': PYTHONPATH=/home/henrik/ros_workspace/build/camera_pkg/prefix_override:/home/henrik/ros_workspace/install/camera_pkg/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/camera_pkg build --build-base /home/henrik/ros_workspace/build/camera_pkg/build install --record /home/henrik/ros_workspace/build/camera_pkg/install.log --install-scripts $base/lib/camera_pkg --single-version-externally-managed
+[3.095s] running egg_info
+[3.096s] creating ../../build/camera_pkg/camera_pkg.egg-info
+[3.096s] writing ../../build/camera_pkg/camera_pkg.egg-info/PKG-INFO
+[3.096s] writing dependency_links to ../../build/camera_pkg/camera_pkg.egg-info/dependency_links.txt
+[3.096s] writing entry points to ../../build/camera_pkg/camera_pkg.egg-info/entry_points.txt
+[3.096s] writing requirements to ../../build/camera_pkg/camera_pkg.egg-info/requires.txt
+[3.096s] writing top-level names to ../../build/camera_pkg/camera_pkg.egg-info/top_level.txt
+[3.097s] writing manifest file '../../build/camera_pkg/camera_pkg.egg-info/SOURCES.txt'
+[3.116s] reading manifest file '../../build/camera_pkg/camera_pkg.egg-info/SOURCES.txt'
+[3.116s] writing manifest file '../../build/camera_pkg/camera_pkg.egg-info/SOURCES.txt'
+[3.116s] running build
+[3.116s] running build_py
+[3.116s] creating /home/henrik/ros_workspace/build/camera_pkg/build
+[3.116s] creating /home/henrik/ros_workspace/build/camera_pkg/build/lib
+[3.116s] copying constants.py -> /home/henrik/ros_workspace/build/camera_pkg/build/lib
+[3.117s] creating /home/henrik/ros_workspace/build/camera_pkg/build/lib/camera_pkg
+[3.117s] copying camera_pkg/__init__.py -> /home/henrik/ros_workspace/build/camera_pkg/build/lib/camera_pkg
+[3.117s] copying camera_pkg/bottle_recog_node.py -> /home/henrik/ros_workspace/build/camera_pkg/build/lib/camera_pkg
+[3.117s] running install
+[3.117s] running install_lib
+[3.118s] creating /home/henrik/ros_workspace/install/camera_pkg/lib/python3.8/site-packages/camera_pkg
+[3.118s] copying /home/henrik/ros_workspace/build/camera_pkg/build/lib/camera_pkg/__init__.py -> /home/henrik/ros_workspace/install/camera_pkg/lib/python3.8/site-packages/camera_pkg
+[3.118s] copying /home/henrik/ros_workspace/build/camera_pkg/build/lib/camera_pkg/bottle_recog_node.py -> /home/henrik/ros_workspace/install/camera_pkg/lib/python3.8/site-packages/camera_pkg
+[3.118s] copying /home/henrik/ros_workspace/build/camera_pkg/build/lib/constants.py -> /home/henrik/ros_workspace/install/camera_pkg/lib/python3.8/site-packages
+[3.118s] byte-compiling /home/henrik/ros_workspace/install/camera_pkg/lib/python3.8/site-packages/camera_pkg/__init__.py to __init__.cpython-38.pyc
+[3.119s] byte-compiling /home/henrik/ros_workspace/install/camera_pkg/lib/python3.8/site-packages/camera_pkg/bottle_recog_node.py to bottle_recog_node.cpython-38.pyc
+[3.119s] byte-compiling /home/henrik/ros_workspace/install/camera_pkg/lib/python3.8/site-packages/constants.py to constants.cpython-38.pyc
+[3.119s] running install_data
+[3.119s] creating /home/henrik/ros_workspace/install/camera_pkg/share/ament_index
+[3.119s] creating /home/henrik/ros_workspace/install/camera_pkg/share/ament_index/resource_index
+[3.119s] creating /home/henrik/ros_workspace/install/camera_pkg/share/ament_index/resource_index/packages
+[3.119s] copying resource/camera_pkg -> /home/henrik/ros_workspace/install/camera_pkg/share/ament_index/resource_index/packages
+[3.119s] copying package.xml -> /home/henrik/ros_workspace/install/camera_pkg/share/camera_pkg
+[3.120s] running install_egg_info
+[3.120s] Copying ../../build/camera_pkg/camera_pkg.egg-info to /home/henrik/ros_workspace/install/camera_pkg/lib/python3.8/site-packages/camera_pkg-0.0.0-py3.8.egg-info
+[3.121s] running install_scripts
+[3.131s] Installing bottle_recog_node script to /home/henrik/ros_workspace/install/camera_pkg/lib/camera_pkg
+[3.132s] writing list of installed files to '/home/henrik/ros_workspace/build/camera_pkg/install.log'
+[3.757s] Invoked command in '/home/henrik/ros_workspace/src/camera_pkg' returned '0': PYTHONPATH=/home/henrik/ros_workspace/build/camera_pkg/prefix_override:/home/henrik/ros_workspace/install/camera_pkg/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/camera_pkg build --build-base /home/henrik/ros_workspace/build/camera_pkg/build install --record /home/henrik/ros_workspace/build/camera_pkg/install.log --install-scripts $base/lib/camera_pkg --single-version-externally-managed

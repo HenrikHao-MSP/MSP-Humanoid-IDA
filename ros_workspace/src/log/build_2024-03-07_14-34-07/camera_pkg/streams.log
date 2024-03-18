@@ -1,0 +1,21 @@
+[2.885s] Invoking command in '/home/henrik/ros_workspace/src/camera_pkg': PYTHONPATH=/home/henrik/ros_workspace/src/build/camera_pkg/prefix_override:/home/henrik/ros_workspace/src/install/camera_pkg/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/camera_pkg build --build-base /home/henrik/ros_workspace/src/build/camera_pkg/build install --record /home/henrik/ros_workspace/src/build/camera_pkg/install.log --install-scripts $base/lib/camera_pkg --single-version-externally-managed
+[2.994s] running egg_info
+[2.994s] writing ../build/camera_pkg/camera_pkg.egg-info/PKG-INFO
+[2.995s] writing dependency_links to ../build/camera_pkg/camera_pkg.egg-info/dependency_links.txt
+[2.996s] writing entry points to ../build/camera_pkg/camera_pkg.egg-info/entry_points.txt
+[2.996s] writing requirements to ../build/camera_pkg/camera_pkg.egg-info/requires.txt
+[2.996s] writing top-level names to ../build/camera_pkg/camera_pkg.egg-info/top_level.txt
+[3.014s] reading manifest file '../build/camera_pkg/camera_pkg.egg-info/SOURCES.txt'
+[3.014s] writing manifest file '../build/camera_pkg/camera_pkg.egg-info/SOURCES.txt'
+[3.015s] running build
+[3.015s] running build_py
+[3.016s] running install
+[3.017s] running install_lib
+[3.017s] running install_data
+[3.018s] running install_egg_info
+[3.019s] removing '/home/henrik/ros_workspace/src/install/camera_pkg/lib/python3.8/site-packages/camera_pkg-0.0.0-py3.8.egg-info' (and everything under it)
+[3.019s] Copying ../build/camera_pkg/camera_pkg.egg-info to /home/henrik/ros_workspace/src/install/camera_pkg/lib/python3.8/site-packages/camera_pkg-0.0.0-py3.8.egg-info
+[3.022s] running install_scripts
+[3.025s] Installing bottle_recog_node script to /home/henrik/ros_workspace/src/install/camera_pkg/lib/camera_pkg
+[3.026s] writing list of installed files to '/home/henrik/ros_workspace/src/build/camera_pkg/install.log'
+[3.238s] Invoked command in '/home/henrik/ros_workspace/src/camera_pkg' returned '0': PYTHONPATH=/home/henrik/ros_workspace/src/build/camera_pkg/prefix_override:/home/henrik/ros_workspace/src/install/camera_pkg/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/camera_pkg build --build-base /home/henrik/ros_workspace/src/build/camera_pkg/build install --record /home/henrik/ros_workspace/src/build/camera_pkg/install.log --install-scripts $base/lib/camera_pkg --single-version-externally-managed

@@ -1,0 +1,294 @@
+[2.808s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[2.808s] DEBUG:colcon:Parsed command line arguments: Namespace(allow_overriding=[], ament_cmake_args=None, base_paths=['.'], build_base='build', catkin_cmake_args=None, catkin_skip_building_tests=False, cmake_args=None, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, cmake_target=None, cmake_target_skip_unavailable=False, continue_on_error=False, event_handlers=None, executor='parallel', ignore_user_meta=False, install_base='install', log_base=None, log_level=None, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7f012bbd65b0>>, merge_install=False, metas=['./colcon.meta'], packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_end=None, packages_ignore=None, packages_ignore_regex=None, packages_select=None, packages_select_build_failed=False, packages_select_by_dep=None, packages_select_regex=None, packages_select_test_failures=False, packages_skip=None, packages_skip_build_finished=False, packages_skip_by_dep=None, packages_skip_regex=None, packages_skip_test_passed=False, packages_skip_up_to=None, packages_start=None, packages_up_to=None, packages_up_to_regex=None, parallel_workers=20, paths=None, symlink_install=False, test_result_base=None, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7f012bbd65b0>, verb_name='build', verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7f012b7d63d0>)
+[2.915s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[2.916s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[2.916s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[2.916s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[2.916s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[2.916s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[2.916s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/henrik/ros_workspace/src'
+[2.916s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[2.916s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[2.916s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[2.916s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[2.916s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[2.916s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[2.916s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[2.916s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[2.916s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[2.921s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[2.921s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[2.922s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[2.922s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[2.922s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[2.922s] Level 1:colcon.colcon_core.package_identification:_identify(arm_pkg) by extensions ['ignore', 'ignore_ament_install']
+[2.922s] Level 1:colcon.colcon_core.package_identification:_identify(arm_pkg) by extension 'ignore'
+[2.922s] Level 1:colcon.colcon_core.package_identification:_identify(arm_pkg) by extension 'ignore_ament_install'
+[2.922s] Level 1:colcon.colcon_core.package_identification:_identify(arm_pkg) by extensions ['colcon_pkg']
+[2.922s] Level 1:colcon.colcon_core.package_identification:_identify(arm_pkg) by extension 'colcon_pkg'
+[2.922s] Level 1:colcon.colcon_core.package_identification:_identify(arm_pkg) by extensions ['colcon_meta']
+[2.922s] Level 1:colcon.colcon_core.package_identification:_identify(arm_pkg) by extension 'colcon_meta'
+[2.922s] Level 1:colcon.colcon_core.package_identification:_identify(arm_pkg) by extensions ['ros']
+[2.922s] Level 1:colcon.colcon_core.package_identification:_identify(arm_pkg) by extension 'ros'
+[2.923s] DEBUG:colcon.colcon_core.package_identification:Package 'arm_pkg' with type 'ros.ament_python' and name 'arm_pkg'
+[2.923s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[2.923s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[2.923s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[2.923s] Level 1:colcon.colcon_core.package_identification:_identify(camera_pkg) by extensions ['ignore', 'ignore_ament_install']
+[2.923s] Level 1:colcon.colcon_core.package_identification:_identify(camera_pkg) by extension 'ignore'
+[2.923s] Level 1:colcon.colcon_core.package_identification:_identify(camera_pkg) by extension 'ignore_ament_install'
+[2.923s] Level 1:colcon.colcon_core.package_identification:_identify(camera_pkg) by extensions ['colcon_pkg']
+[2.923s] Level 1:colcon.colcon_core.package_identification:_identify(camera_pkg) by extension 'colcon_pkg'
+[2.923s] Level 1:colcon.colcon_core.package_identification:_identify(camera_pkg) by extensions ['colcon_meta']
+[2.923s] Level 1:colcon.colcon_core.package_identification:_identify(camera_pkg) by extension 'colcon_meta'
+[2.923s] Level 1:colcon.colcon_core.package_identification:_identify(camera_pkg) by extensions ['ros']
+[2.923s] Level 1:colcon.colcon_core.package_identification:_identify(camera_pkg) by extension 'ros'
+[2.924s] DEBUG:colcon.colcon_core.package_identification:Package 'camera_pkg' with type 'ros.ament_python' and name 'camera_pkg'
+[2.924s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[2.924s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[2.924s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[2.924s] Level 1:colcon.colcon_core.package_identification:_identify(interfaces) by extensions ['ignore', 'ignore_ament_install']
+[2.924s] Level 1:colcon.colcon_core.package_identification:_identify(interfaces) by extension 'ignore'
+[2.924s] Level 1:colcon.colcon_core.package_identification:_identify(interfaces) by extension 'ignore_ament_install'
+[2.924s] Level 1:colcon.colcon_core.package_identification:_identify(interfaces) by extensions ['colcon_pkg']
+[2.924s] Level 1:colcon.colcon_core.package_identification:_identify(interfaces) by extension 'colcon_pkg'
+[2.924s] Level 1:colcon.colcon_core.package_identification:_identify(interfaces) by extensions ['colcon_meta']
+[2.924s] Level 1:colcon.colcon_core.package_identification:_identify(interfaces) by extension 'colcon_meta'
+[2.924s] Level 1:colcon.colcon_core.package_identification:_identify(interfaces) by extensions ['ros']
+[2.924s] Level 1:colcon.colcon_core.package_identification:_identify(interfaces) by extension 'ros'
+[2.924s] DEBUG:colcon.colcon_core.package_identification:Package 'interfaces' with type 'ros.ament_cmake' and name 'interfaces'
+[2.924s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[2.924s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[2.924s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[2.924s] Level 1:colcon.colcon_core.package_identification:_identify(mic_pkg) by extensions ['ignore', 'ignore_ament_install']
+[2.925s] Level 1:colcon.colcon_core.package_identification:_identify(mic_pkg) by extension 'ignore'
+[2.925s] Level 1:colcon.colcon_core.package_identification:_identify(mic_pkg) by extension 'ignore_ament_install'
+[2.925s] Level 1:colcon.colcon_core.package_identification:_identify(mic_pkg) by extensions ['colcon_pkg']
+[2.925s] Level 1:colcon.colcon_core.package_identification:_identify(mic_pkg) by extension 'colcon_pkg'
+[2.925s] Level 1:colcon.colcon_core.package_identification:_identify(mic_pkg) by extensions ['colcon_meta']
+[2.925s] Level 1:colcon.colcon_core.package_identification:_identify(mic_pkg) by extension 'colcon_meta'
+[2.925s] Level 1:colcon.colcon_core.package_identification:_identify(mic_pkg) by extensions ['ros']
+[2.925s] Level 1:colcon.colcon_core.package_identification:_identify(mic_pkg) by extension 'ros'
+[2.925s] DEBUG:colcon.colcon_core.package_identification:Package 'mic_pkg' with type 'ros.ament_python' and name 'mic_pkg'
+[2.925s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[2.925s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[2.925s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[2.925s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[2.925s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[3.174s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[3.174s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[3.271s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 3 installed packages in /home/henrik/ros_workspace/src/install
+[3.319s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 2 installed packages in /home/henrik/ros_workspace/install
+[3.373s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 256 installed packages in /opt/ros/foxy
+[3.374s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[3.508s] Level 5:colcon.colcon_core.verb:set package 'arm_pkg' build argument 'cmake_args' from command line to 'None'
+[3.508s] Level 5:colcon.colcon_core.verb:set package 'arm_pkg' build argument 'cmake_target' from command line to 'None'
+[3.508s] Level 5:colcon.colcon_core.verb:set package 'arm_pkg' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[3.508s] Level 5:colcon.colcon_core.verb:set package 'arm_pkg' build argument 'cmake_clean_cache' from command line to 'False'
+[3.508s] Level 5:colcon.colcon_core.verb:set package 'arm_pkg' build argument 'cmake_clean_first' from command line to 'False'
+[3.508s] Level 5:colcon.colcon_core.verb:set package 'arm_pkg' build argument 'cmake_force_configure' from command line to 'False'
+[3.508s] Level 5:colcon.colcon_core.verb:set package 'arm_pkg' build argument 'ament_cmake_args' from command line to 'None'
+[3.508s] Level 5:colcon.colcon_core.verb:set package 'arm_pkg' build argument 'catkin_cmake_args' from command line to 'None'
+[3.508s] Level 5:colcon.colcon_core.verb:set package 'arm_pkg' build argument 'catkin_skip_building_tests' from command line to 'False'
+[3.508s] DEBUG:colcon.colcon_core.verb:Building package 'arm_pkg' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/henrik/ros_workspace/src/build/arm_pkg', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/henrik/ros_workspace/src/install/arm_pkg', 'merge_install': False, 'path': '/home/henrik/ros_workspace/src/arm_pkg', 'symlink_install': False, 'test_result_base': None}
+[3.557s] Level 5:colcon.colcon_core.verb:set package 'camera_pkg' build argument 'cmake_args' from command line to 'None'
+[3.557s] Level 5:colcon.colcon_core.verb:set package 'camera_pkg' build argument 'cmake_target' from command line to 'None'
+[3.557s] Level 5:colcon.colcon_core.verb:set package 'camera_pkg' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[3.557s] Level 5:colcon.colcon_core.verb:set package 'camera_pkg' build argument 'cmake_clean_cache' from command line to 'False'
+[3.557s] Level 5:colcon.colcon_core.verb:set package 'camera_pkg' build argument 'cmake_clean_first' from command line to 'False'
+[3.557s] Level 5:colcon.colcon_core.verb:set package 'camera_pkg' build argument 'cmake_force_configure' from command line to 'False'
+[3.557s] Level 5:colcon.colcon_core.verb:set package 'camera_pkg' build argument 'ament_cmake_args' from command line to 'None'
+[3.557s] Level 5:colcon.colcon_core.verb:set package 'camera_pkg' build argument 'catkin_cmake_args' from command line to 'None'
+[3.557s] Level 5:colcon.colcon_core.verb:set package 'camera_pkg' build argument 'catkin_skip_building_tests' from command line to 'False'
+[3.557s] DEBUG:colcon.colcon_core.verb:Building package 'camera_pkg' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/henrik/ros_workspace/src/build/camera_pkg', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/henrik/ros_workspace/src/install/camera_pkg', 'merge_install': False, 'path': '/home/henrik/ros_workspace/src/camera_pkg', 'symlink_install': False, 'test_result_base': None}
+[3.607s] Level 5:colcon.colcon_core.verb:set package 'interfaces' build argument 'cmake_args' from command line to 'None'
+[3.607s] Level 5:colcon.colcon_core.verb:set package 'interfaces' build argument 'cmake_target' from command line to 'None'
+[3.607s] Level 5:colcon.colcon_core.verb:set package 'interfaces' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[3.607s] Level 5:colcon.colcon_core.verb:set package 'interfaces' build argument 'cmake_clean_cache' from command line to 'False'
+[3.607s] Level 5:colcon.colcon_core.verb:set package 'interfaces' build argument 'cmake_clean_first' from command line to 'False'
+[3.607s] Level 5:colcon.colcon_core.verb:set package 'interfaces' build argument 'cmake_force_configure' from command line to 'False'
+[3.607s] Level 5:colcon.colcon_core.verb:set package 'interfaces' build argument 'ament_cmake_args' from command line to 'None'
+[3.607s] Level 5:colcon.colcon_core.verb:set package 'interfaces' build argument 'catkin_cmake_args' from command line to 'None'
+[3.607s] Level 5:colcon.colcon_core.verb:set package 'interfaces' build argument 'catkin_skip_building_tests' from command line to 'False'
+[3.607s] DEBUG:colcon.colcon_core.verb:Building package 'interfaces' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/henrik/ros_workspace/src/build/interfaces', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/henrik/ros_workspace/src/install/interfaces', 'merge_install': False, 'path': '/home/henrik/ros_workspace/src/interfaces', 'symlink_install': False, 'test_result_base': None}
+[3.655s] Level 5:colcon.colcon_core.verb:set package 'mic_pkg' build argument 'cmake_args' from command line to 'None'
+[3.655s] Level 5:colcon.colcon_core.verb:set package 'mic_pkg' build argument 'cmake_target' from command line to 'None'
+[3.655s] Level 5:colcon.colcon_core.verb:set package 'mic_pkg' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[3.655s] Level 5:colcon.colcon_core.verb:set package 'mic_pkg' build argument 'cmake_clean_cache' from command line to 'False'
+[3.655s] Level 5:colcon.colcon_core.verb:set package 'mic_pkg' build argument 'cmake_clean_first' from command line to 'False'
+[3.655s] Level 5:colcon.colcon_core.verb:set package 'mic_pkg' build argument 'cmake_force_configure' from command line to 'False'
+[3.655s] Level 5:colcon.colcon_core.verb:set package 'mic_pkg' build argument 'ament_cmake_args' from command line to 'None'
+[3.655s] Level 5:colcon.colcon_core.verb:set package 'mic_pkg' build argument 'catkin_cmake_args' from command line to 'None'
+[3.655s] Level 5:colcon.colcon_core.verb:set package 'mic_pkg' build argument 'catkin_skip_building_tests' from command line to 'False'
+[3.655s] DEBUG:colcon.colcon_core.verb:Building package 'mic_pkg' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/henrik/ros_workspace/src/build/mic_pkg', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/henrik/ros_workspace/src/install/mic_pkg', 'merge_install': False, 'path': '/home/henrik/ros_workspace/src/mic_pkg', 'symlink_install': False, 'test_result_base': None}
+[3.703s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[3.752s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[3.752s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/henrik/ros_workspace/src/arm_pkg' with build type 'ament_python'
+[3.752s] Level 1:colcon.colcon_core.shell:create_environment_hook('arm_pkg', 'ament_prefix_path')
+[3.802s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[3.802s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/ros_workspace/src/install/arm_pkg/share/arm_pkg/hook/ament_prefix_path.ps1'
+[3.802s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/henrik/ros_workspace/src/install/arm_pkg/share/arm_pkg/hook/ament_prefix_path.dsv'
+[3.803s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/ros_workspace/src/install/arm_pkg/share/arm_pkg/hook/ament_prefix_path.sh'
+[3.853s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.853s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[4.051s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/henrik/ros_workspace/src/camera_pkg' with build type 'ament_python'
+[4.051s] Level 1:colcon.colcon_core.shell:create_environment_hook('camera_pkg', 'ament_prefix_path')
+[4.101s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/ros_workspace/src/install/camera_pkg/share/camera_pkg/hook/ament_prefix_path.ps1'
+[4.102s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/henrik/ros_workspace/src/install/camera_pkg/share/camera_pkg/hook/ament_prefix_path.dsv'
+[4.102s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/ros_workspace/src/install/camera_pkg/share/camera_pkg/hook/ament_prefix_path.sh'
+[4.151s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[4.151s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[4.348s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/henrik/ros_workspace/src/interfaces' with build type 'ament_cmake'
+[4.348s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/henrik/ros_workspace/src/interfaces'
+[4.399s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[4.399s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[4.601s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/henrik/ros_workspace/src/mic_pkg' with build type 'ament_python'
+[4.601s] Level 1:colcon.colcon_core.shell:create_environment_hook('mic_pkg', 'ament_prefix_path')
+[4.651s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/ros_workspace/src/install/mic_pkg/share/mic_pkg/hook/ament_prefix_path.ps1'
+[4.651s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/henrik/ros_workspace/src/install/mic_pkg/share/mic_pkg/hook/ament_prefix_path.dsv'
+[4.652s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/ros_workspace/src/install/mic_pkg/share/mic_pkg/hook/ament_prefix_path.sh'
+[4.701s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[4.701s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[5.014s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/henrik/ros_workspace/src/arm_pkg'
+[5.065s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[5.065s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[5.388s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/henrik/ros_workspace/src/camera_pkg'
+[5.438s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[5.438s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[5.640s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/henrik/ros_workspace/src/build/interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/henrik/ros_workspace/src/install/mic_pkg:/home/henrik/ros_workspace/src/install/camera_pkg:/home/henrik/ros_workspace/install/mic_pkg:/opt/ros/foxy /usr/bin/cmake --build /home/henrik/ros_workspace/src/build/interfaces -- -j20 -l20
+[5.762s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/henrik/ros_workspace/src/mic_pkg'
+[5.813s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[5.813s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[6.020s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/henrik/ros_workspace/src/build/interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/henrik/ros_workspace/src/install/mic_pkg:/home/henrik/ros_workspace/src/install/camera_pkg:/home/henrik/ros_workspace/install/mic_pkg:/opt/ros/foxy /usr/bin/cmake --build /home/henrik/ros_workspace/src/build/interfaces -- -j20 -l20
+[6.058s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/henrik/ros_workspace/src/build/interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/henrik/ros_workspace/src/install/mic_pkg:/home/henrik/ros_workspace/src/install/camera_pkg:/home/henrik/ros_workspace/install/mic_pkg:/opt/ros/foxy /usr/bin/cmake --install /home/henrik/ros_workspace/src/build/interfaces
+[6.089s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(interfaces)
+[6.089s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/henrik/ros_workspace/src/build/interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/henrik/ros_workspace/src/install/mic_pkg:/home/henrik/ros_workspace/src/install/camera_pkg:/home/henrik/ros_workspace/install/mic_pkg:/opt/ros/foxy /usr/bin/cmake --install /home/henrik/ros_workspace/src/build/interfaces
+[6.147s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/ros_workspace/src/install/interfaces' for CMake module files
+[6.147s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/ros_workspace/src/install/interfaces' for CMake config files
+[6.147s] Level 1:colcon.colcon_core.shell:create_environment_hook('interfaces', 'cmake_prefix_path')
+[6.205s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/ros_workspace/src/install/interfaces/share/interfaces/hook/cmake_prefix_path.ps1'
+[6.206s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/henrik/ros_workspace/src/install/interfaces/share/interfaces/hook/cmake_prefix_path.dsv'
+[6.206s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/ros_workspace/src/install/interfaces/share/interfaces/hook/cmake_prefix_path.sh'
+[6.206s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/ros_workspace/src/install/interfaces/lib'
+[6.206s] Level 1:colcon.colcon_core.shell:create_environment_hook('interfaces', 'ld_library_path_lib')
+[6.259s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/ros_workspace/src/install/interfaces/share/interfaces/hook/ld_library_path_lib.ps1'
+[6.260s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/henrik/ros_workspace/src/install/interfaces/share/interfaces/hook/ld_library_path_lib.dsv'
+[6.260s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/ros_workspace/src/install/interfaces/share/interfaces/hook/ld_library_path_lib.sh'
+[6.260s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/ros_workspace/src/install/interfaces/bin'
+[6.260s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/ros_workspace/src/install/interfaces/lib/pkgconfig/interfaces.pc'
+[6.260s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/ros_workspace/src/install/interfaces/lib/python3.8/site-packages'
+[6.260s] Level 1:colcon.colcon_core.shell:create_environment_hook('interfaces', 'pythonpath')
+[6.310s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/ros_workspace/src/install/interfaces/share/interfaces/hook/pythonpath.ps1'
+[6.310s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/henrik/ros_workspace/src/install/interfaces/share/interfaces/hook/pythonpath.dsv'
+[6.310s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/ros_workspace/src/install/interfaces/share/interfaces/hook/pythonpath.sh'
+[6.311s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/ros_workspace/src/install/interfaces/bin'
+[6.360s] INFO:colcon.colcon_core.shell:Creating package script '/home/henrik/ros_workspace/src/install/interfaces/share/interfaces/package.ps1'
+[6.360s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/henrik/ros_workspace/src/install/interfaces/share/interfaces/package.dsv'
+[6.361s] INFO:colcon.colcon_core.shell:Creating package script '/home/henrik/ros_workspace/src/install/interfaces/share/interfaces/package.sh'
+[6.361s] INFO:colcon.colcon_core.shell:Creating package script '/home/henrik/ros_workspace/src/install/interfaces/share/interfaces/package.bash'
+[6.361s] INFO:colcon.colcon_core.shell:Creating package script '/home/henrik/ros_workspace/src/install/interfaces/share/interfaces/package.zsh'
+[6.362s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/henrik/ros_workspace/src/install/interfaces/share/colcon-core/packages/interfaces)
+[6.366s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/henrik/ros_workspace/src/arm_pkg': PYTHONPATH=/home/henrik/ros_workspace/src/build/arm_pkg/prefix_override:/home/henrik/ros_workspace/src/install/arm_pkg/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/arm_pkg build --build-base /home/henrik/ros_workspace/src/build/arm_pkg/build install --record /home/henrik/ros_workspace/src/build/arm_pkg/install.log --install-scripts $base/lib/arm_pkg --single-version-externally-managed
+[6.370s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/henrik/ros_workspace/src/camera_pkg': PYTHONPATH=/home/henrik/ros_workspace/src/build/camera_pkg/prefix_override:/home/henrik/ros_workspace/src/install/camera_pkg/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/camera_pkg build --build-base /home/henrik/ros_workspace/src/build/camera_pkg/build install --record /home/henrik/ros_workspace/src/build/camera_pkg/install.log --install-scripts $base/lib/camera_pkg --single-version-externally-managed
+[6.371s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/henrik/ros_workspace/src/mic_pkg': PYTHONPATH=/home/henrik/ros_workspace/src/build/mic_pkg/prefix_override:/home/henrik/ros_workspace/src/install/mic_pkg/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/mic_pkg build --build-base /home/henrik/ros_workspace/src/build/mic_pkg/build install --record /home/henrik/ros_workspace/src/build/mic_pkg/install.log --install-scripts $base/lib/mic_pkg --single-version-externally-managed
+[6.485s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(interfaces)
+[6.580s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/ros_workspace/src/install/interfaces' for CMake module files
+[6.581s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/ros_workspace/src/install/interfaces' for CMake config files
+[6.581s] Level 1:colcon.colcon_core.shell:create_environment_hook('interfaces', 'cmake_prefix_path')
+[6.668s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/ros_workspace/src/install/interfaces/share/interfaces/hook/cmake_prefix_path.ps1'
+[6.671s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/henrik/ros_workspace/src/install/interfaces/share/interfaces/hook/cmake_prefix_path.dsv'
+[6.671s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/ros_workspace/src/install/interfaces/share/interfaces/hook/cmake_prefix_path.sh'
+[6.672s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/ros_workspace/src/install/interfaces/lib'
+[6.672s] Level 1:colcon.colcon_core.shell:create_environment_hook('interfaces', 'ld_library_path_lib')
+[6.758s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/ros_workspace/src/install/interfaces/share/interfaces/hook/ld_library_path_lib.ps1'
+[6.758s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/henrik/ros_workspace/src/install/interfaces/share/interfaces/hook/ld_library_path_lib.dsv'
+[6.759s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/ros_workspace/src/install/interfaces/share/interfaces/hook/ld_library_path_lib.sh'
+[6.759s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/ros_workspace/src/install/interfaces/bin'
+[6.759s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/ros_workspace/src/install/interfaces/lib/pkgconfig/interfaces.pc'
+[6.759s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/ros_workspace/src/install/interfaces/lib/python3.8/site-packages'
+[6.759s] Level 1:colcon.colcon_core.shell:create_environment_hook('interfaces', 'pythonpath')
+[6.845s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/ros_workspace/src/install/interfaces/share/interfaces/hook/pythonpath.ps1'
+[6.846s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/henrik/ros_workspace/src/install/interfaces/share/interfaces/hook/pythonpath.dsv'
+[6.846s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/ros_workspace/src/install/interfaces/share/interfaces/hook/pythonpath.sh'
+[6.846s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/ros_workspace/src/install/interfaces/bin'
+[6.932s] INFO:colcon.colcon_core.shell:Creating package script '/home/henrik/ros_workspace/src/install/interfaces/share/interfaces/package.ps1'
+[6.933s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/henrik/ros_workspace/src/install/interfaces/share/interfaces/package.dsv'
+[6.933s] INFO:colcon.colcon_core.shell:Creating package script '/home/henrik/ros_workspace/src/install/interfaces/share/interfaces/package.sh'
+[6.934s] INFO:colcon.colcon_core.shell:Creating package script '/home/henrik/ros_workspace/src/install/interfaces/share/interfaces/package.bash'
+[6.934s] INFO:colcon.colcon_core.shell:Creating package script '/home/henrik/ros_workspace/src/install/interfaces/share/interfaces/package.zsh'
+[6.934s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/henrik/ros_workspace/src/install/interfaces/share/colcon-core/packages/interfaces)
+[6.937s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/henrik/ros_workspace/src/camera_pkg' returned '0': PYTHONPATH=/home/henrik/ros_workspace/src/build/camera_pkg/prefix_override:/home/henrik/ros_workspace/src/install/camera_pkg/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/camera_pkg build --build-base /home/henrik/ros_workspace/src/build/camera_pkg/build install --record /home/henrik/ros_workspace/src/build/camera_pkg/install.log --install-scripts $base/lib/camera_pkg --single-version-externally-managed
+[7.023s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/ros_workspace/src/install/camera_pkg' for CMake module files
+[7.024s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/ros_workspace/src/install/camera_pkg' for CMake config files
+[7.024s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/ros_workspace/src/install/camera_pkg/lib'
+[7.024s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/ros_workspace/src/install/camera_pkg/bin'
+[7.024s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/ros_workspace/src/install/camera_pkg/lib/pkgconfig/camera_pkg.pc'
+[7.024s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/ros_workspace/src/install/camera_pkg/lib/python3.8/site-packages'
+[7.024s] Level 1:colcon.colcon_core.shell:create_environment_hook('camera_pkg', 'pythonpath')
+[7.111s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/ros_workspace/src/install/camera_pkg/share/camera_pkg/hook/pythonpath.ps1'
+[7.111s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/henrik/ros_workspace/src/install/camera_pkg/share/camera_pkg/hook/pythonpath.dsv'
+[7.111s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/ros_workspace/src/install/camera_pkg/share/camera_pkg/hook/pythonpath.sh'
+[7.112s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/ros_workspace/src/install/camera_pkg/bin'
+[7.112s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(camera_pkg)
+[7.198s] INFO:colcon.colcon_core.shell:Creating package script '/home/henrik/ros_workspace/src/install/camera_pkg/share/camera_pkg/package.ps1'
+[7.198s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/henrik/ros_workspace/src/install/camera_pkg/share/camera_pkg/package.dsv'
+[7.198s] INFO:colcon.colcon_core.shell:Creating package script '/home/henrik/ros_workspace/src/install/camera_pkg/share/camera_pkg/package.sh'
+[7.199s] INFO:colcon.colcon_core.shell:Creating package script '/home/henrik/ros_workspace/src/install/camera_pkg/share/camera_pkg/package.bash'
+[7.199s] INFO:colcon.colcon_core.shell:Creating package script '/home/henrik/ros_workspace/src/install/camera_pkg/share/camera_pkg/package.zsh'
+[7.199s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/henrik/ros_workspace/src/install/camera_pkg/share/colcon-core/packages/camera_pkg)
+[7.200s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/henrik/ros_workspace/src/arm_pkg' returned '0': PYTHONPATH=/home/henrik/ros_workspace/src/build/arm_pkg/prefix_override:/home/henrik/ros_workspace/src/install/arm_pkg/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/arm_pkg build --build-base /home/henrik/ros_workspace/src/build/arm_pkg/build install --record /home/henrik/ros_workspace/src/build/arm_pkg/install.log --install-scripts $base/lib/arm_pkg --single-version-externally-managed
+[7.286s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/ros_workspace/src/install/arm_pkg' for CMake module files
+[7.287s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/ros_workspace/src/install/arm_pkg' for CMake config files
+[7.287s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/ros_workspace/src/install/arm_pkg/lib'
+[7.287s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/ros_workspace/src/install/arm_pkg/bin'
+[7.287s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/ros_workspace/src/install/arm_pkg/lib/pkgconfig/arm_pkg.pc'
+[7.288s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/ros_workspace/src/install/arm_pkg/lib/python3.8/site-packages'
+[7.288s] Level 1:colcon.colcon_core.shell:create_environment_hook('arm_pkg', 'pythonpath')
+[7.373s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/ros_workspace/src/install/arm_pkg/share/arm_pkg/hook/pythonpath.ps1'
+[7.374s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/henrik/ros_workspace/src/install/arm_pkg/share/arm_pkg/hook/pythonpath.dsv'
+[7.374s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/ros_workspace/src/install/arm_pkg/share/arm_pkg/hook/pythonpath.sh'
+[7.374s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/ros_workspace/src/install/arm_pkg/bin'
+[7.374s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(arm_pkg)
+[7.461s] INFO:colcon.colcon_core.shell:Creating package script '/home/henrik/ros_workspace/src/install/arm_pkg/share/arm_pkg/package.ps1'
+[7.461s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/henrik/ros_workspace/src/install/arm_pkg/share/arm_pkg/package.dsv'
+[7.461s] INFO:colcon.colcon_core.shell:Creating package script '/home/henrik/ros_workspace/src/install/arm_pkg/share/arm_pkg/package.sh'
+[7.462s] INFO:colcon.colcon_core.shell:Creating package script '/home/henrik/ros_workspace/src/install/arm_pkg/share/arm_pkg/package.bash'
+[7.462s] INFO:colcon.colcon_core.shell:Creating package script '/home/henrik/ros_workspace/src/install/arm_pkg/share/arm_pkg/package.zsh'
+[7.462s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/henrik/ros_workspace/src/install/arm_pkg/share/colcon-core/packages/arm_pkg)
+[7.463s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/henrik/ros_workspace/src/mic_pkg' returned '0': PYTHONPATH=/home/henrik/ros_workspace/src/build/mic_pkg/prefix_override:/home/henrik/ros_workspace/src/install/mic_pkg/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/mic_pkg build --build-base /home/henrik/ros_workspace/src/build/mic_pkg/build install --record /home/henrik/ros_workspace/src/build/mic_pkg/install.log --install-scripts $base/lib/mic_pkg --single-version-externally-managed
+[7.549s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/ros_workspace/src/install/mic_pkg' for CMake module files
+[7.549s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/ros_workspace/src/install/mic_pkg' for CMake config files
+[7.550s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/ros_workspace/src/install/mic_pkg/lib'
+[7.550s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/ros_workspace/src/install/mic_pkg/bin'
+[7.550s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/ros_workspace/src/install/mic_pkg/lib/pkgconfig/mic_pkg.pc'
+[7.550s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/ros_workspace/src/install/mic_pkg/lib/python3.8/site-packages'
+[7.550s] Level 1:colcon.colcon_core.shell:create_environment_hook('mic_pkg', 'pythonpath')
+[7.638s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/ros_workspace/src/install/mic_pkg/share/mic_pkg/hook/pythonpath.ps1'
+[7.638s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/henrik/ros_workspace/src/install/mic_pkg/share/mic_pkg/hook/pythonpath.dsv'
+[7.638s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/ros_workspace/src/install/mic_pkg/share/mic_pkg/hook/pythonpath.sh'
+[7.639s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/ros_workspace/src/install/mic_pkg/bin'
+[7.639s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(mic_pkg)
+[7.726s] INFO:colcon.colcon_core.shell:Creating package script '/home/henrik/ros_workspace/src/install/mic_pkg/share/mic_pkg/package.ps1'
+[7.727s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/henrik/ros_workspace/src/install/mic_pkg/share/mic_pkg/package.dsv'
+[7.727s] INFO:colcon.colcon_core.shell:Creating package script '/home/henrik/ros_workspace/src/install/mic_pkg/share/mic_pkg/package.sh'
+[7.728s] INFO:colcon.colcon_core.shell:Creating package script '/home/henrik/ros_workspace/src/install/mic_pkg/share/mic_pkg/package.bash'
+[7.728s] INFO:colcon.colcon_core.shell:Creating package script '/home/henrik/ros_workspace/src/install/mic_pkg/share/mic_pkg/package.zsh'
+[7.728s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/henrik/ros_workspace/src/install/mic_pkg/share/colcon-core/packages/mic_pkg)
+[7.728s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[7.729s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[7.729s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[7.729s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[7.822s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[7.822s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[7.822s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[7.832s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[7.922s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/henrik/ros_workspace/src/install/local_setup.ps1'
+[7.923s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/henrik/ros_workspace/src/install/_local_setup_util_ps1.py'
+[7.924s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/henrik/ros_workspace/src/install/setup.ps1'
+[8.012s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/henrik/ros_workspace/src/install/local_setup.sh'
+[8.013s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/henrik/ros_workspace/src/install/_local_setup_util_sh.py'
+[8.013s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/henrik/ros_workspace/src/install/setup.sh'
+[8.102s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/henrik/ros_workspace/src/install/local_setup.bash'
+[8.102s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/henrik/ros_workspace/src/install/setup.bash'
+[8.190s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/henrik/ros_workspace/src/install/local_setup.zsh'
+[8.191s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/henrik/ros_workspace/src/install/setup.zsh'

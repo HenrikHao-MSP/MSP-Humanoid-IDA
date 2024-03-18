@@ -1,0 +1,28 @@
+[1.925s] Invoking command in '/home/henrik/ros_workspace/src/camera_pkg': PYTHONPATH=/home/henrik/ros_workspace/src/build/camera_pkg/prefix_override:/home/henrik/ros_workspace/src/install/camera_pkg/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/camera_pkg build --build-base /home/henrik/ros_workspace/src/build/camera_pkg/build install --record /home/henrik/ros_workspace/src/build/camera_pkg/install.log --install-scripts $base/lib/camera_pkg --single-version-externally-managed
+[2.032s] running egg_info
+[2.034s] writing ../build/camera_pkg/camera_pkg.egg-info/PKG-INFO
+[2.034s] writing dependency_links to ../build/camera_pkg/camera_pkg.egg-info/dependency_links.txt
+[2.035s] writing entry points to ../build/camera_pkg/camera_pkg.egg-info/entry_points.txt
+[2.035s] writing requirements to ../build/camera_pkg/camera_pkg.egg-info/requires.txt
+[2.036s] writing top-level names to ../build/camera_pkg/camera_pkg.egg-info/top_level.txt
+[2.050s] file constants.py (for module constants) not found
+[2.053s] file constants.py (for module constants) not found
+[2.053s] file constants.py (for module constants) not found
+[2.056s] reading manifest file '../build/camera_pkg/camera_pkg.egg-info/SOURCES.txt'
+[2.056s] writing manifest file '../build/camera_pkg/camera_pkg.egg-info/SOURCES.txt'
+[2.057s] running build
+[2.057s] running build_py
+[2.058s] copying camera_pkg/bottle_recog_node.py -> /home/henrik/ros_workspace/src/build/camera_pkg/build/lib/camera_pkg
+[2.058s] running install
+[2.059s] running install_lib
+[2.059s] copying /home/henrik/ros_workspace/src/build/camera_pkg/build/lib/camera_pkg/bottle_recog_node.py -> /home/henrik/ros_workspace/src/install/camera_pkg/lib/python3.8/site-packages/camera_pkg
+[2.060s] byte-compiling /home/henrik/ros_workspace/src/install/camera_pkg/lib/python3.8/site-packages/camera_pkg/bottle_recog_node.py to bottle_recog_node.cpython-38.pyc
+[2.061s] running install_data
+[2.061s] running install_egg_info
+[2.064s] removing '/home/henrik/ros_workspace/src/install/camera_pkg/lib/python3.8/site-packages/camera_pkg-0.0.0-py3.8.egg-info' (and everything under it)
+[2.064s] Copying ../build/camera_pkg/camera_pkg.egg-info to /home/henrik/ros_workspace/src/install/camera_pkg/lib/python3.8/site-packages/camera_pkg-0.0.0-py3.8.egg-info
+[2.064s] running install_scripts
+[2.064s] Installing bottle_recog_node script to /home/henrik/ros_workspace/src/install/camera_pkg/lib/camera_pkg
+[2.064s] writing list of installed files to '/home/henrik/ros_workspace/src/build/camera_pkg/install.log'
+[2.064s] file constants.py (for module constants) not found
+[2.275s] Invoked command in '/home/henrik/ros_workspace/src/camera_pkg' returned '0': PYTHONPATH=/home/henrik/ros_workspace/src/build/camera_pkg/prefix_override:/home/henrik/ros_workspace/src/install/camera_pkg/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/camera_pkg build --build-base /home/henrik/ros_workspace/src/build/camera_pkg/build install --record /home/henrik/ros_workspace/src/build/camera_pkg/install.log --install-scripts $base/lib/camera_pkg --single-version-externally-managed

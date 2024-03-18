@@ -1,0 +1,3 @@
+[console_scripts]
+arm_control_node = arm_pkg.arm_control_node:main
+

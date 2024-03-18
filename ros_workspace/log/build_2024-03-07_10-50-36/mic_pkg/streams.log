@@ -1,0 +1,37 @@
+[0.766s] Invoking command in '/home/henrik/ros_workspace/src/mic_pkg': PYTHONPATH=/home/henrik/ros_workspace/build/mic_pkg/prefix_override:/home/henrik/ros_workspace/install/mic_pkg/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/mic_pkg build --build-base /home/henrik/ros_workspace/build/mic_pkg/build install --record /home/henrik/ros_workspace/build/mic_pkg/install.log --install-scripts $base/lib/mic_pkg --single-version-externally-managed
+[0.867s] running egg_info
+[0.867s] creating ../../build/mic_pkg/mic_pkg.egg-info
+[0.867s] writing ../../build/mic_pkg/mic_pkg.egg-info/PKG-INFO
+[0.867s] writing dependency_links to ../../build/mic_pkg/mic_pkg.egg-info/dependency_links.txt
+[0.867s] writing entry points to ../../build/mic_pkg/mic_pkg.egg-info/entry_points.txt
+[0.867s] writing requirements to ../../build/mic_pkg/mic_pkg.egg-info/requires.txt
+[0.867s] writing top-level names to ../../build/mic_pkg/mic_pkg.egg-info/top_level.txt
+[0.868s] writing manifest file '../../build/mic_pkg/mic_pkg.egg-info/SOURCES.txt'
+[0.887s] reading manifest file '../../build/mic_pkg/mic_pkg.egg-info/SOURCES.txt'
+[0.887s] writing manifest file '../../build/mic_pkg/mic_pkg.egg-info/SOURCES.txt'
+[0.887s] running build
+[0.887s] running build_py
+[0.887s] creating /home/henrik/ros_workspace/build/mic_pkg/build
+[0.887s] creating /home/henrik/ros_workspace/build/mic_pkg/build/lib
+[0.887s] creating /home/henrik/ros_workspace/build/mic_pkg/build/lib/mic_pkg
+[0.887s] copying mic_pkg/__init__.py -> /home/henrik/ros_workspace/build/mic_pkg/build/lib/mic_pkg
+[0.887s] copying mic_pkg/mic_node.py -> /home/henrik/ros_workspace/build/mic_pkg/build/lib/mic_pkg
+[0.887s] running install
+[0.888s] running install_lib
+[0.888s] creating /home/henrik/ros_workspace/install/mic_pkg/lib/python3.8/site-packages/mic_pkg
+[0.888s] copying /home/henrik/ros_workspace/build/mic_pkg/build/lib/mic_pkg/__init__.py -> /home/henrik/ros_workspace/install/mic_pkg/lib/python3.8/site-packages/mic_pkg
+[0.888s] copying /home/henrik/ros_workspace/build/mic_pkg/build/lib/mic_pkg/mic_node.py -> /home/henrik/ros_workspace/install/mic_pkg/lib/python3.8/site-packages/mic_pkg
+[0.888s] byte-compiling /home/henrik/ros_workspace/install/mic_pkg/lib/python3.8/site-packages/mic_pkg/__init__.py to __init__.cpython-38.pyc
+[0.889s] byte-compiling /home/henrik/ros_workspace/install/mic_pkg/lib/python3.8/site-packages/mic_pkg/mic_node.py to mic_node.cpython-38.pyc
+[0.889s] running install_data
+[0.889s] creating /home/henrik/ros_workspace/install/mic_pkg/share/ament_index
+[0.889s] creating /home/henrik/ros_workspace/install/mic_pkg/share/ament_index/resource_index
+[0.889s] creating /home/henrik/ros_workspace/install/mic_pkg/share/ament_index/resource_index/packages
+[0.889s] copying resource/mic_pkg -> /home/henrik/ros_workspace/install/mic_pkg/share/ament_index/resource_index/packages
+[0.889s] copying package.xml -> /home/henrik/ros_workspace/install/mic_pkg/share/mic_pkg
+[0.889s] running install_egg_info
+[0.890s] Copying ../../build/mic_pkg/mic_pkg.egg-info to /home/henrik/ros_workspace/install/mic_pkg/lib/python3.8/site-packages/mic_pkg-0.0.0-py3.8.egg-info
+[0.890s] running install_scripts
+[0.899s] Installing mic_node script to /home/henrik/ros_workspace/install/mic_pkg/lib/mic_pkg
+[0.899s] writing list of installed files to '/home/henrik/ros_workspace/build/mic_pkg/install.log'
+[0.909s] Invoked command in '/home/henrik/ros_workspace/src/mic_pkg' returned '0': PYTHONPATH=/home/henrik/ros_workspace/build/mic_pkg/prefix_override:/home/henrik/ros_workspace/install/mic_pkg/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/mic_pkg build --build-base /home/henrik/ros_workspace/build/mic_pkg/build install --record /home/henrik/ros_workspace/build/mic_pkg/install.log --install-scripts $base/lib/mic_pkg --single-version-externally-managed

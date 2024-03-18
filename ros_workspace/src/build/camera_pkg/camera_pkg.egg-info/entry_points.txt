@@ -1,0 +1,3 @@
+[console_scripts]
+bottle_recog_node = camera_pkg.bottle_recog_node:main
+

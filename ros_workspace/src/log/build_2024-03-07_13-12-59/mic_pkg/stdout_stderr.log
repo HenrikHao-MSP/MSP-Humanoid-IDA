@@ -1,0 +1,39 @@
+running egg_info
+creating ../build/mic_pkg/mic_pkg.egg-info
+writing ../build/mic_pkg/mic_pkg.egg-info/PKG-INFO
+writing dependency_links to ../build/mic_pkg/mic_pkg.egg-info/dependency_links.txt
+writing entry points to ../build/mic_pkg/mic_pkg.egg-info/entry_points.txt
+writing requirements to ../build/mic_pkg/mic_pkg.egg-info/requires.txt
+writing top-level names to ../build/mic_pkg/mic_pkg.egg-info/top_level.txt
+writing manifest file '../build/mic_pkg/mic_pkg.egg-info/SOURCES.txt'
+file constants.py (for module constants) not found
+reading manifest file '../build/mic_pkg/mic_pkg.egg-info/SOURCES.txt'
+writing manifest file '../build/mic_pkg/mic_pkg.egg-info/SOURCES.txt'
+file constants.py (for module constants) not found
+file constants.py (for module constants) not found
+running build
+running build_py
+creating /home/henrik/ros_workspace/src/build/mic_pkg/build
+creating /home/henrik/ros_workspace/src/build/mic_pkg/build/lib
+creating /home/henrik/ros_workspace/src/build/mic_pkg/build/lib/mic_pkg
+copying mic_pkg/__init__.py -> /home/henrik/ros_workspace/src/build/mic_pkg/build/lib/mic_pkg
+copying mic_pkg/mic_node.py -> /home/henrik/ros_workspace/src/build/mic_pkg/build/lib/mic_pkg
+running install
+running install_lib
+creating /home/henrik/ros_workspace/src/install/mic_pkg/lib/python3.8/site-packages/mic_pkg
+copying /home/henrik/ros_workspace/src/build/mic_pkg/build/lib/mic_pkg/__init__.py -> /home/henrik/ros_workspace/src/install/mic_pkg/lib/python3.8/site-packages/mic_pkg
+copying /home/henrik/ros_workspace/src/build/mic_pkg/build/lib/mic_pkg/mic_node.py -> /home/henrik/ros_workspace/src/install/mic_pkg/lib/python3.8/site-packages/mic_pkg
+byte-compiling /home/henrik/ros_workspace/src/install/mic_pkg/lib/python3.8/site-packages/mic_pkg/__init__.py to __init__.cpython-38.pyc
+byte-compiling /home/henrik/ros_workspace/src/install/mic_pkg/lib/python3.8/site-packages/mic_pkg/mic_node.py to mic_node.cpython-38.pyc
+running install_data
+creating /home/henrik/ros_workspace/src/install/mic_pkg/share/ament_index
+creating /home/henrik/ros_workspace/src/install/mic_pkg/share/ament_index/resource_index
+creating /home/henrik/ros_workspace/src/install/mic_pkg/share/ament_index/resource_index/packages
+copying resource/mic_pkg -> /home/henrik/ros_workspace/src/install/mic_pkg/share/ament_index/resource_index/packages
+copying package.xml -> /home/henrik/ros_workspace/src/install/mic_pkg/share/mic_pkg
+running install_egg_info
+Copying ../build/mic_pkg/mic_pkg.egg-info to /home/henrik/ros_workspace/src/install/mic_pkg/lib/python3.8/site-packages/mic_pkg-0.0.0-py3.8.egg-info
+running install_scripts
+Installing mic_node script to /home/henrik/ros_workspace/src/install/mic_pkg/lib/mic_pkg
+writing list of installed files to '/home/henrik/ros_workspace/src/build/mic_pkg/install.log'
+file constants.py (for module constants) not found

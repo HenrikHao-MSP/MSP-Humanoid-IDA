@@ -1,0 +1,28 @@
+running egg_info
+creating ../build/motion_control_pkg/motion_control_pkg.egg-info
+writing ../build/motion_control_pkg/motion_control_pkg.egg-info/PKG-INFO
+writing dependency_links to ../build/motion_control_pkg/motion_control_pkg.egg-info/dependency_links.txt
+writing entry points to ../build/motion_control_pkg/motion_control_pkg.egg-info/entry_points.txt
+writing requirements to ../build/motion_control_pkg/motion_control_pkg.egg-info/requires.txt
+writing top-level names to ../build/motion_control_pkg/motion_control_pkg.egg-info/top_level.txt
+writing manifest file '../build/motion_control_pkg/motion_control_pkg.egg-info/SOURCES.txt'
+reading manifest file '../build/motion_control_pkg/motion_control_pkg.egg-info/SOURCES.txt'
+writing manifest file '../build/motion_control_pkg/motion_control_pkg.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/henrik/ros_workspace/src/build/motion_control_pkg/build
+creating /home/henrik/ros_workspace/src/build/motion_control_pkg/build/lib
+creating /home/henrik/ros_workspace/src/build/motion_control_pkg/build/lib/motion_control_pkg
+copying motion_control_pkg/__init__.py -> /home/henrik/ros_workspace/src/build/motion_control_pkg/build/lib/motion_control_pkg
+copying motion_control_pkg/arm_control_node.py -> /home/henrik/ros_workspace/src/build/motion_control_pkg/build/lib/motion_control_pkg
+running install
+running install_lib
+creating /home/henrik/ros_workspace/src/install/motion_control_pkg/lib/python3.8/site-packages/motion_control_pkg
+copying /home/henrik/ros_workspace/src/build/motion_control_pkg/build/lib/motion_control_pkg/__init__.py -> /home/henrik/ros_workspace/src/install/motion_control_pkg/lib/python3.8/site-packages/motion_control_pkg
+copying /home/henrik/ros_workspace/src/build/motion_control_pkg/build/lib/motion_control_pkg/arm_control_node.py -> /home/henrik/ros_workspace/src/install/motion_control_pkg/lib/python3.8/site-packages/motion_control_pkg
+byte-compiling /home/henrik/ros_workspace/src/install/motion_control_pkg/lib/python3.8/site-packages/motion_control_pkg/__init__.py to __init__.cpython-38.pyc
+byte-compiling /home/henrik/ros_workspace/src/install/motion_control_pkg/lib/python3.8/site-packages/motion_control_pkg/arm_control_node.py to arm_control_node.cpython-38.pyc
+running install_data
+creating /home/henrik/ros_workspace/src/install/motion_control_pkg/share/ament_index
+creating /home/henrik/ros_workspace/src/install/motion_control_pkg/share/ament_index/resource_index
+creating /home/henrik/ros_workspace/src/install/motion_control_pkg/share/ament_index/resource_index/packages

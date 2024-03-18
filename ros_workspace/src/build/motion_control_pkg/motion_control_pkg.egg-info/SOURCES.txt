@@ -1,0 +1,16 @@
+package.xml
+setup.cfg
+setup.py
+../build/motion_control_pkg/motion_control_pkg.egg-info/PKG-INFO
+../build/motion_control_pkg/motion_control_pkg.egg-info/SOURCES.txt
+../build/motion_control_pkg/motion_control_pkg.egg-info/dependency_links.txt
+../build/motion_control_pkg/motion_control_pkg.egg-info/entry_points.txt
+../build/motion_control_pkg/motion_control_pkg.egg-info/requires.txt
+../build/motion_control_pkg/motion_control_pkg.egg-info/top_level.txt
+../build/motion_control_pkg/motion_control_pkg.egg-info/zip-safe
+motion_control_pkg/__init__.py
+motion_control_pkg/arm_control_node.py
+resource/motion_control_pkg
+test/test_copyright.py
+test/test_flake8.py
+test/test_pep257.py

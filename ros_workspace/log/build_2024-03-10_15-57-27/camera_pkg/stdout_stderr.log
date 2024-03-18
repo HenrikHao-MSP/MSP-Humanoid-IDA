@@ -1,0 +1,38 @@
+running egg_info
+creating ../../build/camera_pkg/camera_pkg.egg-info
+writing ../../build/camera_pkg/camera_pkg.egg-info/PKG-INFO
+writing dependency_links to ../../build/camera_pkg/camera_pkg.egg-info/dependency_links.txt
+writing entry points to ../../build/camera_pkg/camera_pkg.egg-info/entry_points.txt
+writing requirements to ../../build/camera_pkg/camera_pkg.egg-info/requires.txt
+writing top-level names to ../../build/camera_pkg/camera_pkg.egg-info/top_level.txt
+writing manifest file '../../build/camera_pkg/camera_pkg.egg-info/SOURCES.txt'
+reading manifest file '../../build/camera_pkg/camera_pkg.egg-info/SOURCES.txt'
+writing manifest file '../../build/camera_pkg/camera_pkg.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/henrik/ros_workspace/build/camera_pkg/build
+creating /home/henrik/ros_workspace/build/camera_pkg/build/lib
+copying constants.py -> /home/henrik/ros_workspace/build/camera_pkg/build/lib
+creating /home/henrik/ros_workspace/build/camera_pkg/build/lib/camera_pkg
+copying camera_pkg/__init__.py -> /home/henrik/ros_workspace/build/camera_pkg/build/lib/camera_pkg
+copying camera_pkg/bottle_recog_node.py -> /home/henrik/ros_workspace/build/camera_pkg/build/lib/camera_pkg
+running install
+running install_lib
+creating /home/henrik/ros_workspace/install/camera_pkg/lib/python3.8/site-packages/camera_pkg
+copying /home/henrik/ros_workspace/build/camera_pkg/build/lib/camera_pkg/__init__.py -> /home/henrik/ros_workspace/install/camera_pkg/lib/python3.8/site-packages/camera_pkg
+copying /home/henrik/ros_workspace/build/camera_pkg/build/lib/camera_pkg/bottle_recog_node.py -> /home/henrik/ros_workspace/install/camera_pkg/lib/python3.8/site-packages/camera_pkg
+copying /home/henrik/ros_workspace/build/camera_pkg/build/lib/constants.py -> /home/henrik/ros_workspace/install/camera_pkg/lib/python3.8/site-packages
+byte-compiling /home/henrik/ros_workspace/install/camera_pkg/lib/python3.8/site-packages/camera_pkg/__init__.py to __init__.cpython-38.pyc
+byte-compiling /home/henrik/ros_workspace/install/camera_pkg/lib/python3.8/site-packages/camera_pkg/bottle_recog_node.py to bottle_recog_node.cpython-38.pyc
+byte-compiling /home/henrik/ros_workspace/install/camera_pkg/lib/python3.8/site-packages/constants.py to constants.cpython-38.pyc
+running install_data
+creating /home/henrik/ros_workspace/install/camera_pkg/share/ament_index
+creating /home/henrik/ros_workspace/install/camera_pkg/share/ament_index/resource_index
+creating /home/henrik/ros_workspace/install/camera_pkg/share/ament_index/resource_index/packages
+copying resource/camera_pkg -> /home/henrik/ros_workspace/install/camera_pkg/share/ament_index/resource_index/packages
+copying package.xml -> /home/henrik/ros_workspace/install/camera_pkg/share/camera_pkg
+running install_egg_info
+Copying ../../build/camera_pkg/camera_pkg.egg-info to /home/henrik/ros_workspace/install/camera_pkg/lib/python3.8/site-packages/camera_pkg-0.0.0-py3.8.egg-info
+running install_scripts
+Installing bottle_recog_node script to /home/henrik/ros_workspace/install/camera_pkg/lib/camera_pkg
+writing list of installed files to '/home/henrik/ros_workspace/build/camera_pkg/install.log'
