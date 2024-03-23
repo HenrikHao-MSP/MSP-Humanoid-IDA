@@ -1,7 +1,7 @@
 import rclpy
 from rclpy.node import Node
 from interfaces.msg import BottleInfo
-from std_msgs.msg import Bool  # Import the standard Bool message type
+from std_msgs.msg import Bool
 
 class ArmControlNode(Node):
     def __init__(self):
@@ -30,7 +30,6 @@ class ArmControlNode(Node):
     def move_arm_to_position(self, position):
         # Placeholder for arm control logic
         # Here, simulate moving the arm and return True for success
-        # Replace this with your actual arm control logic
         self.get_logger().info(f'Moving arm to position: {position}')
         # Simulate a successful operation
         return True

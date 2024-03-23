@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/henrik/ros_workspace/src/interfaces
+CMAKE_SOURCE_DIR = /home/henrik/MSP-Humanoid-IDA/ros_workspace/src/interfaces
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/henrik/ros_workspace/build/interfaces
+CMAKE_BINARY_DIR = /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces
 
 # Utility rule file for interfaces__cpp.
 
@@ -87,8 +87,8 @@ rosidl_generator_cpp/interfaces/msg/robot_status.hpp: /opt/ros/foxy/share/rosidl
 rosidl_generator_cpp/interfaces/msg/robot_status.hpp: /opt/ros/foxy/share/rosidl_generator_cpp/resource/srv__type_support.hpp.em
 rosidl_generator_cpp/interfaces/msg/robot_status.hpp: rosidl_adapter/interfaces/msg/RobotStatus.idl
 rosidl_generator_cpp/interfaces/msg/robot_status.hpp: rosidl_adapter/interfaces/msg/BottleInfo.idl
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/henrik/ros_workspace/build/interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code for ROS interfaces"
-	/usr/bin/python3 /opt/ros/foxy/share/rosidl_generator_cpp/cmake/../../../lib/rosidl_generator_cpp/rosidl_generator_cpp --generator-arguments-file /home/henrik/ros_workspace/build/interfaces/rosidl_generator_cpp__arguments.json
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code for ROS interfaces"
+	/usr/bin/python3 /opt/ros/foxy/share/rosidl_generator_cpp/cmake/../../../lib/rosidl_generator_cpp/rosidl_generator_cpp --generator-arguments-file /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_generator_cpp__arguments.json
 
 rosidl_generator_cpp/interfaces/msg/detail/robot_status__builder.hpp: rosidl_generator_cpp/interfaces/msg/robot_status.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/interfaces/msg/detail/robot_status__builder.hpp
@@ -142,6 +142,6 @@ CMakeFiles/interfaces__cpp.dir/clean:
 .PHONY : CMakeFiles/interfaces__cpp.dir/clean
 
 CMakeFiles/interfaces__cpp.dir/depend:
-	cd /home/henrik/ros_workspace/build/interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/henrik/ros_workspace/src/interfaces /home/henrik/ros_workspace/src/interfaces /home/henrik/ros_workspace/build/interfaces /home/henrik/ros_workspace/build/interfaces /home/henrik/ros_workspace/build/interfaces/CMakeFiles/interfaces__cpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/henrik/MSP-Humanoid-IDA/ros_workspace/src/interfaces /home/henrik/MSP-Humanoid-IDA/ros_workspace/src/interfaces /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/CMakeFiles/interfaces__cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/interfaces__cpp.dir/depend
 

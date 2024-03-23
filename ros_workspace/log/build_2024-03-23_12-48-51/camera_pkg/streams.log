@@ -1,0 +1,32 @@
+[0.732s] Invoking command in '/home/henrik/MSP-Humanoid-IDA/ros_workspace/src/camera_pkg': PYTHONPATH=/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/camera_pkg/prefix_override:/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/camera_pkg/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/camera_pkg build --build-base /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/camera_pkg/build install --record /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/camera_pkg/install.log --install-scripts $base/lib/camera_pkg --single-version-externally-managed install_data
+[0.866s] running egg_info
+[0.867s] creating ../../build/camera_pkg/camera_pkg.egg-info
+[0.867s] writing ../../build/camera_pkg/camera_pkg.egg-info/PKG-INFO
+[0.867s] writing dependency_links to ../../build/camera_pkg/camera_pkg.egg-info/dependency_links.txt
+[0.867s] writing entry points to ../../build/camera_pkg/camera_pkg.egg-info/entry_points.txt
+[0.867s] writing requirements to ../../build/camera_pkg/camera_pkg.egg-info/requires.txt
+[0.867s] writing top-level names to ../../build/camera_pkg/camera_pkg.egg-info/top_level.txt
+[0.867s] writing manifest file '../../build/camera_pkg/camera_pkg.egg-info/SOURCES.txt'
+[0.886s] reading manifest file '../../build/camera_pkg/camera_pkg.egg-info/SOURCES.txt'
+[0.887s] writing manifest file '../../build/camera_pkg/camera_pkg.egg-info/SOURCES.txt'
+[0.887s] running build
+[0.887s] running build_py
+[0.887s] creating /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/camera_pkg/build
+[0.887s] creating /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/camera_pkg/build/lib
+[0.887s] copying constants.py -> /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/camera_pkg/build/lib
+[0.887s] creating /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/camera_pkg/build/lib/camera_pkg
+[0.887s] copying camera_pkg/__init__.py -> /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/camera_pkg/build/lib/camera_pkg
+[0.887s] copying camera_pkg/launch.launch.py -> /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/camera_pkg/build/lib/camera_pkg
+[0.887s] copying camera_pkg/bottle_recog_node.py -> /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/camera_pkg/build/lib/camera_pkg
+[0.887s] copying camera_pkg/pouring_accuracy_node.py -> /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/camera_pkg/build/lib/camera_pkg
+[0.887s] running install
+[0.888s] running install_lib
+[0.888s] running install_data
+[0.889s] running install_egg_info
+[0.889s] removing '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/camera_pkg/lib/python3.8/site-packages/camera_pkg-0.0.0-py3.8.egg-info' (and everything under it)
+[0.890s] Copying ../../build/camera_pkg/camera_pkg.egg-info to /home/henrik/MSP-Humanoid-IDA/ros_workspace/install/camera_pkg/lib/python3.8/site-packages/camera_pkg-0.0.0-py3.8.egg-info
+[0.890s] running install_scripts
+[0.901s] Installing bottle_recog_node script to /home/henrik/MSP-Humanoid-IDA/ros_workspace/install/camera_pkg/lib/camera_pkg
+[0.901s] Installing pouring_accuracy_node script to /home/henrik/MSP-Humanoid-IDA/ros_workspace/install/camera_pkg/lib/camera_pkg
+[0.901s] writing list of installed files to '/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/camera_pkg/install.log'
+[0.913s] Invoked command in '/home/henrik/MSP-Humanoid-IDA/ros_workspace/src/camera_pkg' returned '0': PYTHONPATH=/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/camera_pkg/prefix_override:/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/camera_pkg/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/camera_pkg build --build-base /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/camera_pkg/build install --record /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/camera_pkg/install.log --install-scripts $base/lib/camera_pkg --single-version-externally-managed install_data

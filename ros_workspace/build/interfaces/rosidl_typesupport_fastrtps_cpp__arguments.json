@@ -1,10 +1,10 @@
 {
   "package_name": "interfaces",
-  "output_dir": "/home/henrik/ros_workspace/build/interfaces/rosidl_typesupport_fastrtps_cpp/interfaces",
+  "output_dir": "/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_typesupport_fastrtps_cpp/interfaces",
   "template_dir": "/opt/ros/foxy/share/rosidl_typesupport_fastrtps_cpp/resource",
   "idl_tuples": [
-    "/home/henrik/ros_workspace/build/interfaces/rosidl_adapter/interfaces:msg/RobotStatus.idl",
-    "/home/henrik/ros_workspace/build/interfaces/rosidl_adapter/interfaces:msg/BottleInfo.idl"
+    "/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_adapter/interfaces:msg/RobotStatus.idl",
+    "/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_adapter/interfaces:msg/BottleInfo.idl"
   ],
   "target_dependencies": [
     "/opt/ros/foxy/lib/rosidl_typesupport_fastrtps_cpp/rosidl_typesupport_fastrtps_cpp",
@@ -15,7 +15,7 @@
     "/opt/ros/foxy/share/rosidl_typesupport_fastrtps_cpp/resource/msg__type_support.cpp.em",
     "/opt/ros/foxy/share/rosidl_typesupport_fastrtps_cpp/resource/srv__rosidl_typesupport_fastrtps_cpp.hpp.em",
     "/opt/ros/foxy/share/rosidl_typesupport_fastrtps_cpp/resource/srv__type_support.cpp.em",
-    "/home/henrik/ros_workspace/build/interfaces/rosidl_adapter/interfaces/msg/RobotStatus.idl",
-    "/home/henrik/ros_workspace/build/interfaces/rosidl_adapter/interfaces/msg/BottleInfo.idl"
+    "/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_adapter/interfaces/msg/RobotStatus.idl",
+    "/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_adapter/interfaces/msg/BottleInfo.idl"
   ]
 }

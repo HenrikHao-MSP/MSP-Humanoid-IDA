@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/henrik/ros_workspace/build/interfaces/rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
 Python.h
 -
 stdbool.h
@@ -14,25 +14,25 @@ stdbool.h
 stdint.h
 -
 rosidl_runtime_c/visibility_control.h
-/home/henrik/ros_workspace/build/interfaces/rosidl_generator_py/interfaces/rosidl_runtime_c/visibility_control.h
+/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_generator_py/interfaces/rosidl_runtime_c/visibility_control.h
 rosidl_runtime_c/message_type_support_struct.h
-/home/henrik/ros_workspace/build/interfaces/rosidl_generator_py/interfaces/rosidl_runtime_c/message_type_support_struct.h
+/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_generator_py/interfaces/rosidl_runtime_c/message_type_support_struct.h
 rosidl_runtime_c/service_type_support_struct.h
-/home/henrik/ros_workspace/build/interfaces/rosidl_generator_py/interfaces/rosidl_runtime_c/service_type_support_struct.h
+/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_generator_py/interfaces/rosidl_runtime_c/service_type_support_struct.h
 rosidl_runtime_c/action_type_support_struct.h
-/home/henrik/ros_workspace/build/interfaces/rosidl_generator_py/interfaces/rosidl_runtime_c/action_type_support_struct.h
+/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_generator_py/interfaces/rosidl_runtime_c/action_type_support_struct.h
 interfaces/msg/detail/robot_status__type_support.h
-/home/henrik/ros_workspace/build/interfaces/rosidl_generator_py/interfaces/interfaces/msg/detail/robot_status__type_support.h
+/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_generator_py/interfaces/interfaces/msg/detail/robot_status__type_support.h
 interfaces/msg/detail/robot_status__struct.h
-/home/henrik/ros_workspace/build/interfaces/rosidl_generator_py/interfaces/interfaces/msg/detail/robot_status__struct.h
+/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_generator_py/interfaces/interfaces/msg/detail/robot_status__struct.h
 interfaces/msg/detail/robot_status__functions.h
-/home/henrik/ros_workspace/build/interfaces/rosidl_generator_py/interfaces/interfaces/msg/detail/robot_status__functions.h
+/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_generator_py/interfaces/interfaces/msg/detail/robot_status__functions.h
 interfaces/msg/detail/bottle_info__type_support.h
-/home/henrik/ros_workspace/build/interfaces/rosidl_generator_py/interfaces/interfaces/msg/detail/bottle_info__type_support.h
+/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_generator_py/interfaces/interfaces/msg/detail/bottle_info__type_support.h
 interfaces/msg/detail/bottle_info__struct.h
-/home/henrik/ros_workspace/build/interfaces/rosidl_generator_py/interfaces/interfaces/msg/detail/bottle_info__struct.h
+/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_generator_py/interfaces/interfaces/msg/detail/bottle_info__struct.h
 interfaces/msg/detail/bottle_info__functions.h
-/home/henrik/ros_workspace/build/interfaces/rosidl_generator_py/interfaces/interfaces/msg/detail/bottle_info__functions.h
+/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_generator_py/interfaces/interfaces/msg/detail/bottle_info__functions.h
 
 /opt/ros/foxy/include/rosidl_runtime_c/action_type_support_struct.h
 rosidl_runtime_c/message_type_support_struct.h
