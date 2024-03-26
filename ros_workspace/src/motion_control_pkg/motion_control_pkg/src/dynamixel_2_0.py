@@ -5,9 +5,10 @@ from dynamixel_consts import *
 # Control table values - will need to find safe values
 PROF_VEL = 50           # Max speed 0-32767 * 1.374 deg/s
 PROF_ACC = 50           # Max accel 0-32767 * 21.4577 deg/s^2
+MX_ACCEL = 60           # Max accel 0-254 * 8.583 deg/s^2
 
 # Default settings for U2D2
-DEVICENAME = 'COM12'  # Replace with the appropriate device name
+DEVICENAME = 'COM8'  # Replace with the appropriate device name
 
 # Initialize the U2D2 and Dynamixel motors
 PACKET_HANDLER = dxl.PacketHandler(PROTOCOL_VERSION)
@@ -25,6 +26,7 @@ class Motors:
         self.load = []
         self._port_open()
         self._sync_torque()
+        self._set_limits()
         self.motors = self._get_motors()
         self._set_profile()
         # self.torque_toggle(set=1)       # Activate motor
@@ -79,6 +81,7 @@ class Motors:
         for i in range(self.num_motors):
             m_type = PACKET_HANDLER.read2ByteTxRx(self._port_handler, i+1, ADDR_MODEL_NUM)
             motor_types.append(m_type)
+        print(motor_types)
         return motor_types
 
     # Motor Functions    
@@ -92,35 +95,28 @@ class Motors:
         return
 
     def _sync_torque(self) -> None:      # Set all torque to zero
+        print("Resetting torque enable to 0...")
         for i in range(self.num_motors):
             PACKET_HANDLER.write1ByteTxRx(self._port_handler, i+1, ADDR_TORQUE_ENABLE, 0) 
-            self.torque_status[i] = 0
+            self.torque_status.append(0)
+        print("Resetting complete.")
         return 
     
     """
     Limits based on dynamixel_consts.py - to edit in there
     """
     def _set_limits(self) -> None:
-        """
-        Assign motor id to movement
-        """
-        shoulder_flexex = 1
-        shoulder_abad = 2
-        shoulder_rot = 3
-        elbow_flexex = 4
-        pro_sup = 5
-        
         # Write limits
-        PACKET_HANDLER.write4ByteTxRx(self._port_handler, shoulder_abad, ADDR_MAX_POS, SHOULDER_ABDUCTION["max"])
-        PACKET_HANDLER.write4ByteTxRx(self._port_handler, shoulder_abad, ADDR_MIN_POS, SHOULDER_ABDUCTION["min"])
-        PACKET_HANDLER.write4ByteTxRx(self._port_handler, shoulder_flexex, ADDR_MAX_POS, SHOULDER_FLEX_EX["max"])
-        PACKET_HANDLER.write4ByteTxRx(self._port_handler, shoulder_flexex, ADDR_MIN_POS, SHOULDER_FLEX_EX["min"])
-        PACKET_HANDLER.write4ByteTxRx(self._port_handler, shoulder_rot, ADDR_MAX_POS, SHOULDER_ROT["max"])
-        PACKET_HANDLER.write4ByteTxRx(self._port_handler, shoulder_rot, ADDR_MIN_POS, SHOULDER_ROT["min"])
-        PACKET_HANDLER.write4ByteTxRx(self._port_handler, elbow_flexex, ADDR_MAX_POS, ELBOW_FLEX_EX["max"])
-        PACKET_HANDLER.write4ByteTxRx(self._port_handler, elbow_flexex, ADDR_MIN_POS, ELBOW_FLEX_EX["min"])
-        PACKET_HANDLER.write4ByteTxRx(self._port_handler, pro_sup, ADDR_MAX_POS, PRO_SUP["max"])
-        PACKET_HANDLER.write4ByteTxRx(self._port_handler, pro_sup, ADDR_MIN_POS, PRO_SUP["min"])
+        PACKET_HANDLER.write4ByteTxRx(self._port_handler, SHOULDER_AB_AD, ADDR_MAX_POS, MM_SHOULDER_ABDUCTION["max"])
+        PACKET_HANDLER.write4ByteTxRx(self._port_handler, SHOULDER_AB_AD, ADDR_MIN_POS, MM_SHOULDER_ABDUCTION["min"])
+        PACKET_HANDLER.write4ByteTxRx(self._port_handler, SHOULDER_F_E, ADDR_MAX_POS, MM_SHOULDER_FLEX_EX["max"])
+        PACKET_HANDLER.write4ByteTxRx(self._port_handler, SHOULDER_F_E, ADDR_MIN_POS, MM_SHOULDER_FLEX_EX["min"])
+        PACKET_HANDLER.write4ByteTxRx(self._port_handler, SHOULDER_ROT, ADDR_MAX_POS, MM_SHOULDER_ROT["max"])
+        PACKET_HANDLER.write4ByteTxRx(self._port_handler, SHOULDER_ROT, ADDR_MIN_POS, MM_SHOULDER_ROT["min"])
+        PACKET_HANDLER.write4ByteTxRx(self._port_handler, ELBOW, ADDR_MAX_POS, MM_ELBOW_FLEX_EX["max"])
+        PACKET_HANDLER.write4ByteTxRx(self._port_handler, ELBOW, ADDR_MIN_POS, MM_ELBOW_FLEX_EX["min"])
+        PACKET_HANDLER.write4ByteTxRx(self._port_handler, PRO_SUP, ADDR_MAX_POS, MM_PRO_SUP["max"])
+        PACKET_HANDLER.write4ByteTxRx(self._port_handler, PRO_SUP, ADDR_MIN_POS, MM_PRO_SUP["min"])
 
     def torque_toggle(self, set: int=None, id: int=None) -> None:
         if id==None:
@@ -167,7 +163,30 @@ class Motors:
         else:
             self.load[id-1] = PACKET_HANDLER.read2ByteTxRx(self._port_handler, id, ADDR_PRESENT_CURRENT)
         return 
+    
+    ## Setup Functions
+    def _set_id(self, id: int) -> None:
+        print("Setting ID...")
+        PACKET_HANDLER.write1ByteTxRx(self._port_handler, ID_BROADCAST, ADDR_ID, id)
+        print(f'ID set to {id}')
+        return
+    
+    def _read_id(self, id: int=ID_BROADCAST) -> int:
+        id = PACKET_HANDLER.read1ByteTxRx(self._port_handler, id, address=ADDR_ID)
+        print(f'ID of Motor is {id}')
+        return id
+    
+    def _mx_set_id(self, id: int) -> None:
+        print("Setting ID...")
+        PACKET_HANDLER.write1ByteTxRx(self._port_handler, ID_BROADCAST, MX_ADDR_ID, id)
+        print(f'ID set to {id}')
+        return
 
+    def _mx_read_id(self, id: int=ID_BROADCAST) -> int:
+        id = PACKET_HANDLER.read1ByteTxRx(self._port_handler, id, MX_ADDR_ID)
+        print(f'ID of Motor is {id}')
+        return id
+    
 # Will need to change to something valid
 TEST_POSITION = [2000, 2000, 2000, 2000, 2000]
 
@@ -183,11 +202,29 @@ def main():
             break
         while True:
             pos = input(f'Enter position to check <0> - <4095>, anything else to quit. \n')
-            if pos.isnumeric() and int(pos) >= 0 and int(pos) < 4096:
-                arm.set_goal(id, int(pos))
+            if pos.isnumeric() and int(pos) >= 0: #and int(pos) < 4096:
+                arm.set_goal(int(id), int(pos))
             else:
+                arm.torque_toggle(0, int(id))
                 break
     arm.port_close()
-                
+
+def setup_arm():
+    arm = Motors(5)
+    # arm._set_id(PRO_SUP)
+    arm._mx_set_id(SHOULDER_ROT)
+    arm._read_id(SHOULDER_F_E)
+    arm._read_id(SHOULDER_AB_AD)
+    arm._read_id(SHOULDER_ROT)
+    arm._read_id(ELBOW)
+    arm._read_id(PRO_SUP)
+    arm._mx_read_id(SHOULDER_F_E)
+    arm._mx_read_id(SHOULDER_AB_AD)
+    arm._mx_read_id(SHOULDER_ROT)
+    arm._mx_read_id(ELBOW)
+    arm._mx_read_id(PRO_SUP)
+    arm.port_close()
+    
 if __name__ == "__main__":
     main()
+    # setup_arm()
