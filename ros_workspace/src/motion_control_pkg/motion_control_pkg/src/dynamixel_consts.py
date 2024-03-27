@@ -54,8 +54,13 @@ MM_SHOULDER_ABDUCTION = {  "min": 0,
                         "max": 1780,
                         "zero": 0}
 MM_SHOULDER_ROT = {    "min": 0,
-                    "max": 2000}
+                    "max": 2000,
+                    "zero": 0}
 MM_ELBOW_FLEX_EX = {   "min": 0,
-                    "max": 2000}
+                    "max": 2000,
+                    "zero": 10}
 MM_PRO_SUP = { "min": 0,
-            "max": 4095}
+            "max": 4095,
+            "zero": 2000}
+
+ANGLE_TO_DYNA = 4095/360    # Converting from angle to dynamixel

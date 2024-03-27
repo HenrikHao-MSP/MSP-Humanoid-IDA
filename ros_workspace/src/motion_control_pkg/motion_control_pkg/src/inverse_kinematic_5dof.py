@@ -19,15 +19,6 @@ L2 = 30         # Depth, equivalent to d0 matlab
 L3 = 265        # Shoulder to elbow, equivalent to l1 matlab
 L4 = 235        # Elbow to end effector, equivalent to l2 matlab
 
-# Constants for Motors
-ORIGIN_M = [2800, 1980, 1100, 850]
-STEPS_M = [4096, 4096, 4096, 1024]
-
-# S1 = {"max": 4095, "min": 1200}
-# S2 = {"max": 2047, "min": 0}
-# S3 = {"max": 1500, "min": 0}
-# S4 = {"max": 1023, "min": 0}
-
 # Other Constants
 DOF = 5         # Degrees of freedom
 DIM = 4         # Dimension of arrays
@@ -211,7 +202,7 @@ def get_angles(pos_matrix, x: float = REST_X, y: float = REST_Y, z: float = REST
     ee_eq2 = sym.Eq(e_eff_co[1], y)
     ee_eq3 = sym.Eq(e_eff_co[2], z)
     # Other equations
-    eq1 = sym.Eq(e_eff_co[2]-elbow_co[2], 0)
+    eq1 = sym.Eq(e_eff_co[2]-elbow_co[2], 0)    # Forearm is parallel with floor
     # Extra y-constraint if needed
     eq2 = sym.Eq(e_eff_co[1]-elbow_co[1], 0)
 
@@ -264,16 +255,6 @@ def get_angles(pos_matrix, x: float = REST_X, y: float = REST_Y, z: float = REST
 def calc_angles(angles):        # Convert angles for dynamixel motors
     steps = [(angle/(360/4096)) for angle in angles]   # Anti-clockwise Positive 
     return [np.rint(step) for step in steps]
-
-# TODO Will need to implement
-def abs_steps(x, y, z):
-    steps = []
-    d_steps = get_angles(x, y, z)
-    if d_steps == 0:
-        return 0
-    for i in range(DOF):
-        steps.append(int((ORIGIN[i]+d_steps[i])%STEPS[i]))
-    return steps
 
 def fk_check(angles: list, input_coord: list = [REST_X, REST_Y, REST_Z]):
     print("FK CHECK")
