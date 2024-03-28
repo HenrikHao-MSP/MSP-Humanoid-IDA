@@ -1,4 +1,4 @@
-import rclpy
+import rclpy 
 from rclpy.node import Node
 from depthai_ros_msgs.msg import SpatialDetectionArray  # Make sure you have the correct import for the message type
 
