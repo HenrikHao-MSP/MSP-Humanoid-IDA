@@ -38,7 +38,11 @@ class Kinematics():
 TEST_COORD = [300, -100, 100]
 
 def main():
-    pass
+    kin = Kinematics()
+    kin.get_angles(TEST_COORD[0], TEST_COORD[1], TEST_COORD[2])
+    kin.fk_check()
+    print(kin.angles)
+    print(kin.f_pos)
 
 if __name__ == "__main__":
     main()

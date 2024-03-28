@@ -242,7 +242,7 @@ def get_angles(pos_matrix, x: float = REST_X, y: float = REST_Y, z: float = REST
     
     # Get angles
     angle = [answer[0].get(q1), answer[0].get(q2), answer[0].get(q3), answer[0].get(q4)]
-    angle = [round(m.degrees((float(rad)))%360) for rad in angle]
+    angle = [m.degrees((float(rad)))%360 for rad in angle]
     
     # Get angle in range -180 to 180 degrees
     chk_ang = lambda ang: ang - 360 if (ang > 180) else (ang + 360 if ang < -180 else ang)

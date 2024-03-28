@@ -115,17 +115,19 @@ class ArmControlNode(Node):
         if self.angles is not None:
             print("q1\tq2\tq3\tq4\tq5")
             cons_min = [dyna.MM_SHOULDER_FLEX_EX["min"], 
-                        dyna.MM_SHOULDER_FLEX_EX["min"], 
-                        dyna.MM_SHOULDER_FLEX_EX["min"], 
-                        -90, 
-                        -180]
-            cons_max = [dyna.MM_SHOULDER_FLEX_EX["min"], 
-                        180, 
-                        60, 
-                        60, 
-                        180]
-            for i in range(len(angles)):
-                if angles[i] not in range(cons_min[i], cons_max[i]):
+                        dyna.MM_SHOULDER_ABDUCTION["min"], 
+                        dyna.MM_SHOULDER_ROT["min"], 
+                        dyna.MM_ELBOW_FLEX_EX["min"], 
+                        dyna.MM_PRO_SUP["min"]]
+            cons_min = self.angle_to_dyna(cons_min)
+            cons_max = [dyna.MM_SHOULDER_FLEX_EX["max"], 
+                        dyna.MM_SHOULDER_ABDUCTION["max"], 
+                        dyna.MM_SHOULDER_ROT["max"], 
+                        dyna.MM_ELBOW_FLEX_EX["max"], 
+                        dyna.MM_PRO_SUP["max"]]
+            cons_max = self.angle_to_dyna(cons_max)
+            for i in range(len(self.angles)):
+                if self.angles[i] not in range(cons_min[i], cons_max[i]):
                     origin_reset = True
                     print('q%d angle out of bounds' % (i+1))
         
