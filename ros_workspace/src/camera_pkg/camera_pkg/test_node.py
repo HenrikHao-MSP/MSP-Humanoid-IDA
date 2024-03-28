@@ -7,6 +7,10 @@ from cv_bridge import CvBridge
 import numpy as np
 import cv2
 
+# Word
+import pytesseract
+import imutils
+
 class SpatialDetectionSubscriber(Node):
     def __init__(self):
         super().__init__('spatial_detection_subscriber')
@@ -64,6 +68,29 @@ class SpatialDetectionSubscriber(Node):
         # Get the dominant color
         dominant_color = centers[0].tolist()
         return dominant_color
+
+    def get_word(image):
+        # If this can be in def main(), then we don't need to run Line 74 everytime
+        pytesseract.pytesseract.tesseract_cmd = r"ros_workspace\src\camera_pkg\resource\Tesseract\tesseract.exe"
+
+        """Convert image to cv2"""
+        # If the image is in cv2 format you can this if block
+        if (image is not type(cv2)):
+            file_bytes = image.read()
+
+            # Convert the byte stream into a NumPy array compatible with OpenCV
+            image = cv2.imdecode(np.frombuffer(file_bytes, np.uint8), cv2.IMREAD_COLOR)
+
+        open_cv_image = np.array(image)
+
+        open_cv_image = open_cv_image[:, :, ::-1].copy()
+        image = open_cv_image
+        image = imutils.resize(image, width=2000)
+        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+        thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)[1]
+
+        # Perform text extraction
+        return pytesseract.image_to_string(thresh, lang='eng',config='--psm 6')
 
 
 def main(args=None):
