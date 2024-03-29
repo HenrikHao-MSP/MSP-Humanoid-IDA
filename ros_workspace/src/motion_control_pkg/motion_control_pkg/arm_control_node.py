@@ -56,6 +56,7 @@ class ArmControlNode(Node):
             'arm_move_success',  # Topic name for the success flag
             10)
         self.subscription  # prevent unused variable warning
+        ### Initiate motors and kinematics ###
         self._kinematics = k.Kinematics()
         self._motors = dyna.Motors(DOF, DEVICENAME)
         self._target_pos = []
@@ -80,7 +81,7 @@ class ArmControlNode(Node):
         # Checks if within limits
         if self._check_limits():
             # Move to arm position
-            self.get_logger().info(f'Moving arm to {coord[0]} {coord[1]} {coord[2]}')
+            self.get_logger().info(f'Moving arm to: {coord[0]} {coord[1]} {coord[2]}')
             self._motors.set_goal(self._target_pos)
             # Continually check movement
             while self._motors.check_moving():
@@ -88,11 +89,11 @@ class ArmControlNode(Node):
             # Check end position 
             c_pos = self.get_current_pos()
             if c_pos != self._target_pos:
-                self.get_logger().info(f'Unable to reach position {coord[0]} {coord[1]} {coord[2]}')
+                self.get_logger().info(f'Unable to reach position: {coord[0]} {coord[1]} {coord[2]}')
                 return False
             return True     # successful movement
         else:
-            self.get_logger().info(f'Unable to reach position {coord[0]} {coord[1]} {coord[2]}')
+            self.get_logger().info(f'Unable to reach position: {coord[0]} {coord[1]} {coord[2]}')
             return False    
         
     def pour(self):
@@ -123,6 +124,17 @@ class ArmControlNode(Node):
                 self.get_logger().info(f'q{i+1} outside valid range.')
                 return False
         return True
+    def _check_limits(self, id: int, pos: int) -> bool:
+        if pos not in range(MINIMUM[id-1], MAXIMUM[id-1]):
+            self.get_logger().info(f'q{id} outside valid range.')
+            return False
+        else:
+            return True
+    ### Specify motor to move
+    def _move_part(self, id: int, dyna_pos: int) -> None:
+        if self._check_limits(id, dyna_pos):
+            self._motors.set_goal(id, dyna_pos)
+        return
     ### Returns current dynamixel positions ###
     def get_current_pos(self) -> list:
         self._motors.get_current_pos()
@@ -142,7 +154,7 @@ class ArmControlNode(Node):
             steps = self.abs_steps(*i_step)
             if steps == ERR:
                 err = ERR
-                self.pathing(prev_step, ORIGIN)
+                self.pathing(prev_step, ARM_ORIGIN)
                 break
             prev_step = i_step
 
@@ -196,6 +208,7 @@ def main(args=None):
     rclpy.init(args=args)
     arm_control_node = ArmControlNode()
     rclpy.spin(arm_control_node)
+    arm_control_node.end_session()
     rclpy.shutdown()
 
 if __name__ == '__main__':
