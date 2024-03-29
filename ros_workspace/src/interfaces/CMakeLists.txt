@@ -38,5 +38,6 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/RobotStatus.msg"
   "msg/BottleInfo.msg"
   "msg/DetectionInfo.msg"
+  "msg/DetectionInfoArray.msg"
 )
 ament_package()

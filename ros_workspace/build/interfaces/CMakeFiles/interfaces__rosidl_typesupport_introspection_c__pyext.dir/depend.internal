@@ -100,6 +100,12 @@ CMakeFiles/interfaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_gene
  rosidl_generator_c/interfaces/msg/detail/bottle_info__functions.h
  rosidl_generator_c/interfaces/msg/detail/bottle_info__struct.h
  rosidl_generator_c/interfaces/msg/detail/bottle_info__type_support.h
+ rosidl_generator_c/interfaces/msg/detail/detection_info__functions.h
+ rosidl_generator_c/interfaces/msg/detail/detection_info__struct.h
+ rosidl_generator_c/interfaces/msg/detail/detection_info__type_support.h
+ rosidl_generator_c/interfaces/msg/detail/detection_info_array__functions.h
+ rosidl_generator_c/interfaces/msg/detail/detection_info_array__struct.h
+ rosidl_generator_c/interfaces/msg/detail/detection_info_array__type_support.h
  rosidl_generator_c/interfaces/msg/detail/robot_status__functions.h
  rosidl_generator_c/interfaces/msg/detail/robot_status__struct.h
  rosidl_generator_c/interfaces/msg/detail/robot_status__type_support.h

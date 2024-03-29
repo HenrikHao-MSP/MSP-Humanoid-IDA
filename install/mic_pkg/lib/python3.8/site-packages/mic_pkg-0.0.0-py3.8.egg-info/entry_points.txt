@@ -1,0 +1,3 @@
+[console_scripts]
+mic_node = mic_pkg.mic_node:main
+

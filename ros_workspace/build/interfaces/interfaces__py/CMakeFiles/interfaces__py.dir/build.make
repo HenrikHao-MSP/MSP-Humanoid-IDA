@@ -58,9 +58,13 @@ interfaces__py/CMakeFiles/interfaces__py: rosidl_generator_py/interfaces/_interf
 interfaces__py/CMakeFiles/interfaces__py: rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_c.c
 interfaces__py/CMakeFiles/interfaces__py: rosidl_generator_py/interfaces/msg/_robot_status.py
 interfaces__py/CMakeFiles/interfaces__py: rosidl_generator_py/interfaces/msg/_bottle_info.py
+interfaces__py/CMakeFiles/interfaces__py: rosidl_generator_py/interfaces/msg/_detection_info.py
+interfaces__py/CMakeFiles/interfaces__py: rosidl_generator_py/interfaces/msg/_detection_info_array.py
 interfaces__py/CMakeFiles/interfaces__py: rosidl_generator_py/interfaces/msg/__init__.py
 interfaces__py/CMakeFiles/interfaces__py: rosidl_generator_py/interfaces/msg/_robot_status_s.c
 interfaces__py/CMakeFiles/interfaces__py: rosidl_generator_py/interfaces/msg/_bottle_info_s.c
+interfaces__py/CMakeFiles/interfaces__py: rosidl_generator_py/interfaces/msg/_detection_info_s.c
+interfaces__py/CMakeFiles/interfaces__py: rosidl_generator_py/interfaces/msg/_detection_info_array_s.c
 
 
 rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/lib/rosidl_generator_py/rosidl_generator_py
@@ -78,6 +82,8 @@ rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c:
 rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/rosidl_generator_py/resource/_srv.py.em
 rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/interfaces/msg/RobotStatus.idl
 rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/interfaces/msg/BottleInfo.idl
+rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/interfaces/msg/DetectionInfo.idl
+rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/interfaces/msg/DetectionInfoArray.idl
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python code for ROS interfaces"
 	cd /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/interfaces__py && /usr/bin/python3 /opt/ros/foxy/share/rosidl_generator_py/cmake/../../../lib/rosidl_generator_py/rosidl_generator_py --generator-arguments-file /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_generator_py__arguments.json --typesupport-impls "rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c;rosidl_typesupport_c"
 
@@ -93,6 +99,12 @@ rosidl_generator_py/interfaces/msg/_robot_status.py: rosidl_generator_py/interfa
 rosidl_generator_py/interfaces/msg/_bottle_info.py: rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/interfaces/msg/_bottle_info.py
 
+rosidl_generator_py/interfaces/msg/_detection_info.py: rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/interfaces/msg/_detection_info.py
+
+rosidl_generator_py/interfaces/msg/_detection_info_array.py: rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/interfaces/msg/_detection_info_array.py
+
 rosidl_generator_py/interfaces/msg/__init__.py: rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/interfaces/msg/__init__.py
 
@@ -102,15 +114,25 @@ rosidl_generator_py/interfaces/msg/_robot_status_s.c: rosidl_generator_py/interf
 rosidl_generator_py/interfaces/msg/_bottle_info_s.c: rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/interfaces/msg/_bottle_info_s.c
 
+rosidl_generator_py/interfaces/msg/_detection_info_s.c: rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/interfaces/msg/_detection_info_s.c
+
+rosidl_generator_py/interfaces/msg/_detection_info_array_s.c: rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/interfaces/msg/_detection_info_array_s.c
+
 interfaces__py: interfaces__py/CMakeFiles/interfaces__py
 interfaces__py: rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
 interfaces__py: rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_introspection_c.c
 interfaces__py: rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_c.c
 interfaces__py: rosidl_generator_py/interfaces/msg/_robot_status.py
 interfaces__py: rosidl_generator_py/interfaces/msg/_bottle_info.py
+interfaces__py: rosidl_generator_py/interfaces/msg/_detection_info.py
+interfaces__py: rosidl_generator_py/interfaces/msg/_detection_info_array.py
 interfaces__py: rosidl_generator_py/interfaces/msg/__init__.py
 interfaces__py: rosidl_generator_py/interfaces/msg/_robot_status_s.c
 interfaces__py: rosidl_generator_py/interfaces/msg/_bottle_info_s.c
+interfaces__py: rosidl_generator_py/interfaces/msg/_detection_info_s.c
+interfaces__py: rosidl_generator_py/interfaces/msg/_detection_info_array_s.c
 interfaces__py: interfaces__py/CMakeFiles/interfaces__py.dir/build.make
 
 .PHONY : interfaces__py

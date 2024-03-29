@@ -67,6 +67,8 @@ rosidl_typesupport_fastrtps_c/interfaces/msg/detail/robot_status__rosidl_typesup
 rosidl_typesupport_fastrtps_c/interfaces/msg/detail/robot_status__rosidl_typesupport_fastrtps_c.h: /opt/ros/foxy/share/rosidl_typesupport_fastrtps_c/resource/srv__type_support_c.cpp.em
 rosidl_typesupport_fastrtps_c/interfaces/msg/detail/robot_status__rosidl_typesupport_fastrtps_c.h: rosidl_adapter/interfaces/msg/RobotStatus.idl
 rosidl_typesupport_fastrtps_c/interfaces/msg/detail/robot_status__rosidl_typesupport_fastrtps_c.h: rosidl_adapter/interfaces/msg/BottleInfo.idl
+rosidl_typesupport_fastrtps_c/interfaces/msg/detail/robot_status__rosidl_typesupport_fastrtps_c.h: rosidl_adapter/interfaces/msg/DetectionInfo.idl
+rosidl_typesupport_fastrtps_c/interfaces/msg/detail/robot_status__rosidl_typesupport_fastrtps_c.h: rosidl_adapter/interfaces/msg/DetectionInfoArray.idl
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C type support for eProsima Fast-RTPS"
 	/usr/bin/python3 /opt/ros/foxy/lib/rosidl_typesupport_fastrtps_c/rosidl_typesupport_fastrtps_c --generator-arguments-file /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_typesupport_fastrtps_c__arguments.json
 
@@ -78,6 +80,18 @@ rosidl_typesupport_fastrtps_c/interfaces/msg/detail/bottle_info__rosidl_typesupp
 
 rosidl_typesupport_fastrtps_c/interfaces/msg/detail/bottle_info__type_support_c.cpp: rosidl_typesupport_fastrtps_c/interfaces/msg/detail/robot_status__rosidl_typesupport_fastrtps_c.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_fastrtps_c/interfaces/msg/detail/bottle_info__type_support_c.cpp
+
+rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info__rosidl_typesupport_fastrtps_c.h: rosidl_typesupport_fastrtps_c/interfaces/msg/detail/robot_status__rosidl_typesupport_fastrtps_c.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info__rosidl_typesupport_fastrtps_c.h
+
+rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info__type_support_c.cpp: rosidl_typesupport_fastrtps_c/interfaces/msg/detail/robot_status__rosidl_typesupport_fastrtps_c.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info__type_support_c.cpp
+
+rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info_array__rosidl_typesupport_fastrtps_c.h: rosidl_typesupport_fastrtps_c/interfaces/msg/detail/robot_status__rosidl_typesupport_fastrtps_c.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info_array__rosidl_typesupport_fastrtps_c.h
+
+rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info_array__type_support_c.cpp: rosidl_typesupport_fastrtps_c/interfaces/msg/detail/robot_status__rosidl_typesupport_fastrtps_c.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info_array__type_support_c.cpp
 
 CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/robot_status__type_support_c.cpp.o: CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/flags.make
 CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/robot_status__type_support_c.cpp.o: rosidl_typesupport_fastrtps_c/interfaces/msg/detail/robot_status__type_support_c.cpp
@@ -105,16 +119,46 @@ CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/bottle_info__type_support_c.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/bottle_info__type_support_c.cpp -o CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/bottle_info__type_support_c.cpp.s
 
+CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info__type_support_c.cpp.o: CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/flags.make
+CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info__type_support_c.cpp.o: rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info__type_support_c.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info__type_support_c.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info__type_support_c.cpp.o -c /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info__type_support_c.cpp
+
+CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info__type_support_c.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info__type_support_c.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info__type_support_c.cpp > CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info__type_support_c.cpp.i
+
+CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info__type_support_c.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info__type_support_c.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info__type_support_c.cpp -o CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info__type_support_c.cpp.s
+
+CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info_array__type_support_c.cpp.o: CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/flags.make
+CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info_array__type_support_c.cpp.o: rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info_array__type_support_c.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info_array__type_support_c.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info_array__type_support_c.cpp.o -c /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info_array__type_support_c.cpp
+
+CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info_array__type_support_c.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info_array__type_support_c.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info_array__type_support_c.cpp > CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info_array__type_support_c.cpp.i
+
+CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info_array__type_support_c.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info_array__type_support_c.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info_array__type_support_c.cpp -o CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info_array__type_support_c.cpp.s
+
 # Object files for target interfaces__rosidl_typesupport_fastrtps_c
 interfaces__rosidl_typesupport_fastrtps_c_OBJECTS = \
 "CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/robot_status__type_support_c.cpp.o" \
-"CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/bottle_info__type_support_c.cpp.o"
+"CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/bottle_info__type_support_c.cpp.o" \
+"CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info__type_support_c.cpp.o" \
+"CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info_array__type_support_c.cpp.o"
 
 # External object files for target interfaces__rosidl_typesupport_fastrtps_c
 interfaces__rosidl_typesupport_fastrtps_c_EXTERNAL_OBJECTS =
 
 libinterfaces__rosidl_typesupport_fastrtps_c.so: CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/robot_status__type_support_c.cpp.o
 libinterfaces__rosidl_typesupport_fastrtps_c.so: CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/bottle_info__type_support_c.cpp.o
+libinterfaces__rosidl_typesupport_fastrtps_c.so: CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info__type_support_c.cpp.o
+libinterfaces__rosidl_typesupport_fastrtps_c.so: CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info_array__type_support_c.cpp.o
 libinterfaces__rosidl_typesupport_fastrtps_c.so: CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/build.make
 libinterfaces__rosidl_typesupport_fastrtps_c.so: /opt/ros/foxy/lib/librosidl_typesupport_fastrtps_c.so
 libinterfaces__rosidl_typesupport_fastrtps_c.so: libinterfaces__rosidl_generator_c.so
@@ -131,7 +175,7 @@ libinterfaces__rosidl_typesupport_fastrtps_c.so: /usr/lib/x86_64-linux-gnu/libss
 libinterfaces__rosidl_typesupport_fastrtps_c.so: /usr/lib/x86_64-linux-gnu/libcrypto.so
 libinterfaces__rosidl_typesupport_fastrtps_c.so: /opt/ros/foxy/lib/libfastcdr.so.1.0.13
 libinterfaces__rosidl_typesupport_fastrtps_c.so: CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX shared library libinterfaces__rosidl_typesupport_fastrtps_c.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX shared library libinterfaces__rosidl_typesupport_fastrtps_c.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -147,6 +191,10 @@ CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/depend: rosidl_typesupp
 CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/depend: rosidl_typesupport_fastrtps_c/interfaces/msg/detail/robot_status__type_support_c.cpp
 CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/depend: rosidl_typesupport_fastrtps_c/interfaces/msg/detail/bottle_info__rosidl_typesupport_fastrtps_c.h
 CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/depend: rosidl_typesupport_fastrtps_c/interfaces/msg/detail/bottle_info__type_support_c.cpp
+CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/depend: rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info__rosidl_typesupport_fastrtps_c.h
+CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/depend: rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info__type_support_c.cpp
+CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/depend: rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info_array__rosidl_typesupport_fastrtps_c.h
+CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/depend: rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info_array__type_support_c.cpp
 	cd /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/henrik/MSP-Humanoid-IDA/ros_workspace/src/interfaces /home/henrik/MSP-Humanoid-IDA/ros_workspace/src/interfaces /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/depend
 

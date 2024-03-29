@@ -2,6 +2,8 @@
   "package_name": "interfaces",
   "non_idl_tuples": [
     "/home/henrik/MSP-Humanoid-IDA/ros_workspace/src/interfaces:msg/RobotStatus.msg",
-    "/home/henrik/MSP-Humanoid-IDA/ros_workspace/src/interfaces:msg/BottleInfo.msg"
+    "/home/henrik/MSP-Humanoid-IDA/ros_workspace/src/interfaces:msg/BottleInfo.msg",
+    "/home/henrik/MSP-Humanoid-IDA/ros_workspace/src/interfaces:msg/DetectionInfo.msg",
+    "/home/henrik/MSP-Humanoid-IDA/ros_workspace/src/interfaces:msg/DetectionInfoArray.msg"
   ]
 }

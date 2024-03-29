@@ -72,6 +72,8 @@ rosidl_generator_c/interfaces/msg/robot_status.h: /opt/ros/foxy/share/rosidl_gen
 rosidl_generator_c/interfaces/msg/robot_status.h: /opt/ros/foxy/share/rosidl_generator_c/resource/srv__type_support.h.em
 rosidl_generator_c/interfaces/msg/robot_status.h: rosidl_adapter/interfaces/msg/RobotStatus.idl
 rosidl_generator_c/interfaces/msg/robot_status.h: rosidl_adapter/interfaces/msg/BottleInfo.idl
+rosidl_generator_c/interfaces/msg/robot_status.h: rosidl_adapter/interfaces/msg/DetectionInfo.idl
+rosidl_generator_c/interfaces/msg/robot_status.h: rosidl_adapter/interfaces/msg/DetectionInfoArray.idl
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C code for ROS interfaces"
 	/usr/bin/python3 /opt/ros/foxy/share/rosidl_generator_c/cmake/../../../lib/rosidl_generator_c/rosidl_generator_c --generator-arguments-file /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_generator_c__arguments.json
 
@@ -96,11 +98,41 @@ rosidl_generator_c/interfaces/msg/detail/bottle_info__struct.h: rosidl_generator
 rosidl_generator_c/interfaces/msg/detail/bottle_info__type_support.h: rosidl_generator_c/interfaces/msg/robot_status.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/interfaces/msg/detail/bottle_info__type_support.h
 
+rosidl_generator_c/interfaces/msg/detection_info.h: rosidl_generator_c/interfaces/msg/robot_status.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/interfaces/msg/detection_info.h
+
+rosidl_generator_c/interfaces/msg/detail/detection_info__functions.h: rosidl_generator_c/interfaces/msg/robot_status.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/interfaces/msg/detail/detection_info__functions.h
+
+rosidl_generator_c/interfaces/msg/detail/detection_info__struct.h: rosidl_generator_c/interfaces/msg/robot_status.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/interfaces/msg/detail/detection_info__struct.h
+
+rosidl_generator_c/interfaces/msg/detail/detection_info__type_support.h: rosidl_generator_c/interfaces/msg/robot_status.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/interfaces/msg/detail/detection_info__type_support.h
+
+rosidl_generator_c/interfaces/msg/detection_info_array.h: rosidl_generator_c/interfaces/msg/robot_status.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/interfaces/msg/detection_info_array.h
+
+rosidl_generator_c/interfaces/msg/detail/detection_info_array__functions.h: rosidl_generator_c/interfaces/msg/robot_status.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/interfaces/msg/detail/detection_info_array__functions.h
+
+rosidl_generator_c/interfaces/msg/detail/detection_info_array__struct.h: rosidl_generator_c/interfaces/msg/robot_status.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/interfaces/msg/detail/detection_info_array__struct.h
+
+rosidl_generator_c/interfaces/msg/detail/detection_info_array__type_support.h: rosidl_generator_c/interfaces/msg/robot_status.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/interfaces/msg/detail/detection_info_array__type_support.h
+
 rosidl_generator_c/interfaces/msg/detail/robot_status__functions.c: rosidl_generator_c/interfaces/msg/robot_status.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/interfaces/msg/detail/robot_status__functions.c
 
 rosidl_generator_c/interfaces/msg/detail/bottle_info__functions.c: rosidl_generator_c/interfaces/msg/robot_status.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/interfaces/msg/detail/bottle_info__functions.c
+
+rosidl_generator_c/interfaces/msg/detail/detection_info__functions.c: rosidl_generator_c/interfaces/msg/robot_status.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/interfaces/msg/detail/detection_info__functions.c
+
+rosidl_generator_c/interfaces/msg/detail/detection_info_array__functions.c: rosidl_generator_c/interfaces/msg/robot_status.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/interfaces/msg/detail/detection_info_array__functions.c
 
 CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/robot_status__functions.c.o: CMakeFiles/interfaces__rosidl_generator_c.dir/flags.make
 CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/robot_status__functions.c.o: rosidl_generator_c/interfaces/msg/detail/robot_status__functions.c
@@ -128,21 +160,51 @@ CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/bottle_info__functions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_generator_c/interfaces/msg/detail/bottle_info__functions.c -o CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/bottle_info__functions.c.s
 
+CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/detection_info__functions.c.o: CMakeFiles/interfaces__rosidl_generator_c.dir/flags.make
+CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/detection_info__functions.c.o: rosidl_generator_c/interfaces/msg/detail/detection_info__functions.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/detection_info__functions.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/detection_info__functions.c.o   -c /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_generator_c/interfaces/msg/detail/detection_info__functions.c
+
+CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/detection_info__functions.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/detection_info__functions.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_generator_c/interfaces/msg/detail/detection_info__functions.c > CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/detection_info__functions.c.i
+
+CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/detection_info__functions.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/detection_info__functions.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_generator_c/interfaces/msg/detail/detection_info__functions.c -o CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/detection_info__functions.c.s
+
+CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/detection_info_array__functions.c.o: CMakeFiles/interfaces__rosidl_generator_c.dir/flags.make
+CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/detection_info_array__functions.c.o: rosidl_generator_c/interfaces/msg/detail/detection_info_array__functions.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/detection_info_array__functions.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/detection_info_array__functions.c.o   -c /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_generator_c/interfaces/msg/detail/detection_info_array__functions.c
+
+CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/detection_info_array__functions.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/detection_info_array__functions.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_generator_c/interfaces/msg/detail/detection_info_array__functions.c > CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/detection_info_array__functions.c.i
+
+CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/detection_info_array__functions.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/detection_info_array__functions.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_generator_c/interfaces/msg/detail/detection_info_array__functions.c -o CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/detection_info_array__functions.c.s
+
 # Object files for target interfaces__rosidl_generator_c
 interfaces__rosidl_generator_c_OBJECTS = \
 "CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/robot_status__functions.c.o" \
-"CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/bottle_info__functions.c.o"
+"CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/bottle_info__functions.c.o" \
+"CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/detection_info__functions.c.o" \
+"CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/detection_info_array__functions.c.o"
 
 # External object files for target interfaces__rosidl_generator_c
 interfaces__rosidl_generator_c_EXTERNAL_OBJECTS =
 
 libinterfaces__rosidl_generator_c.so: CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/robot_status__functions.c.o
 libinterfaces__rosidl_generator_c.so: CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/bottle_info__functions.c.o
+libinterfaces__rosidl_generator_c.so: CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/detection_info__functions.c.o
+libinterfaces__rosidl_generator_c.so: CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/detection_info_array__functions.c.o
 libinterfaces__rosidl_generator_c.so: CMakeFiles/interfaces__rosidl_generator_c.dir/build.make
 libinterfaces__rosidl_generator_c.so: /opt/ros/foxy/lib/librosidl_runtime_c.so
 libinterfaces__rosidl_generator_c.so: /opt/ros/foxy/lib/librcutils.so
 libinterfaces__rosidl_generator_c.so: CMakeFiles/interfaces__rosidl_generator_c.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C shared library libinterfaces__rosidl_generator_c.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C shared library libinterfaces__rosidl_generator_c.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/interfaces__rosidl_generator_c.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -162,8 +224,18 @@ CMakeFiles/interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/interfa
 CMakeFiles/interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/interfaces/msg/detail/bottle_info__functions.h
 CMakeFiles/interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/interfaces/msg/detail/bottle_info__struct.h
 CMakeFiles/interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/interfaces/msg/detail/bottle_info__type_support.h
+CMakeFiles/interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/interfaces/msg/detection_info.h
+CMakeFiles/interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/interfaces/msg/detail/detection_info__functions.h
+CMakeFiles/interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/interfaces/msg/detail/detection_info__struct.h
+CMakeFiles/interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/interfaces/msg/detail/detection_info__type_support.h
+CMakeFiles/interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/interfaces/msg/detection_info_array.h
+CMakeFiles/interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/interfaces/msg/detail/detection_info_array__functions.h
+CMakeFiles/interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/interfaces/msg/detail/detection_info_array__struct.h
+CMakeFiles/interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/interfaces/msg/detail/detection_info_array__type_support.h
 CMakeFiles/interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/interfaces/msg/detail/robot_status__functions.c
 CMakeFiles/interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/interfaces/msg/detail/bottle_info__functions.c
+CMakeFiles/interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/interfaces/msg/detail/detection_info__functions.c
+CMakeFiles/interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/interfaces/msg/detail/detection_info_array__functions.c
 	cd /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/henrik/MSP-Humanoid-IDA/ros_workspace/src/interfaces /home/henrik/MSP-Humanoid-IDA/ros_workspace/src/interfaces /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/CMakeFiles/interfaces__rosidl_generator_c.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/interfaces__rosidl_generator_c.dir/depend
 

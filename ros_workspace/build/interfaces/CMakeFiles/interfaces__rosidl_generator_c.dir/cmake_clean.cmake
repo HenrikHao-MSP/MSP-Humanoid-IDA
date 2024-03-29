@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/bottle_info__functions.c.o"
+  "CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/detection_info__functions.c.o"
+  "CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/detection_info_array__functions.c.o"
   "CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/robot_status__functions.c.o"
   "libinterfaces__rosidl_generator_c.pdb"
   "libinterfaces__rosidl_generator_c.so"
@@ -8,10 +10,20 @@ file(REMOVE_RECURSE
   "rosidl_generator_c/interfaces/msg/detail/bottle_info__functions.h"
   "rosidl_generator_c/interfaces/msg/detail/bottle_info__struct.h"
   "rosidl_generator_c/interfaces/msg/detail/bottle_info__type_support.h"
+  "rosidl_generator_c/interfaces/msg/detail/detection_info__functions.c"
+  "rosidl_generator_c/interfaces/msg/detail/detection_info__functions.h"
+  "rosidl_generator_c/interfaces/msg/detail/detection_info__struct.h"
+  "rosidl_generator_c/interfaces/msg/detail/detection_info__type_support.h"
+  "rosidl_generator_c/interfaces/msg/detail/detection_info_array__functions.c"
+  "rosidl_generator_c/interfaces/msg/detail/detection_info_array__functions.h"
+  "rosidl_generator_c/interfaces/msg/detail/detection_info_array__struct.h"
+  "rosidl_generator_c/interfaces/msg/detail/detection_info_array__type_support.h"
   "rosidl_generator_c/interfaces/msg/detail/robot_status__functions.c"
   "rosidl_generator_c/interfaces/msg/detail/robot_status__functions.h"
   "rosidl_generator_c/interfaces/msg/detail/robot_status__struct.h"
   "rosidl_generator_c/interfaces/msg/detail/robot_status__type_support.h"
+  "rosidl_generator_c/interfaces/msg/detection_info.h"
+  "rosidl_generator_c/interfaces/msg/detection_info_array.h"
   "rosidl_generator_c/interfaces/msg/robot_status.h"
 )
 

@@ -63,6 +63,16 @@ CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/bottle_in
 CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/bottle_info__struct.hpp
 CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/bottle_info__traits.hpp
 CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/bottle_info__type_support.hpp
+CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detection_info.hpp
+CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/detection_info__builder.hpp
+CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/detection_info__struct.hpp
+CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/detection_info__traits.hpp
+CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/detection_info__type_support.hpp
+CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detection_info_array.hpp
+CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/detection_info_array__builder.hpp
+CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/detection_info_array__struct.hpp
+CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/detection_info_array__traits.hpp
+CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/detection_info_array__type_support.hpp
 CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/rosidl_generator_cpp__visibility_control.hpp
 
 
@@ -87,6 +97,8 @@ rosidl_generator_cpp/interfaces/msg/robot_status.hpp: /opt/ros/foxy/share/rosidl
 rosidl_generator_cpp/interfaces/msg/robot_status.hpp: /opt/ros/foxy/share/rosidl_generator_cpp/resource/srv__type_support.hpp.em
 rosidl_generator_cpp/interfaces/msg/robot_status.hpp: rosidl_adapter/interfaces/msg/RobotStatus.idl
 rosidl_generator_cpp/interfaces/msg/robot_status.hpp: rosidl_adapter/interfaces/msg/BottleInfo.idl
+rosidl_generator_cpp/interfaces/msg/robot_status.hpp: rosidl_adapter/interfaces/msg/DetectionInfo.idl
+rosidl_generator_cpp/interfaces/msg/robot_status.hpp: rosidl_adapter/interfaces/msg/DetectionInfoArray.idl
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code for ROS interfaces"
 	/usr/bin/python3 /opt/ros/foxy/share/rosidl_generator_cpp/cmake/../../../lib/rosidl_generator_cpp/rosidl_generator_cpp --generator-arguments-file /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_generator_cpp__arguments.json
 
@@ -117,6 +129,36 @@ rosidl_generator_cpp/interfaces/msg/detail/bottle_info__traits.hpp: rosidl_gener
 rosidl_generator_cpp/interfaces/msg/detail/bottle_info__type_support.hpp: rosidl_generator_cpp/interfaces/msg/robot_status.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/interfaces/msg/detail/bottle_info__type_support.hpp
 
+rosidl_generator_cpp/interfaces/msg/detection_info.hpp: rosidl_generator_cpp/interfaces/msg/robot_status.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/interfaces/msg/detection_info.hpp
+
+rosidl_generator_cpp/interfaces/msg/detail/detection_info__builder.hpp: rosidl_generator_cpp/interfaces/msg/robot_status.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/interfaces/msg/detail/detection_info__builder.hpp
+
+rosidl_generator_cpp/interfaces/msg/detail/detection_info__struct.hpp: rosidl_generator_cpp/interfaces/msg/robot_status.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/interfaces/msg/detail/detection_info__struct.hpp
+
+rosidl_generator_cpp/interfaces/msg/detail/detection_info__traits.hpp: rosidl_generator_cpp/interfaces/msg/robot_status.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/interfaces/msg/detail/detection_info__traits.hpp
+
+rosidl_generator_cpp/interfaces/msg/detail/detection_info__type_support.hpp: rosidl_generator_cpp/interfaces/msg/robot_status.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/interfaces/msg/detail/detection_info__type_support.hpp
+
+rosidl_generator_cpp/interfaces/msg/detection_info_array.hpp: rosidl_generator_cpp/interfaces/msg/robot_status.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/interfaces/msg/detection_info_array.hpp
+
+rosidl_generator_cpp/interfaces/msg/detail/detection_info_array__builder.hpp: rosidl_generator_cpp/interfaces/msg/robot_status.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/interfaces/msg/detail/detection_info_array__builder.hpp
+
+rosidl_generator_cpp/interfaces/msg/detail/detection_info_array__struct.hpp: rosidl_generator_cpp/interfaces/msg/robot_status.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/interfaces/msg/detail/detection_info_array__struct.hpp
+
+rosidl_generator_cpp/interfaces/msg/detail/detection_info_array__traits.hpp: rosidl_generator_cpp/interfaces/msg/robot_status.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/interfaces/msg/detail/detection_info_array__traits.hpp
+
+rosidl_generator_cpp/interfaces/msg/detail/detection_info_array__type_support.hpp: rosidl_generator_cpp/interfaces/msg/robot_status.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/interfaces/msg/detail/detection_info_array__type_support.hpp
+
 interfaces__cpp: CMakeFiles/interfaces__cpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/robot_status.hpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/robot_status__builder.hpp
@@ -128,6 +170,16 @@ interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/bottle_info__builder
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/bottle_info__struct.hpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/bottle_info__traits.hpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/bottle_info__type_support.hpp
+interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detection_info.hpp
+interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/detection_info__builder.hpp
+interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/detection_info__struct.hpp
+interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/detection_info__traits.hpp
+interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/detection_info__type_support.hpp
+interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detection_info_array.hpp
+interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/detection_info_array__builder.hpp
+interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/detection_info_array__struct.hpp
+interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/detection_info_array__traits.hpp
+interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/detection_info_array__type_support.hpp
 interfaces__cpp: CMakeFiles/interfaces__cpp.dir/build.make
 
 .PHONY : interfaces__cpp

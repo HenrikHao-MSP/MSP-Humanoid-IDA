@@ -4,7 +4,9 @@
   "template_dir": "/opt/ros/foxy/share/rosidl_generator_cpp/cmake/../resource",
   "idl_tuples": [
     "/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_adapter/interfaces:msg/RobotStatus.idl",
-    "/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_adapter/interfaces:msg/BottleInfo.idl"
+    "/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_adapter/interfaces:msg/BottleInfo.idl",
+    "/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_adapter/interfaces:msg/DetectionInfo.idl",
+    "/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_adapter/interfaces:msg/DetectionInfoArray.idl"
   ],
   "target_dependencies": [
     "/opt/ros/foxy/share/rosidl_generator_cpp/cmake/../../../lib/rosidl_generator_cpp/rosidl_generator_cpp",
@@ -27,6 +29,8 @@
     "/opt/ros/foxy/share/rosidl_generator_cpp/cmake/../resource/srv__traits.hpp.em",
     "/opt/ros/foxy/share/rosidl_generator_cpp/cmake/../resource/srv__type_support.hpp.em",
     "/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_adapter/interfaces/msg/RobotStatus.idl",
-    "/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_adapter/interfaces/msg/BottleInfo.idl"
+    "/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_adapter/interfaces/msg/BottleInfo.idl",
+    "/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_adapter/interfaces/msg/DetectionInfo.idl",
+    "/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces/rosidl_adapter/interfaces/msg/DetectionInfoArray.idl"
   ]
 }

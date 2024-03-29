@@ -1,7 +1,8 @@
 import rclpy 
 from rclpy.node import Node
 from depthai_ros_msgs.msg import SpatialDetectionArray  # Make sure you have the correct import for the message type
-
+from interfaces.msg import DetectionInfo
+from interfaces.msg import DetectionInfoArray
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
 import numpy as np
@@ -29,31 +30,62 @@ class SpatialDetectionSubscriber(Node):
             self.image_listener_callback,
             10)
 
+        self.info_publisher = self.create_publisher(DetectionInfoArray, 'detection_info', 10)
     def image_listener_callback(self, msg):
         # Convert ROS Image message to CV image
         cv_image = self.bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8')
         self.latest_image = cv_image
 
+    def process_detection(self, detection, object_name):
+        bbox = detection.bbox
+        center_x, center_y = int(bbox.center.x), int(bbox.center.y)
+        size_x, size_y = int(bbox.size_x), int(bbox.size_y)
+        x_start, x_end = max(0, center_x - size_x // 2), min(self.latest_image.shape[1], center_x + size_x // 2)
+        y_start, y_end = max(0, center_y - size_y // 2), min(self.latest_image.shape[0], center_y + size_y // 2)
+        
+        # Extract the region of interest
+        roi = self.latest_image[y_start:y_end, x_start:x_end]
+
+        if object_name == 'bottle':
+            dominant_color = self.find_dominant_color(roi)
+            word = self.get_word(roi)
+        else:  # For other objects, you might have different processing logic
+            dominant_color = None
+            word = None
+            if object_name == 'cup':
+                image_filename = '/home/henrik/MSP-Humanoid-IDA/ros_workspace/src/camera_pkg/resource/baseimg.jpg'
+                cv2.imwrite(image_filename, roi)
+
+        # Create DetectionInfo object
+        detection_info = DetectionInfo()
+        detection_info.name = object_name
+        detection_info.x = float(detection.position.x)
+        detection_info.y = float(detection.position.y)
+        detection_info.z = float(detection.position.z)
+        detection_info.text = word
+        detection_info.color = dominant_color
+
+        return detection_info
+
     def detection_listener_callback(self, msg):
         if self.latest_image is not None:
+            all_detections = []
+
             for detection in msg.detections:
                 for result in detection.results:
-                    if result.id == '39':  # Check if the id is 'bottle'
-                        # Process detection's bounding box to find dominant color
-                        bbox = detection.bbox
-                        center_x, center_y = int(bbox.center.x), int(bbox.center.y)
-                        size_x, size_y = int(bbox.size_x), int(bbox.size_y)
-                        x_start, x_end = max(0, center_x - size_x // 2), min(self.latest_image.shape[1], center_x + size_x // 2)
-                        y_start, y_end = max(0, center_y - size_y // 2), min(self.latest_image.shape[0], center_y + size_y // 2)
-                        
-                        # Extract the region of interest
-                        roi = self.latest_image[y_start:y_end, x_start:x_end]
-                        
-                        # Determine the dominant color
-                        dominant_color = self.find_dominant_color(roi)
-                        word = self.get_word(roi)
-                        self.get_logger().info(f'Dominant Color: {dominant_color}')
-                        self.get_logger().info(f'Word: {word}')
+                    if result.id == '39':  # Bottle
+                        detection_info = self.process_detection(detection, 'bottle')
+                        all_detections.append(detection_info)
+                    elif result.id == '41':  # Cup
+                        detection_info = self.process_detection(detection, 'cup')
+                        all_detections.append(detection_info)
+
+            # Publish all detections as a list
+            if all_detections:
+                detection_info_array = DetectionInfoArray()
+                detection_info_array.detections = all_detections
+                self.info_publisher.publish(detection_info_array)
+                self.get_logger().info(f'Published {len(all_detections)} detections')
 
     def find_dominant_color(self, image):
         # Convert image to RGB (OpenCV uses BGR)

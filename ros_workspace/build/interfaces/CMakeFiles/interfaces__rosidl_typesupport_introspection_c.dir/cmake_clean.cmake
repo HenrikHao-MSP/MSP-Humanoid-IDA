@@ -1,10 +1,16 @@
 file(REMOVE_RECURSE
   "CMakeFiles/interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces/msg/detail/bottle_info__type_support.c.o"
+  "CMakeFiles/interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces/msg/detail/detection_info__type_support.c.o"
+  "CMakeFiles/interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces/msg/detail/detection_info_array__type_support.c.o"
   "CMakeFiles/interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces/msg/detail/robot_status__type_support.c.o"
   "libinterfaces__rosidl_typesupport_introspection_c.pdb"
   "libinterfaces__rosidl_typesupport_introspection_c.so"
   "rosidl_typesupport_introspection_c/interfaces/msg/detail/bottle_info__rosidl_typesupport_introspection_c.h"
   "rosidl_typesupport_introspection_c/interfaces/msg/detail/bottle_info__type_support.c"
+  "rosidl_typesupport_introspection_c/interfaces/msg/detail/detection_info__rosidl_typesupport_introspection_c.h"
+  "rosidl_typesupport_introspection_c/interfaces/msg/detail/detection_info__type_support.c"
+  "rosidl_typesupport_introspection_c/interfaces/msg/detail/detection_info_array__rosidl_typesupport_introspection_c.h"
+  "rosidl_typesupport_introspection_c/interfaces/msg/detail/detection_info_array__type_support.c"
   "rosidl_typesupport_introspection_c/interfaces/msg/detail/robot_status__rosidl_typesupport_introspection_c.h"
   "rosidl_typesupport_introspection_c/interfaces/msg/detail/robot_status__type_support.c"
 )
