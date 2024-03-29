@@ -1,7 +1,7 @@
 import rclpy 
 from rclpy.node import Node
 from depthai_ros_msgs.msg import SpatialDetectionArray  # Make sure you have the correct import for the message type
-
+from interfaces.msg import DetectionInfo
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
 import numpy as np
@@ -29,6 +29,7 @@ class SpatialDetectionSubscriber(Node):
             self.image_listener_callback,
             10)
 
+        self.info_publisher = self.create_publisher(DetectionInfo, 'detection_info', 10)
     def image_listener_callback(self, msg):
         # Convert ROS Image message to CV image
         cv_image = self.bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8')
@@ -51,7 +52,16 @@ class SpatialDetectionSubscriber(Node):
                         
                         # Determine the dominant color
                         dominant_color = self.find_dominant_color(roi)
-                        self.get_logger().info(f'Dominant Color: {dominant_color}')
+                        word = self.get_word(roi)
+                        info_msg = DetectionInfo()
+                        info_msg.x = center_x
+                        info_msg.y = center_y
+                        info_msg.text = word
+                        info_msg.color = dominant_color
+                        
+                        # Publish the message
+                        self.info_publisher.publish(info_msg)
+                        self.get_logger().info(f'Published detection info: {info_msg}')
 
     def find_dominant_color(self, image):
         # Convert image to RGB (OpenCV uses BGR)
@@ -69,28 +79,16 @@ class SpatialDetectionSubscriber(Node):
         dominant_color = centers[0].tolist()
         return dominant_color
 
-    def get_word(image):
-        # If this can be in def main(), then we don't need to run Line 74 everytime
-        pytesseract.pytesseract.tesseract_cmd = r"ros_workspace\src\camera_pkg\resource\Tesseract\tesseract.exe"
-
-        """Convert image to cv2"""
-        # If the image is in cv2 format you can this if block
-        if (image is not type(cv2)):
-            file_bytes = image.read()
-
-            # Convert the byte stream into a NumPy array compatible with OpenCV
-            image = cv2.imdecode(np.frombuffer(file_bytes, np.uint8), cv2.IMREAD_COLOR)
-
-        open_cv_image = np.array(image)
-
-        open_cv_image = open_cv_image[:, :, ::-1].copy()
-        image = open_cv_image
+    def get_word(self, image):
+        # Resize the image to make it more suitable for text detection
         image = imutils.resize(image, width=2000)
+        # Convert the image to grayscale
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+        # Apply thresholding to binarize the image
         thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)[1]
 
         # Perform text extraction
-        return pytesseract.image_to_string(thresh, lang='eng',config='--psm 6')
+        return pytesseract.image_to_string(thresh, lang='eng', config='--psm 6')
 
 
 def main(args=None):

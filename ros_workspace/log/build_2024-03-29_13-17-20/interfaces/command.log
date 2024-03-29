@@ -1,0 +1,4 @@
+Invoking command in '/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces': /usr/bin/cmake --build /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces -- -j20 -l20
+Invoked command in '/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces' returned '0': /usr/bin/cmake --build /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces -- -j20 -l20
+Invoking command in '/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces': /usr/bin/cmake --install /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces
+Invoked command in '/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces' returned '0': /usr/bin/cmake --install /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces

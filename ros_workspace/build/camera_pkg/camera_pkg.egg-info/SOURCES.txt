@@ -12,6 +12,7 @@ setup.py
 camera_pkg/__init__.py
 camera_pkg/bottle_recog_node.py
 camera_pkg/launch.launch.py
+camera_pkg/no_ros.py
 camera_pkg/pouring_accuracy_node.py
 camera_pkg/test_node.py
 resource/camera_pkg

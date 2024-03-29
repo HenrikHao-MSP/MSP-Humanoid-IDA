@@ -37,5 +37,6 @@ find_package(rosidl_default_generators REQUIRED)
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/RobotStatus.msg"
   "msg/BottleInfo.msg"
+  "msg/DetectionInfo.msg"
 )
 ament_package()

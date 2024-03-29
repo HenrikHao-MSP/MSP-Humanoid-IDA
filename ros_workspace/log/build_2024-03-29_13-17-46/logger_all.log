@@ -1,0 +1,328 @@
+[0.099s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.099s] DEBUG:colcon:Parsed command line arguments: Namespace(allow_overriding=[], ament_cmake_args=None, base_paths=['.'], build_base='build', catkin_cmake_args=None, catkin_skip_building_tests=False, cmake_args=None, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, cmake_target=None, cmake_target_skip_unavailable=False, continue_on_error=False, event_handlers=None, executor='parallel', ignore_user_meta=False, install_base='install', log_base=None, log_level=None, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7f52c7aac640>>, merge_install=False, metas=['./colcon.meta'], packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_end=None, packages_ignore=None, packages_ignore_regex=None, packages_select=None, packages_select_build_failed=False, packages_select_by_dep=None, packages_select_regex=None, packages_select_test_failures=False, packages_skip=None, packages_skip_build_finished=False, packages_skip_by_dep=None, packages_skip_regex=None, packages_skip_test_passed=False, packages_skip_up_to=None, packages_start=None, packages_up_to=None, packages_up_to_regex=None, parallel_workers=20, paths=None, symlink_install=False, test_result_base=None, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7f52c7aac640>, verb_name='build', verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7f52c793c220>)
+[0.173s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.173s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.173s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.173s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.173s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.173s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.174s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/henrik/MSP-Humanoid-IDA/ros_workspace'
+[0.174s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.174s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.174s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.174s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.174s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.174s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.174s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.174s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.174s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.180s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.180s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.180s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.181s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.181s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.181s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.181s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.181s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.181s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.181s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.181s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.181s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.181s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.181s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.181s] Level 1:colcon.colcon_core.package_identification:_identify(msg) by extensions ['ignore', 'ignore_ament_install']
+[0.181s] Level 1:colcon.colcon_core.package_identification:_identify(msg) by extension 'ignore'
+[0.181s] Level 1:colcon.colcon_core.package_identification:_identify(msg) by extension 'ignore_ament_install'
+[0.181s] Level 1:colcon.colcon_core.package_identification:_identify(msg) by extensions ['colcon_pkg']
+[0.181s] Level 1:colcon.colcon_core.package_identification:_identify(msg) by extension 'colcon_pkg'
+[0.181s] Level 1:colcon.colcon_core.package_identification:_identify(msg) by extensions ['colcon_meta']
+[0.181s] Level 1:colcon.colcon_core.package_identification:_identify(msg) by extension 'colcon_meta'
+[0.181s] Level 1:colcon.colcon_core.package_identification:_identify(msg) by extensions ['ros']
+[0.181s] Level 1:colcon.colcon_core.package_identification:_identify(msg) by extension 'ros'
+[0.181s] Level 1:colcon.colcon_core.package_identification:_identify(msg) by extensions ['cmake', 'python']
+[0.181s] Level 1:colcon.colcon_core.package_identification:_identify(msg) by extension 'cmake'
+[0.181s] Level 1:colcon.colcon_core.package_identification:_identify(msg) by extension 'python'
+[0.181s] Level 1:colcon.colcon_core.package_identification:_identify(msg) by extensions ['python_setup_py']
+[0.181s] Level 1:colcon.colcon_core.package_identification:_identify(msg) by extension 'python_setup_py'
+[0.181s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.181s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.181s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.181s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.181s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.181s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.181s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.181s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.181s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.181s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.181s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.182s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.182s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.182s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.182s] Level 1:colcon.colcon_core.package_identification:_identify(src/build) by extensions ['ignore', 'ignore_ament_install']
+[0.182s] Level 1:colcon.colcon_core.package_identification:_identify(src/build) by extension 'ignore'
+[0.182s] Level 1:colcon.colcon_core.package_identification:_identify(src/build) ignored
+[0.182s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_pkg) by extensions ['ignore', 'ignore_ament_install']
+[0.182s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_pkg) by extension 'ignore'
+[0.182s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_pkg) by extension 'ignore_ament_install'
+[0.182s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_pkg) by extensions ['colcon_pkg']
+[0.182s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_pkg) by extension 'colcon_pkg'
+[0.182s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_pkg) by extensions ['colcon_meta']
+[0.182s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_pkg) by extension 'colcon_meta'
+[0.182s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_pkg) by extensions ['ros']
+[0.182s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_pkg) by extension 'ros'
+[0.183s] DEBUG:colcon.colcon_core.package_identification:Package 'src/camera_pkg' with type 'ros.ament_python' and name 'camera_pkg'
+[0.183s] Level 1:colcon.colcon_core.package_identification:_identify(src/install) by extensions ['ignore', 'ignore_ament_install']
+[0.183s] Level 1:colcon.colcon_core.package_identification:_identify(src/install) by extension 'ignore'
+[0.183s] Level 1:colcon.colcon_core.package_identification:_identify(src/install) ignored
+[0.183s] Level 1:colcon.colcon_core.package_identification:_identify(src/interfaces) by extensions ['ignore', 'ignore_ament_install']
+[0.183s] Level 1:colcon.colcon_core.package_identification:_identify(src/interfaces) by extension 'ignore'
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/interfaces) by extension 'ignore_ament_install'
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/interfaces) by extensions ['colcon_pkg']
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/interfaces) by extension 'colcon_pkg'
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/interfaces) by extensions ['colcon_meta']
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/interfaces) by extension 'colcon_meta'
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/interfaces) by extensions ['ros']
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/interfaces) by extension 'ros'
+[0.184s] DEBUG:colcon.colcon_core.package_identification:Package 'src/interfaces' with type 'ros.ament_cmake' and name 'interfaces'
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/log) by extensions ['ignore', 'ignore_ament_install']
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/log) by extension 'ignore'
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/log) ignored
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/mic_pkg) by extensions ['ignore', 'ignore_ament_install']
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/mic_pkg) by extension 'ignore'
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/mic_pkg) by extension 'ignore_ament_install'
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/mic_pkg) by extensions ['colcon_pkg']
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/mic_pkg) by extension 'colcon_pkg'
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/mic_pkg) by extensions ['colcon_meta']
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/mic_pkg) by extension 'colcon_meta'
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/mic_pkg) by extensions ['ros']
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/mic_pkg) by extension 'ros'
+[0.185s] DEBUG:colcon.colcon_core.package_identification:Package 'src/mic_pkg' with type 'ros.ament_python' and name 'mic_pkg'
+[0.185s] Level 1:colcon.colcon_core.package_identification:_identify(src/motion_control_pkg) by extensions ['ignore', 'ignore_ament_install']
+[0.185s] Level 1:colcon.colcon_core.package_identification:_identify(src/motion_control_pkg) by extension 'ignore'
+[0.185s] Level 1:colcon.colcon_core.package_identification:_identify(src/motion_control_pkg) by extension 'ignore_ament_install'
+[0.185s] Level 1:colcon.colcon_core.package_identification:_identify(src/motion_control_pkg) by extensions ['colcon_pkg']
+[0.185s] Level 1:colcon.colcon_core.package_identification:_identify(src/motion_control_pkg) by extension 'colcon_pkg'
+[0.185s] Level 1:colcon.colcon_core.package_identification:_identify(src/motion_control_pkg) by extensions ['colcon_meta']
+[0.185s] Level 1:colcon.colcon_core.package_identification:_identify(src/motion_control_pkg) by extension 'colcon_meta'
+[0.185s] Level 1:colcon.colcon_core.package_identification:_identify(src/motion_control_pkg) by extensions ['ros']
+[0.185s] Level 1:colcon.colcon_core.package_identification:_identify(src/motion_control_pkg) by extension 'ros'
+[0.185s] DEBUG:colcon.colcon_core.package_identification:Package 'src/motion_control_pkg' with type 'ros.ament_python' and name 'motion_control_pkg'
+[0.185s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.185s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.185s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.185s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.185s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.194s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.194s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.194s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.195s] Level 5:colcon.colcon_core.verb:set package 'camera_pkg' build argument 'cmake_args' from command line to 'None'
+[0.195s] Level 5:colcon.colcon_core.verb:set package 'camera_pkg' build argument 'cmake_target' from command line to 'None'
+[0.195s] Level 5:colcon.colcon_core.verb:set package 'camera_pkg' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.195s] Level 5:colcon.colcon_core.verb:set package 'camera_pkg' build argument 'cmake_clean_cache' from command line to 'False'
+[0.195s] Level 5:colcon.colcon_core.verb:set package 'camera_pkg' build argument 'cmake_clean_first' from command line to 'False'
+[0.195s] Level 5:colcon.colcon_core.verb:set package 'camera_pkg' build argument 'cmake_force_configure' from command line to 'False'
+[0.195s] Level 5:colcon.colcon_core.verb:set package 'camera_pkg' build argument 'ament_cmake_args' from command line to 'None'
+[0.195s] Level 5:colcon.colcon_core.verb:set package 'camera_pkg' build argument 'catkin_cmake_args' from command line to 'None'
+[0.195s] Level 5:colcon.colcon_core.verb:set package 'camera_pkg' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.195s] DEBUG:colcon.colcon_core.verb:Building package 'camera_pkg' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/camera_pkg', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/camera_pkg', 'merge_install': False, 'path': '/home/henrik/MSP-Humanoid-IDA/ros_workspace/src/camera_pkg', 'symlink_install': False, 'test_result_base': None}
+[0.195s] Level 5:colcon.colcon_core.verb:set package 'interfaces' build argument 'cmake_args' from command line to 'None'
+[0.195s] Level 5:colcon.colcon_core.verb:set package 'interfaces' build argument 'cmake_target' from command line to 'None'
+[0.195s] Level 5:colcon.colcon_core.verb:set package 'interfaces' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.195s] Level 5:colcon.colcon_core.verb:set package 'interfaces' build argument 'cmake_clean_cache' from command line to 'False'
+[0.195s] Level 5:colcon.colcon_core.verb:set package 'interfaces' build argument 'cmake_clean_first' from command line to 'False'
+[0.195s] Level 5:colcon.colcon_core.verb:set package 'interfaces' build argument 'cmake_force_configure' from command line to 'False'
+[0.195s] Level 5:colcon.colcon_core.verb:set package 'interfaces' build argument 'ament_cmake_args' from command line to 'None'
+[0.195s] Level 5:colcon.colcon_core.verb:set package 'interfaces' build argument 'catkin_cmake_args' from command line to 'None'
+[0.195s] Level 5:colcon.colcon_core.verb:set package 'interfaces' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.195s] DEBUG:colcon.colcon_core.verb:Building package 'interfaces' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces', 'merge_install': False, 'path': '/home/henrik/MSP-Humanoid-IDA/ros_workspace/src/interfaces', 'symlink_install': False, 'test_result_base': None}
+[0.195s] Level 5:colcon.colcon_core.verb:set package 'mic_pkg' build argument 'cmake_args' from command line to 'None'
+[0.195s] Level 5:colcon.colcon_core.verb:set package 'mic_pkg' build argument 'cmake_target' from command line to 'None'
+[0.195s] Level 5:colcon.colcon_core.verb:set package 'mic_pkg' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.195s] Level 5:colcon.colcon_core.verb:set package 'mic_pkg' build argument 'cmake_clean_cache' from command line to 'False'
+[0.195s] Level 5:colcon.colcon_core.verb:set package 'mic_pkg' build argument 'cmake_clean_first' from command line to 'False'
+[0.195s] Level 5:colcon.colcon_core.verb:set package 'mic_pkg' build argument 'cmake_force_configure' from command line to 'False'
+[0.195s] Level 5:colcon.colcon_core.verb:set package 'mic_pkg' build argument 'ament_cmake_args' from command line to 'None'
+[0.195s] Level 5:colcon.colcon_core.verb:set package 'mic_pkg' build argument 'catkin_cmake_args' from command line to 'None'
+[0.196s] Level 5:colcon.colcon_core.verb:set package 'mic_pkg' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.196s] DEBUG:colcon.colcon_core.verb:Building package 'mic_pkg' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/mic_pkg', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/mic_pkg', 'merge_install': False, 'path': '/home/henrik/MSP-Humanoid-IDA/ros_workspace/src/mic_pkg', 'symlink_install': False, 'test_result_base': None}
+[0.196s] Level 5:colcon.colcon_core.verb:set package 'motion_control_pkg' build argument 'cmake_args' from command line to 'None'
+[0.196s] Level 5:colcon.colcon_core.verb:set package 'motion_control_pkg' build argument 'cmake_target' from command line to 'None'
+[0.196s] Level 5:colcon.colcon_core.verb:set package 'motion_control_pkg' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.196s] Level 5:colcon.colcon_core.verb:set package 'motion_control_pkg' build argument 'cmake_clean_cache' from command line to 'False'
+[0.196s] Level 5:colcon.colcon_core.verb:set package 'motion_control_pkg' build argument 'cmake_clean_first' from command line to 'False'
+[0.196s] Level 5:colcon.colcon_core.verb:set package 'motion_control_pkg' build argument 'cmake_force_configure' from command line to 'False'
+[0.196s] Level 5:colcon.colcon_core.verb:set package 'motion_control_pkg' build argument 'ament_cmake_args' from command line to 'None'
+[0.196s] Level 5:colcon.colcon_core.verb:set package 'motion_control_pkg' build argument 'catkin_cmake_args' from command line to 'None'
+[0.196s] Level 5:colcon.colcon_core.verb:set package 'motion_control_pkg' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.196s] DEBUG:colcon.colcon_core.verb:Building package 'motion_control_pkg' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/motion_control_pkg', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/motion_control_pkg', 'merge_install': False, 'path': '/home/henrik/MSP-Humanoid-IDA/ros_workspace/src/motion_control_pkg', 'symlink_install': False, 'test_result_base': None}
+[0.196s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.196s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.197s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/henrik/MSP-Humanoid-IDA/ros_workspace/src/camera_pkg' with build type 'ament_python'
+[0.197s] Level 1:colcon.colcon_core.shell:create_environment_hook('camera_pkg', 'ament_prefix_path')
+[0.198s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.198s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/camera_pkg/share/camera_pkg/hook/ament_prefix_path.ps1'
+[0.198s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/camera_pkg/share/camera_pkg/hook/ament_prefix_path.dsv'
+[0.198s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/camera_pkg/share/camera_pkg/hook/ament_prefix_path.sh'
+[0.199s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.199s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.201s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/henrik/MSP-Humanoid-IDA/ros_workspace/src/interfaces' with build type 'ament_cmake'
+[0.201s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/henrik/MSP-Humanoid-IDA/ros_workspace/src/interfaces'
+[0.201s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.201s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.203s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/henrik/MSP-Humanoid-IDA/ros_workspace/src/mic_pkg' with build type 'ament_python'
+[0.203s] Level 1:colcon.colcon_core.shell:create_environment_hook('mic_pkg', 'ament_prefix_path')
+[0.203s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/mic_pkg/share/mic_pkg/hook/ament_prefix_path.ps1'
+[0.203s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/mic_pkg/share/mic_pkg/hook/ament_prefix_path.dsv'
+[0.203s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/mic_pkg/share/mic_pkg/hook/ament_prefix_path.sh'
+[0.204s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.204s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.205s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/henrik/MSP-Humanoid-IDA/ros_workspace/src/motion_control_pkg' with build type 'ament_python'
+[0.205s] Level 1:colcon.colcon_core.shell:create_environment_hook('motion_control_pkg', 'ament_prefix_path')
+[0.205s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/motion_control_pkg/share/motion_control_pkg/hook/ament_prefix_path.ps1'
+[0.206s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/motion_control_pkg/share/motion_control_pkg/hook/ament_prefix_path.dsv'
+[0.207s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/motion_control_pkg/share/motion_control_pkg/hook/ament_prefix_path.sh'
+[0.207s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.207s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.313s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/henrik/MSP-Humanoid-IDA/ros_workspace/src/camera_pkg'
+[0.313s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.313s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.318s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces': /usr/bin/cmake --build /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces -- -j20 -l20
+[0.442s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/henrik/MSP-Humanoid-IDA/ros_workspace/src/mic_pkg'
+[0.442s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.442s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.551s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/henrik/MSP-Humanoid-IDA/ros_workspace/src/motion_control_pkg'
+[0.551s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.551s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.558s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces' returned '0': /usr/bin/cmake --build /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces -- -j20 -l20
+[0.590s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces': /usr/bin/cmake --install /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces
+[0.620s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(interfaces)
+[0.620s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces' returned '0': /usr/bin/cmake --install /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/interfaces
+[0.622s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces' for CMake module files
+[0.623s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces' for CMake config files
+[0.623s] Level 1:colcon.colcon_core.shell:create_environment_hook('interfaces', 'cmake_prefix_path')
+[0.623s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces/share/interfaces/hook/cmake_prefix_path.ps1'
+[0.624s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces/share/interfaces/hook/cmake_prefix_path.dsv'
+[0.624s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces/share/interfaces/hook/cmake_prefix_path.sh'
+[0.625s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces/lib'
+[0.625s] Level 1:colcon.colcon_core.shell:create_environment_hook('interfaces', 'ld_library_path_lib')
+[0.625s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces/share/interfaces/hook/ld_library_path_lib.ps1'
+[0.625s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces/share/interfaces/hook/ld_library_path_lib.dsv'
+[0.625s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces/share/interfaces/hook/ld_library_path_lib.sh'
+[0.626s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces/bin'
+[0.626s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces/lib/pkgconfig/interfaces.pc'
+[0.626s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces/lib/python3.8/site-packages'
+[0.626s] Level 1:colcon.colcon_core.shell:create_environment_hook('interfaces', 'pythonpath')
+[0.626s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces/share/interfaces/hook/pythonpath.ps1'
+[0.627s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces/share/interfaces/hook/pythonpath.dsv'
+[0.627s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces/share/interfaces/hook/pythonpath.sh'
+[0.627s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces/bin'
+[0.627s] INFO:colcon.colcon_core.shell:Creating package script '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces/share/interfaces/package.ps1'
+[0.628s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces/share/interfaces/package.dsv'
+[0.629s] INFO:colcon.colcon_core.shell:Creating package script '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces/share/interfaces/package.sh'
+[0.629s] INFO:colcon.colcon_core.shell:Creating package script '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces/share/interfaces/package.bash'
+[0.630s] INFO:colcon.colcon_core.shell:Creating package script '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces/share/interfaces/package.zsh'
+[0.630s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces/share/colcon-core/packages/interfaces)
+[0.657s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(interfaces)
+[0.658s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces' for CMake module files
+[0.658s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces' for CMake config files
+[0.659s] Level 1:colcon.colcon_core.shell:create_environment_hook('interfaces', 'cmake_prefix_path')
+[0.659s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces/share/interfaces/hook/cmake_prefix_path.ps1'
+[0.659s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces/share/interfaces/hook/cmake_prefix_path.dsv'
+[0.659s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces/share/interfaces/hook/cmake_prefix_path.sh'
+[0.660s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces/lib'
+[0.660s] Level 1:colcon.colcon_core.shell:create_environment_hook('interfaces', 'ld_library_path_lib')
+[0.660s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces/share/interfaces/hook/ld_library_path_lib.ps1'
+[0.660s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces/share/interfaces/hook/ld_library_path_lib.dsv'
+[0.661s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces/share/interfaces/hook/ld_library_path_lib.sh'
+[0.661s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces/bin'
+[0.661s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces/lib/pkgconfig/interfaces.pc'
+[0.661s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces/lib/python3.8/site-packages'
+[0.661s] Level 1:colcon.colcon_core.shell:create_environment_hook('interfaces', 'pythonpath')
+[0.662s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces/share/interfaces/hook/pythonpath.ps1'
+[0.662s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces/share/interfaces/hook/pythonpath.dsv'
+[0.662s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces/share/interfaces/hook/pythonpath.sh'
+[0.662s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces/bin'
+[0.663s] INFO:colcon.colcon_core.shell:Creating package script '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces/share/interfaces/package.ps1'
+[0.663s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces/share/interfaces/package.dsv'
+[0.664s] INFO:colcon.colcon_core.shell:Creating package script '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces/share/interfaces/package.sh'
+[0.664s] INFO:colcon.colcon_core.shell:Creating package script '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces/share/interfaces/package.bash'
+[0.664s] INFO:colcon.colcon_core.shell:Creating package script '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces/share/interfaces/package.zsh'
+[0.665s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/interfaces/share/colcon-core/packages/interfaces)
+[0.781s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/henrik/MSP-Humanoid-IDA/ros_workspace/src/mic_pkg': PYTHONPATH=/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/mic_pkg/prefix_override:/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/mic_pkg/lib/python3.8/site-packages: /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/mic_pkg build --build-base /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/mic_pkg/build install --record /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/mic_pkg/install.log --install-scripts $base/lib/mic_pkg --single-version-externally-managed install_data
+[0.791s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/henrik/MSP-Humanoid-IDA/ros_workspace/src/motion_control_pkg': PYTHONPATH=/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/motion_control_pkg/prefix_override:/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/motion_control_pkg/lib/python3.8/site-packages: /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/motion_control_pkg build --build-base /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/motion_control_pkg/build install --record /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/motion_control_pkg/install.log --install-scripts $base/lib/motion_control_pkg --single-version-externally-managed install_data
+[0.803s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/henrik/MSP-Humanoid-IDA/ros_workspace/src/camera_pkg': PYTHONPATH=/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/camera_pkg/prefix_override:/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/camera_pkg/lib/python3.8/site-packages: /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/camera_pkg build --build-base /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/camera_pkg/build install --record /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/camera_pkg/install.log --install-scripts $base/lib/camera_pkg --single-version-externally-managed install_data
+[0.935s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/mic_pkg' for CMake module files
+[0.935s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/henrik/MSP-Humanoid-IDA/ros_workspace/src/mic_pkg' returned '0': PYTHONPATH=/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/mic_pkg/prefix_override:/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/mic_pkg/lib/python3.8/site-packages: /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/mic_pkg build --build-base /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/mic_pkg/build install --record /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/mic_pkg/install.log --install-scripts $base/lib/mic_pkg --single-version-externally-managed install_data
+[0.936s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/mic_pkg' for CMake config files
+[0.937s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/mic_pkg/lib'
+[0.937s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/mic_pkg/bin'
+[0.937s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/mic_pkg/lib/pkgconfig/mic_pkg.pc'
+[0.937s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/mic_pkg/lib/python3.8/site-packages'
+[0.937s] Level 1:colcon.colcon_core.shell:create_environment_hook('mic_pkg', 'pythonpath')
+[0.937s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/mic_pkg/share/mic_pkg/hook/pythonpath.ps1'
+[0.938s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/mic_pkg/share/mic_pkg/hook/pythonpath.dsv'
+[0.938s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/mic_pkg/share/mic_pkg/hook/pythonpath.sh'
+[0.938s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/mic_pkg/bin'
+[0.939s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(mic_pkg)
+[0.939s] INFO:colcon.colcon_core.shell:Creating package script '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/mic_pkg/share/mic_pkg/package.ps1'
+[0.940s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/mic_pkg/share/mic_pkg/package.dsv'
+[0.940s] INFO:colcon.colcon_core.shell:Creating package script '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/mic_pkg/share/mic_pkg/package.sh'
+[0.940s] INFO:colcon.colcon_core.shell:Creating package script '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/mic_pkg/share/mic_pkg/package.bash'
+[0.941s] INFO:colcon.colcon_core.shell:Creating package script '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/mic_pkg/share/mic_pkg/package.zsh'
+[0.941s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/mic_pkg/share/colcon-core/packages/mic_pkg)
+[0.951s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/motion_control_pkg' for CMake module files
+[0.952s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/henrik/MSP-Humanoid-IDA/ros_workspace/src/motion_control_pkg' returned '0': PYTHONPATH=/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/motion_control_pkg/prefix_override:/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/motion_control_pkg/lib/python3.8/site-packages: /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/motion_control_pkg build --build-base /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/motion_control_pkg/build install --record /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/motion_control_pkg/install.log --install-scripts $base/lib/motion_control_pkg --single-version-externally-managed install_data
+[0.952s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/motion_control_pkg' for CMake config files
+[0.952s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/motion_control_pkg/lib'
+[0.953s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/motion_control_pkg/bin'
+[0.953s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/motion_control_pkg/lib/pkgconfig/motion_control_pkg.pc'
+[0.953s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/motion_control_pkg/lib/python3.8/site-packages'
+[0.953s] Level 1:colcon.colcon_core.shell:create_environment_hook('motion_control_pkg', 'pythonpath')
+[0.953s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/motion_control_pkg/share/motion_control_pkg/hook/pythonpath.ps1'
+[0.953s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/motion_control_pkg/share/motion_control_pkg/hook/pythonpath.dsv'
+[0.954s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/motion_control_pkg/share/motion_control_pkg/hook/pythonpath.sh'
+[0.954s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/motion_control_pkg/bin'
+[0.954s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(motion_control_pkg)
+[0.954s] INFO:colcon.colcon_core.shell:Creating package script '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/motion_control_pkg/share/motion_control_pkg/package.ps1'
+[0.955s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/motion_control_pkg/share/motion_control_pkg/package.dsv'
+[0.955s] INFO:colcon.colcon_core.shell:Creating package script '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/motion_control_pkg/share/motion_control_pkg/package.sh'
+[0.955s] INFO:colcon.colcon_core.shell:Creating package script '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/motion_control_pkg/share/motion_control_pkg/package.bash'
+[0.956s] INFO:colcon.colcon_core.shell:Creating package script '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/motion_control_pkg/share/motion_control_pkg/package.zsh'
+[0.956s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/motion_control_pkg/share/colcon-core/packages/motion_control_pkg)
+[0.958s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/camera_pkg' for CMake module files
+[0.958s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/henrik/MSP-Humanoid-IDA/ros_workspace/src/camera_pkg' returned '0': PYTHONPATH=/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/camera_pkg/prefix_override:/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/camera_pkg/lib/python3.8/site-packages: /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/camera_pkg build --build-base /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/camera_pkg/build install --record /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/camera_pkg/install.log --install-scripts $base/lib/camera_pkg --single-version-externally-managed install_data
+[0.958s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/camera_pkg' for CMake config files
+[0.959s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/camera_pkg/lib'
+[0.959s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/camera_pkg/bin'
+[0.959s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/camera_pkg/lib/pkgconfig/camera_pkg.pc'
+[0.959s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/camera_pkg/lib/python3.8/site-packages'
+[0.959s] Level 1:colcon.colcon_core.shell:create_environment_hook('camera_pkg', 'pythonpath')
+[0.959s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/camera_pkg/share/camera_pkg/hook/pythonpath.ps1'
+[0.960s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/camera_pkg/share/camera_pkg/hook/pythonpath.dsv'
+[0.960s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/camera_pkg/share/camera_pkg/hook/pythonpath.sh'
+[0.960s] Level 1:colcon.colcon_core.environment:checking '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/camera_pkg/bin'
+[0.960s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(camera_pkg)
+[0.961s] INFO:colcon.colcon_core.shell:Creating package script '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/camera_pkg/share/camera_pkg/package.ps1'
+[0.961s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/camera_pkg/share/camera_pkg/package.dsv'
+[0.961s] INFO:colcon.colcon_core.shell:Creating package script '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/camera_pkg/share/camera_pkg/package.sh'
+[0.962s] INFO:colcon.colcon_core.shell:Creating package script '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/camera_pkg/share/camera_pkg/package.bash'
+[0.962s] INFO:colcon.colcon_core.shell:Creating package script '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/camera_pkg/share/camera_pkg/package.zsh'
+[0.962s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/camera_pkg/share/colcon-core/packages/camera_pkg)
+[0.962s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[0.963s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[0.963s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[0.963s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[0.967s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[0.967s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[0.967s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[0.976s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[0.976s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/local_setup.ps1'
+[0.977s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/_local_setup_util_ps1.py'
+[0.978s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/setup.ps1'
+[0.978s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/local_setup.sh'
+[0.979s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/_local_setup_util_sh.py'
+[0.979s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/setup.sh'
+[0.980s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/local_setup.bash'
+[0.980s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/setup.bash'
+[0.981s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/local_setup.zsh'
+[0.981s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/setup.zsh'

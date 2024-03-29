@@ -1,4 +1,4 @@
-import rclpy
+import rclpy 
 from rclpy.node import Node
 from depthai_ros_msgs.msg import SpatialDetectionArray  # Make sure you have the correct import for the message type
 
@@ -6,6 +6,10 @@ from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
 import numpy as np
 import cv2
+
+# Word
+import pytesseract
+import imutils
 
 class SpatialDetectionSubscriber(Node):
     def __init__(self):
@@ -47,7 +51,9 @@ class SpatialDetectionSubscriber(Node):
                         
                         # Determine the dominant color
                         dominant_color = self.find_dominant_color(roi)
+                        word = self.get_word(roi)
                         self.get_logger().info(f'Dominant Color: {dominant_color}')
+                        self.get_logger().info(f'Word: {word}')
 
     def find_dominant_color(self, image):
         # Convert image to RGB (OpenCV uses BGR)
@@ -64,6 +70,17 @@ class SpatialDetectionSubscriber(Node):
         # Get the dominant color
         dominant_color = centers[0].tolist()
         return dominant_color
+
+    def get_word(self, image):
+        # Resize the image to make it more suitable for text detection
+        image = imutils.resize(image, width=2000)
+        # Convert the image to grayscale
+        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+        # Apply thresholding to binarize the image
+        thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)[1]
+
+        # Perform text extraction
+        return pytesseract.image_to_string(thresh, lang='eng', config='--psm 6')
 
 
 def main(args=None):
