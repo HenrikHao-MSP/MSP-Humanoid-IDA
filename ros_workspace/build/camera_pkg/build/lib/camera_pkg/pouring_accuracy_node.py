@@ -8,34 +8,72 @@ from skimage.measure import label, regionprops
 from skimage.morphology import binary_opening, disk
 import numpy as np
 import matplotlib.pyplot as plt
+from depthai_ros_msgs.msg import SpatialDetectionArray
+from sensor_msgs.msg import Image
+from cv_bridge import CvBridge
 
 class PouringAccuracyNode(Node):
     def __init__(self):
         super().__init__('pouring_accuracy_node')
+        self.latest_image = None
+        self.bridge = CvBridge()
+        self.empty_cup = '/home/henrik/MSP-Humanoid-IDA/ros_workspace/src/camera_pkg/resource/baseimg.jpg'
+        self.arm_mvoe_success = False
         self.subscription = self.create_subscription(
             Bool,
             'arm_move_success',  # Listen to the success flag from ArmControlNode
             self.success_callback,
             10)
+        
+        self.detection_subscription = self.create_subscription(
+            SpatialDetectionArray,
+            'color/yolov4_Spatial_detections',
+            self.detection_listener_callback,
+            10)
+        
+        self.image_subscription = self.create_subscription(
+            Image,
+            'color/image',
+            self.image_listener_callback,
+            10)
+        
         self.liquid_level_publisher = self.create_publisher(
             Float32,
             'liquid_level',  # Topic for publishing the liquid level
             10)
         
     def success_callback(self, msg):
-        if msg.data:  # True if arm movement was successful
+        self.arm_move_success = msg.data
+        if self.arm_move_success:  # True if arm movement was successful
             self.get_logger().info('Arm movement was successful, analyzing pouring accuracy...')
-            self.analyze_pouring_accuracy()
         else:
             self.get_logger().info('Arm movement was not successful, skipping pouring accuracy analysis.')
 
-    def analyze_pouring_accuracy(self):
-        # Your image processing logic here
-        empty_cup_path = '/path/to/your/empty_cup_image.jpg'  # Update this path
-        filled_cup_path = '/path/to/your/filled_cup_image.jpg'  # Update this path
-        
-        empty_cup_image = io.imread(empty_cup_path)
-        filled_cup_image = io.imread(filled_cup_path)
+    def image_listener_callback(self, msg):
+        # Convert ROS Image message to CV image
+        cv_image = self.bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8')
+        self.latest_image = cv_image
+    
+    def detection_listener_callback(self, msg):
+        if self.arm_move_success:
+            if self.latest_image is not None:
+                for detection in msg.detections:
+                    for result in detection.results:
+                        if result.id == '41':  # Bottle
+                            bbox = detection.bbox
+                            center_x, center_y = int(bbox.center.x), int(bbox.center.y)
+                            size_x, size_y = int(bbox.size_x), int(bbox.size_y)
+                            x_start, x_end = max(0, center_x - size_x // 2), min(self.latest_image.shape[1], center_x + size_x // 2)
+                            y_start, y_end = max(0, center_y - size_y // 2), min(self.latest_image.shape[0], center_y + size_y // 2)
+                            roi = self.latest_image[y_start:y_end, x_start:x_end]
+                            self.analyze_pouring_accuracy(roi, self.empty_cup)
+
+        # Extract the region of interest
+        roi = self.latest_image[y_start:y_end, x_start:x_end]
+    def analyze_pouring_accuracy(self, img, empty_cup):
+
+        empty_cup_image = io.imread(empty_cup)
+        filled_cup_image = img
         
         empty_cup_gray = rgb2gray(empty_cup_image)
         filled_cup_gray = rgb2gray(filled_cup_image)
