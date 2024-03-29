@@ -163,6 +163,18 @@ class Motors:
             self.load[id-1] = PACKET_HANDLER.read2ByteTxRx(self._port_handler, id, ADDR_PRESENT_CURRENT)[0]
         return 
     
+    def check_moving(self, id: int=None) -> bool:
+        if id==None:
+            for i in range(self.num_motors):
+                moving = PACKET_HANDLER.read1ByteTxRx(self._port_handler, i+1, ADDR_MOVING)[0]
+                if moving:
+                    return True
+        else:
+            moving = PACKET_HANDLER.read1ByteTxRx(self._port_handler, id, ADDR_MOVING)[0]
+            if moving:
+                    return True
+        return False
+    
     ## Setup Functions
     def _set_id(self, id_new: int, id_old: int=ID_BROADCAST) -> None:
         print("Setting ID...")

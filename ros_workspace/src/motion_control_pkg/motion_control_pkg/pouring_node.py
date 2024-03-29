@@ -2,6 +2,9 @@ import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Float32
 
+# 
+POURING_POSITION = 1500
+
 class PouringControlNode(Node):
     def __init__(self):
         super().__init__('pouring_control_node')

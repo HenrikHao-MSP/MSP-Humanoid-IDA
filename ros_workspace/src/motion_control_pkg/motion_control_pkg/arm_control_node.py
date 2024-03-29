@@ -17,6 +17,28 @@ x_dotf = x_dot0
 y_dotf = y_dot0
 z_dotf = z_dot0
 # main arm 
+DOF = 5
+# Change to device appropriate device/com port
+DEVICENAME = "COM11"
+
+MINIMUM = [dyna.MM_SHOULDER_FLEX_EX["min"],
+           dyna.MM_SHOULDER_ABDUCTION["min"],
+           dyna.MM_SHOULDER_ROT["min"],
+           dyna.MM_ELBOW_FLEX_EX["min"],
+           dyna.MM_PRO_SUP["min"]]
+
+MAXIMUM = [dyna.MM_SHOULDER_FLEX_EX["max"],
+           dyna.MM_SHOULDER_ABDUCTION["max"],
+           dyna.MM_SHOULDER_ROT["max"],
+           dyna.MM_ELBOW_FLEX_EX["max"],
+           dyna.MM_PRO_SUP["max"]]
+
+RESTING = [dyna.MM_SHOULDER_FLEX_EX["zero"],
+           dyna.MM_SHOULDER_ABDUCTION["zero"],
+           dyna.MM_SHOULDER_ROT["zero"],
+           dyna.MM_ELBOW_FLEX_EX["zero"],
+           dyna.MM_PRO_SUP["zero"]]
+
 ERR = 0
 STEP_NUM = 20
 ARM_ORIGIN = [k.L4, k.L2, k.L1-k.L3]
@@ -34,51 +56,83 @@ class ArmControlNode(Node):
             'arm_move_success',  # Topic name for the success flag
             10)
         self.subscription  # prevent unused variable warning
-        self.kinematics = k.Kinematics()
-        self.angles = []
-        self.dynamixel_in = []
+        self._kinematics = k.Kinematics()
+        self._motors = dyna.Motors(DOF, DEVICENAME)
+        self._target_pos = []
+        self._start_motors()
 
     def bottle_info_callback(self, msg):
         self.get_logger().info(f'Received bottle info: {msg.position}')
         # Control logic to move the arm to the bottle's position
-        success = self.move_arm_to_position(msg.position)
+        success = self.move_to_coord(msg.position)
         # Publish the success flag
         success_msg = Bool()
         success_msg.data = success
         self.publisher_.publish(success_msg)
         self.get_logger().info(f'Published move success flag: {success}')
-
-    def move_arm_to_position(self, position):
-        # Placeholder for arm control logic
-
-        # check if position is reachable
-        check = self.get_angles(position)
-        #TODO check if get_angles returns ERR
-        if check == ERR:
-            return ERR
-        else:
-            # assuming given a position, arm to reach that position, pour a drink, and return to origin
-            path = self.pathing(ARM_ORIGIN, position)
-            if path == ERR:
-                return ERR
-            self.delay(1.5)
-            current_coord = position
-
-            #TODO: motor control
-            #pour()
-
-            self.delay(1)
-            path = self.pathing(current_coord, ARM_ORIGIN)
-            if path == ERR:
-                return ERR
-            self.delay(1)
-            
-            # Here, simulate moving the arm and return True for success
-            self.get_logger().info(f'Moving arm to position: {position}')
-            # Simulate a successful operation
-            return True
     
+    ### Main function call to move arm ###
+    def move_to_coord(self, coord: list) -> bool:
+        # IK function
+        self._calc_angles(coord)
+        # Convert to position of motors
+        self._angle_to_dynamixel()
+        # Checks if within limits
+        if self._check_limits():
+            # Move to arm position
+            self.get_logger().info(f'Moving arm to {coord[0]} {coord[1]} {coord[2]}')
+            self._motors.set_goal(self._target_pos)
+            # Continually check movement
+            while self._motors.check_moving():
+                continue
+            # Check end position 
+            c_pos = self.get_current_pos()
+            if c_pos != self._target_pos:
+                self.get_logger().info(f'Unable to reach position {coord[0]} {coord[1]} {coord[2]}')
+                return False
+            return True     # successful movement
+        else:
+            self.get_logger().info(f'Unable to reach position {coord[0]} {coord[1]} {coord[2]}')
+            return False    
+        
+    def pour(self):
+        pass
+
+    def grip(self):
+        pass
+
     ###### general helpers ######
+    ### IK Function - Updates _kinematics.angles ###
+    def _calc_angles(self, coord: list) -> None:
+        self._kinematics.get_angles(coord[0], coord[1], coord[2])
+        return
+    ### Start motors ###
+    def _start_motors(self) -> None:
+        self._motors.torque_toggle(1)
+        self._motors.set_goal(RESTING)
+        self._motors.get_current_pos()
+        return
+    ### Convert angles to dynamixel positions - Updates self._target_pos ### 
+    def _angle_to_dynamixel(self) -> None:
+        self._target_pos = [round(angle*dyna.ANGLE_TO_DYNA) for angle in self._kinematics.angles]
+        return
+    ### Check limits from input - limits have already been set for arm ###
+    def _check_limits(self) -> bool:
+        for i in range(DOF):
+            if self._target_pos[i] not in range(MINIMUM[i], MAXIMUM[i]):
+                self.get_logger().info(f'q{i+1} outside valid range.')
+                return False
+        return True
+    ### Returns current dynamixel positions ###
+    def get_current_pos(self) -> list:
+        self._motors.get_current_pos()
+        return self._motors.pos
+
+    ### End session ###    
+    def end_session(self) -> None:
+        self._motors.port_close()
+        return
+    
     def pathing(self, cur_coord, coord):
         path = self.path_gen(STEP_NUM, cur_coord, coord)
         i = 0
@@ -97,48 +151,11 @@ class ArmControlNode(Node):
             i+=1
         if err == ERR:
             return err
-        
+    ### Delay function ###    
     def delay(self, time):
         start = t.time()
         while t.time()-start < time:
             continue
-
-
-    ###### IK helpers ###### 
-    # main IK function, hard coded
-    def inverse_kinematics(self, coord):
-        self.angles = self.kinematics.get_angles(coord[0], coord[1], coord[2])
-        
-        origin_reset = False
-
-        # TODO: change input of positon and update max values
-        if self.angles is not None:
-            print("q1\tq2\tq3\tq4\tq5")
-            cons_min = [dyna.MM_SHOULDER_FLEX_EX["min"], 
-                        dyna.MM_SHOULDER_ABDUCTION["min"], 
-                        dyna.MM_SHOULDER_ROT["min"], 
-                        dyna.MM_ELBOW_FLEX_EX["min"], 
-                        dyna.MM_PRO_SUP["min"]]
-            cons_min = self.angle_to_dyna(cons_min)
-            cons_max = [dyna.MM_SHOULDER_FLEX_EX["max"], 
-                        dyna.MM_SHOULDER_ABDUCTION["max"], 
-                        dyna.MM_SHOULDER_ROT["max"], 
-                        dyna.MM_ELBOW_FLEX_EX["max"], 
-                        dyna.MM_PRO_SUP["max"]]
-            cons_max = self.angle_to_dyna(cons_max)
-            for i in range(len(self.angles)):
-                if self.angles[i] not in range(cons_min[i], cons_max[i]):
-                    origin_reset = True
-                    print('q%d angle out of bounds' % (i+1))
-        
-        if origin_reset:
-            self.angles = [0,0,0,0,0]
-            print('Arm has been reset to origin.')
-        return
-
-    def angle_to_dyna(self, angles: list) -> list:
-        dyna_input = [round(angle*dyna.ANGLE_TO_DYNA) for angle in angles]
-        return dyna_input
 
     ##### path gen helpers ###### 
     def path_gen(self, steps, start=None, final=None):
@@ -151,8 +168,8 @@ class ArmControlNode(Node):
         y_steps = self.steps_generation(steps, y_factors)
         z_steps = self.steps_generation(steps, z_factors)
         path = np.array([x_steps, y_steps, z_steps])
-        print(path)
-        # print(path[0][0])
+        self.get_logger().info(path)
+        # self.get_logger().info(path[0][0])
         return path
     
     def poly_factors(self, ini_coor, ini_v, fin_coor, fin_v):
