@@ -9,6 +9,7 @@ from rclpy.node import Node
 from interfaces.msg import BottleInfo
 from std_msgs.msg import Bool
 
+
 # path gen
 x_dot0 = 0
 y_dot0 = 0
@@ -51,6 +52,12 @@ class ArmControlNode(Node):
             'bottle_info',
             self.bottle_info_callback,
             10)
+        self.subscription = self.create_subscription(
+            Bool, 
+            'pouring_complete', 
+            self.pouring_complete_callback,
+            10
+        )
         self.publisher_ = self.create_publisher(
             Bool,
             'arm_move_success',  # Topic name for the success flag
@@ -71,6 +78,11 @@ class ArmControlNode(Node):
         success_msg.data = success
         self.publisher_.publish(success_msg)
         self.get_logger().info(f'Published move success flag: {success}')
+
+    def pouring_complete_callback(self, msg):
+        self.get_logger().info(f'Pouring is complete: {msg}')
+        self.finish_pour = Bool()
+        self.finish_pour = msg
     
     ### Main function call to move arm ###
     def move_to_coord(self, coord: list) -> bool:
@@ -97,9 +109,20 @@ class ArmControlNode(Node):
             return False    
         
     def pour(self):
+        # set angle of motor to tilt from upright to below 90 
+        c_pos = self.get_current_pos()
+        self._target_pos[DOF-1] = self._target_pos[DOF-1] - round(100*dyna.ANGLE_TO_DYNA)
+        self._motors.set_goal(self._target_pos)
+        # hold that until get the msg that pouring is complete 
+        while not self.finish_pour:
+            continue
+        # set angle back to previous value 
+        self._target_pos = c_pos
+        self._motors.set_goal(self._target_pos)
         pass
 
     def grip(self):
+        # implemented by EE
         pass
 
     ###### general helpers ######
