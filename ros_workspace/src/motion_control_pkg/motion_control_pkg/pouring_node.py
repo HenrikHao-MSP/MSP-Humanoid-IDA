@@ -1,6 +1,6 @@
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import Float32
+from std_msgs.msg import Float32, Bool
 
 # 
 POURING_POSITION = 1500
@@ -13,6 +13,11 @@ class PouringControlNode(Node):
             'liquid_level',
             self.liquid_level_callback,
             10)
+        self.publisher_ = self.create_publisher(
+            Bool,
+            'pouring_complete', 
+            10
+        )
         self.liquid_level_threshold = 80.0  # Example threshold, adjust as needed
 
     def liquid_level_callback(self, msg):
@@ -25,6 +30,9 @@ class PouringControlNode(Node):
         # Placeholder for actual arm stop command
         self.get_logger().info('Liquid level threshold exceeded. Stopping pouring...')
         # Insert your arm control logic here to stop pouring
+        pour_msg = Bool()
+        pour_msg.data = True
+        self.publisher_.publish(pour_msg)
 
 def main(args=None):
     rclpy.init(args=args)
