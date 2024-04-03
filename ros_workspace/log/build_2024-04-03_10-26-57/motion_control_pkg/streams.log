@@ -1,0 +1,28 @@
+[0.603s] Invoking command in '/home/henrik/MSP-Humanoid-IDA/ros_workspace/src/motion_control_pkg': PYTHONPATH=/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/motion_control_pkg/prefix_override:/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/motion_control_pkg/lib/python3.8/site-packages: /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/motion_control_pkg build --build-base /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/motion_control_pkg/build install --record /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/motion_control_pkg/install.log --install-scripts $base/lib/motion_control_pkg --single-version-externally-managed install_data
+[0.701s] running egg_info
+[0.701s] writing ../../build/motion_control_pkg/motion_control_pkg.egg-info/PKG-INFO
+[0.701s] writing dependency_links to ../../build/motion_control_pkg/motion_control_pkg.egg-info/dependency_links.txt
+[0.702s] writing entry points to ../../build/motion_control_pkg/motion_control_pkg.egg-info/entry_points.txt
+[0.702s] writing requirements to ../../build/motion_control_pkg/motion_control_pkg.egg-info/requires.txt
+[0.702s] writing top-level names to ../../build/motion_control_pkg/motion_control_pkg.egg-info/top_level.txt
+[0.743s] reading manifest file '../../build/motion_control_pkg/motion_control_pkg.egg-info/SOURCES.txt'
+[0.745s] writing manifest file '../../build/motion_control_pkg/motion_control_pkg.egg-info/SOURCES.txt'
+[0.745s] running build
+[0.745s] running build_py
+[0.745s] copying motion_control_pkg/pouring_node.py -> /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/motion_control_pkg/build/lib/motion_control_pkg
+[0.745s] copying motion_control_pkg/arm_control_node.py -> /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/motion_control_pkg/build/lib/motion_control_pkg
+[0.745s] running install
+[0.746s] running install_lib
+[0.746s] copying /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/motion_control_pkg/build/lib/motion_control_pkg/pouring_node.py -> /home/henrik/MSP-Humanoid-IDA/ros_workspace/install/motion_control_pkg/lib/python3.8/site-packages/motion_control_pkg
+[0.746s] copying /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/motion_control_pkg/build/lib/motion_control_pkg/arm_control_node.py -> /home/henrik/MSP-Humanoid-IDA/ros_workspace/install/motion_control_pkg/lib/python3.8/site-packages/motion_control_pkg
+[0.746s] byte-compiling /home/henrik/MSP-Humanoid-IDA/ros_workspace/install/motion_control_pkg/lib/python3.8/site-packages/motion_control_pkg/pouring_node.py to pouring_node.cpython-38.pyc
+[0.747s] byte-compiling /home/henrik/MSP-Humanoid-IDA/ros_workspace/install/motion_control_pkg/lib/python3.8/site-packages/motion_control_pkg/arm_control_node.py to arm_control_node.cpython-38.pyc
+[0.748s] running install_data
+[0.748s] running install_egg_info
+[0.748s] removing '/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/motion_control_pkg/lib/python3.8/site-packages/motion_control_pkg-0.0.0-py3.8.egg-info' (and everything under it)
+[0.748s] Copying ../../build/motion_control_pkg/motion_control_pkg.egg-info to /home/henrik/MSP-Humanoid-IDA/ros_workspace/install/motion_control_pkg/lib/python3.8/site-packages/motion_control_pkg-0.0.0-py3.8.egg-info
+[0.749s] running install_scripts
+[0.759s] Installing arm_control_node script to /home/henrik/MSP-Humanoid-IDA/ros_workspace/install/motion_control_pkg/lib/motion_control_pkg
+[0.759s] Installing pouring_node script to /home/henrik/MSP-Humanoid-IDA/ros_workspace/install/motion_control_pkg/lib/motion_control_pkg
+[0.759s] writing list of installed files to '/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/motion_control_pkg/install.log'
+[0.775s] Invoked command in '/home/henrik/MSP-Humanoid-IDA/ros_workspace/src/motion_control_pkg' returned '0': PYTHONPATH=/home/henrik/MSP-Humanoid-IDA/ros_workspace/build/motion_control_pkg/prefix_override:/home/henrik/MSP-Humanoid-IDA/ros_workspace/install/motion_control_pkg/lib/python3.8/site-packages: /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/motion_control_pkg build --build-base /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/motion_control_pkg/build install --record /home/henrik/MSP-Humanoid-IDA/ros_workspace/build/motion_control_pkg/install.log --install-scripts $base/lib/motion_control_pkg --single-version-externally-managed install_data
