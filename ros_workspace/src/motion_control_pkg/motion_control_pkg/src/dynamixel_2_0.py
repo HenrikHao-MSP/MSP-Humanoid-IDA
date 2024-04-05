@@ -7,8 +7,9 @@ PROF_ACC = 50           # Max accel 0-32767 * 21.4577 deg/s^2
 MX_ACCEL = 60           # Max accel 0-254 * 8.583 deg/s^2
 
 # Default settings for U2D2
-DEVICENAME = 'COM8'  # Replace with the appropriate device name
+DEVICENAME = '/dev/ttyUSB0'  # Replace with the appropriate device name
 BAUDRATE = 57600
+PROTOCOL_VERSION = 2.0
 
 # Initialize the U2D2 and Dynamixel motors
 PACKET_HANDLER = dxl.PacketHandler(PROTOCOL_VERSION)
@@ -22,7 +23,7 @@ class Motors:
         self.baudrate = baudrate
         self.num_motors = dof
         self.torque_status = []
-        self.pos = []
+        self.pos = [0]*dof
         self.load = []
         self._port_open()
         self._sync_torque()
@@ -89,9 +90,9 @@ class Motors:
             PACKET_HANDLER.write4ByteTxRx(self._port_handler, i+1, ADDR_GOAL_POS, target_pos[i]) 
         return
     
-    def set_goal(self, id: int, target_pos: int) -> None:
-        PACKET_HANDLER.write4ByteTxRx(self._port_handler, id, ADDR_GOAL_POS, target_pos)
-        return
+    #def set_goal(self, id: int, target_pos: int) -> None:
+    #    PACKET_HANDLER.write4ByteTxRx(self._port_handler, id, ADDR_GOAL_POS, target_pos)
+    #    return
 
     def _sync_torque(self) -> None:      # Set all torque to zero
         print("Resetting torque enable to 0...")
