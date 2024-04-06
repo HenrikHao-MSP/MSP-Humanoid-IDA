@@ -271,7 +271,7 @@ def print_list(lists: list):
     print(strings)
 
 # Test Coordinates - Change HERE
-TEST_COORD = [250, -150.6, 140]
+TEST_COORD = [300, -200.6, 200]
 TEST = True
 
 # Automated Transformation Matrices
