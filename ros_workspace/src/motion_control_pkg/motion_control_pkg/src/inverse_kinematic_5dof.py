@@ -246,7 +246,7 @@ def get_angles(pos_matrix, x: float = REST_X, y: float = REST_Y, z: float = REST
     
     # Get angle in range -180 to 180 degrees
     chk_ang = lambda ang: ang - 360 if (ang > 180) else (ang + 360 if ang < -180 else ang)
-    angle = [chk_ang(ang) for ang in angle]
+    angle = [round(chk_ang(ang), 1) for ang in angle]
 
     angle.append(-angle[1])     # q5 where q5 = -q2
 
@@ -271,7 +271,7 @@ def print_list(lists: list):
     print(strings)
 
 # Test Coordinates - Change HERE
-TEST_COORD = [370, -350, 360]
+TEST_COORD = [250, -150.6, 140]
 TEST = True
 
 # Automated Transformation Matrices
@@ -284,6 +284,7 @@ def main():
         coord = TEST_COORD
     else:
         coord = get_position()
+    print(coord)
     angles = get_angles(pos, coord[0], coord[1], coord[2])    
     if angles is not None:
         print("q1\tq2\tq3\tq4\tq5")
@@ -310,6 +311,7 @@ def hard_main():
         coord = TEST_COORD
     else:
         coord = get_position()
+    print(coord)
     angles = get_angles(pos, coord[0], coord[1], coord[2])    
     if angles is not None:
         print("q1\tq2\tq3\tq4\tq5")
@@ -318,7 +320,7 @@ def hard_main():
         cons_min = [-60, 0, -90, -90, -180]
         cons_max = [180, 180, 60, 60, 180]
         for i in range(len(angles)):
-            if angles[i] not in range(cons_min[i], cons_max[i]):
+            if int(angles[i]) not in range(cons_min[i], cons_max[i]):
                 origin_reset = True
                 print('q%d angle out of bounds' % (i+1))
     
@@ -327,8 +329,8 @@ def hard_main():
         print('Arm has been reset to origin')
 
 if __name__ == "__main__":
-    print("Main")
-    main()
-    print("====================")
+    # print("Main")
+    # main()
+    # print("====================")
     print("Hard Main")
     hard_main()
