@@ -41,7 +41,7 @@ class Arm():
         return
     
     def _angle_to_dynamixel(self) -> None:
-        self._target_pos = [round(angle*d.ANGLE_TO_DYNA) for angle in self._kinematics.angles]
+        self._target_pos = [int(round(angle*d.ANGLE_TO_DYNA)) for angle in self._kinematics.angles]
         return
     
     def _check_limits(self) -> bool:

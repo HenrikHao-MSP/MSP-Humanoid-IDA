@@ -87,12 +87,16 @@ class Motors:
     # Motor Functions    
     def set_goal(self, target_pos: list) -> None:
         for i in range(len(target_pos)):
-            PACKET_HANDLER.write4ByteTxRx(self._port_handler, i+1, ADDR_GOAL_POS, target_pos[i]) 
+            PACKET_HANDLER.write4ByteTxRx(self._port_handler, i+1, ADDR_GOAL_POS, target_pos[i])
+            # Finish flex-ext first
+            if i==1:
+                while self.check_moving(i):
+                    continue
         return
     
-    #def set_goal(self, id: int, target_pos: int) -> None:
-    #    PACKET_HANDLER.write4ByteTxRx(self._port_handler, id, ADDR_GOAL_POS, target_pos)
-    #    return
+    def set_goal(self, id: int, target_pos: int) -> None:
+       PACKET_HANDLER.write4ByteTxRx(self._port_handler, id, ADDR_GOAL_POS, target_pos)
+       return
 
     def _sync_torque(self) -> None:      # Set all torque to zero
         print("Resetting torque enable to 0...")
@@ -136,7 +140,9 @@ class Motors:
                 PACKET_HANDLER.write1ByteTxRx(self._port_handler, id, ADDR_TORQUE_ENABLE, set)
                 self.torque_status[id-1] = set
         return
-            
+    """
+    Profiles based on dynamixel_consts.py - to edit in there
+    """        
     def _set_profile(self, vel: int=PROF_VEL, accel: int=PROF_ACC, id: int=None) -> None:
         if id==None:
             for i in range(self.num_motors):
@@ -200,9 +206,11 @@ class Motors:
     #     return id
     
 # Will need to change to something valid
-TEST_POSITION = [2000, 2000, 2000, 2000, 2000]
+TEST_POSITION = [200, 200, 200, 200, 200]
 
-# Test Angles
+"""
+Test - be careful with chosen angles - motors can break mounts due to torque 
+"""
 def main():
     arm = Motors(5)
     while True:

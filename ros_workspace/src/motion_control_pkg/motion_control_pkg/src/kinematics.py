@@ -29,6 +29,7 @@ class Kinematics():
 
     def get_angles(self, x: float = REST_X, y: float = REST_Y, z: float = REST_Z) -> list:
         self.angles = ik.get_angles(self.i_pm, x, y, z)
+        self.angles[3] += 90
         return self.angles
         
     def fk_check(self) -> list:
