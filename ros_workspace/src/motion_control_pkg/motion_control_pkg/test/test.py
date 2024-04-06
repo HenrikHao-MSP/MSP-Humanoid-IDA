@@ -3,7 +3,7 @@ import dynamixel_2_0 as d
 
 DOF = 5
 # Change to device appropriate device/com port
-DEVICENAME = "COM11"
+DEVICENAME = "/dev/ttyUSB0"
 
 MINIMUM = [d.MM_SHOULDER_FLEX_EX["min"],
            d.MM_SHOULDER_ABDUCTION["min"],
@@ -46,6 +46,7 @@ class Arm():
     
     def _check_limits(self) -> bool:
         for i in range(DOF):
+            self._target_pos[i] = self._target_pos[i] + RESTING[i]
             if self._target_pos[i] not in range(MINIMUM[i], MAXIMUM[i]):
                 return False
         return True
@@ -68,7 +69,8 @@ class Arm():
         self._motors.port_close()
         return
 
-TEST_COORD = [300, 100, 100]
+TEST_COORD = [166.2, -334.9, -4.9]
+#TEST_COORD = [235, -30, 35] #rest position
 
 def get_angles() -> list:
     coords = ['X', 'Y', 'Z']
@@ -76,10 +78,11 @@ def get_angles() -> list:
         entry = input(f'Enter {coords[i]} Position or <Q> to Quit:\n')
         if entry.capitalize() == 'Q':
             raise ValueError('Quitting...')
-        elif entry.isnumeric(): 
-            coords[i] = float(entry)
+        #elif entry.isnumeric(): 
+        #    coords[i] = float(entry)
         else:
-            raise ValueError('Invalid Entry.')
+            coords[i] = float(entry)
+            #raise ValueError('Invalid Entry.')
     return coords
 
 def main():
