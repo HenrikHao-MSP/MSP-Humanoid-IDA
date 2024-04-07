@@ -2,8 +2,8 @@ import DynamixelSDK.python.src.dynamixel_sdk as dxl
 from dynamixel_consts import * 
 
 # Control table values - will need to find safe values
-PROF_VEL = 50           # Max speed 0-32767 * 1.374 deg/s
-PROF_ACC = 50           # Max accel 0-32767 * 21.4577 deg/s^2
+PROF_VEL = 20           # Max speed 0-32767 * 1.374 deg/s
+PROF_ACC = 20           # Max accel 0-32767 * 21.4577 deg/s^2
 MX_ACCEL = 60           # Max accel 0-254 * 8.583 deg/s^2
 
 # Default settings for U2D2
@@ -88,15 +88,16 @@ class Motors:
     def set_goal(self, target_pos: list) -> None:
         for i in range(len(target_pos)):
             PACKET_HANDLER.write4ByteTxRx(self._port_handler, i+1, ADDR_GOAL_POS, target_pos[i])
-            # Finish flex-ext first
-            if i==1:
-                while self.check_moving(i):
-                    continue
+            print(f'Moving joint {i+1}...')
+            while self.check_moving(i):
+                continue
+        print('Movement complete...')
         return
     
-    def set_goal(self, id: int, target_pos: int) -> None:
-       PACKET_HANDLER.write4ByteTxRx(self._port_handler, id, ADDR_GOAL_POS, target_pos)
-       return
+    # Comment out on Jetson
+    # def set_goal(self, id: int, target_pos: int) -> None:
+    #    PACKET_HANDLER.write4ByteTxRx(self._port_handler, id, ADDR_GOAL_POS, target_pos)
+    #    return
 
     def _sync_torque(self) -> None:      # Set all torque to zero
         print("Resetting torque enable to 0...")
@@ -141,7 +142,7 @@ class Motors:
                 self.torque_status[id-1] = set
         return
     """
-    Profiles based on dynamixel_consts.py - to edit in there
+    Profiles at start of file - to edit there
     """        
     def _set_profile(self, vel: int=PROF_VEL, accel: int=PROF_ACC, id: int=None) -> None:
         if id==None:

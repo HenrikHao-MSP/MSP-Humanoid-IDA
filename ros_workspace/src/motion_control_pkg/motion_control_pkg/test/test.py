@@ -1,3 +1,7 @@
+"""
+Arm must be externally rotated, abducted prior to starting. 
+"""
+
 import sys
 import os
 src_dir = os.path.join(os.path.dirname(__file__), '..', 'src')
@@ -49,6 +53,7 @@ class Arm():
     
     def _angle_to_dynamixel(self) -> None:
         self._target_pos = [int(round((180+angle)*d.ANGLE_TO_DYNA)) for angle in self._kinematics.angles]
+        self._target_pos[1] -= 2044
         self._target_pos[3] -= 2044
         return
     

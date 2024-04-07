@@ -61,9 +61,9 @@ MM_SHOULDER_FLEX_EX = {    "min": 980,
 MM_SHOULDER_ABDUCTION = {  "min": 0,
                         "max": 1780,
                         "zero": 0}
-MM_SHOULDER_ROT = {    "min": 0,
-                    "max": 2000,
-                    "zero": 0}
+MM_SHOULDER_ROT = {    "min": 1024,
+                    "max": 4094,
+                    "zero": 2044}
 MM_ELBOW_FLEX_EX = {   "min": 0,
                     "max": 2000,
                     "zero": 1023}
