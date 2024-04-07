@@ -57,18 +57,18 @@ PRO_SUP = 5
 # Joint constraints for Dynamixels 0-4095
 MM_SHOULDER_FLEX_EX = {    "min": 980,
                         "max": 2600,
-                        "zero": 1200}
+                        "zero": 1300}
 MM_SHOULDER_ABDUCTION = {  "min": 0,
-                        "max": 1780,
+                        "max": 2048,
                         "zero": 0}
 MM_SHOULDER_ROT = {    "min": 1024,
-                    "max": 4094,
-                    "zero": 2044}
-MM_ELBOW_FLEX_EX = {   "min": 0,
-                    "max": 2000,
-                    "zero": 1023}
+                    "max": 3072,
+                    "zero": 2048}
+MM_ELBOW_FLEX_EX = {   "min": 2100,
+                    "max": 3072,
+                    "zero": 3072}
 MM_PRO_SUP = { "min": 0,
             "max": 4095,
-            "zero": 2000}
+            "zero": 0}
 
 ANGLE_TO_DYNA = 4095/360    # Converting from angle to dynamixel

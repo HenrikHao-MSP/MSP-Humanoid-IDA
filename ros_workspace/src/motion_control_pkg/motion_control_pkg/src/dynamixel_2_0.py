@@ -89,7 +89,8 @@ class Motors:
         for i in range(len(target_pos)):
             PACKET_HANDLER.write4ByteTxRx(self._port_handler, i+1, ADDR_GOAL_POS, target_pos[i])
             print(f'Moving joint {i+1}...')
-            while self.check_moving(i):
+            while self.check_moving(i)==1:
+                print(self.check_moving)
                 continue
         print('Movement complete...')
         return
