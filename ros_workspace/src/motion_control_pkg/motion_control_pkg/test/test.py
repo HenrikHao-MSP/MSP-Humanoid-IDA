@@ -48,12 +48,12 @@ class Arm():
         return
     
     def _angle_to_dynamixel(self) -> None:
-        self._target_pos = [int(round(angle*d.ANGLE_TO_DYNA)) for angle in self._kinematics.angles]
+        self._target_pos = [int(round((180+angle)*d.ANGLE_TO_DYNA)) for angle in self._kinematics.angles]
+        self._target_pos[3] -= 2044
         return
     
     def _check_limits(self) -> bool:
         for i in range(DOF):
-            self._target_pos[i] = self._target_pos[i] + RESTING[i]
             if self._target_pos[i] not in range(MINIMUM[i], MAXIMUM[i]):
                 return False
         return True
@@ -66,18 +66,26 @@ class Arm():
         self._calc_angles(coord)
         self._angle_to_dynamixel()
         if self._check_limits():
-            self._motors.set_goal(self._target_pos)
-            return True
+            chk = input(f'Confirm move to:\nMotor Angles:\n{self._kinematics.angles}\nTarget Positions:\n{self._target_pos}, <y> to confirm:\n')
+            if chk.lower() == 'y':
+                self._motors.set_goal(self._target_pos)
+                return True
+            else:
+                print('Aborting...')
+                return False
         else:
             print(f'Unable to reach position {coord[0]} {coord[1]} {coord[2]}')
             return False
         
+    def pour(self) -> None:
+        pour = input('<y> to pour')
+    
     def end_session(self) -> None:
         self._motors.port_close()
         return
 
 TEST_COORD = [166.2, -334.9, -4.9]
-#TEST_COORD = [235, -30, 35] #rest position
+#TEST_COORD = [L4, -L2, L1-L4] #rest position
 
 def get_angles() -> list:
     coords = ['X', 'Y', 'Z']
@@ -94,7 +102,7 @@ def get_angles() -> list:
     return coords
 
 def main():
-    # arm = Arm()
+    arm = Arm()
     while True:
         try:
             coords = get_angles()

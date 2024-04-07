@@ -154,6 +154,7 @@ class Motors:
         return
 
     # Read functions
+    # Only works for extended position control
     def get_current_pos(self, id: int=None) -> None:
         if id==None:
             for i in range(self.num_motors):
@@ -272,6 +273,7 @@ def read_pos():
             break
         else:
             arm.get_current_pos()
+            arm.check_moving()
     arm.port_close()
     
 if __name__ == "__main__":
