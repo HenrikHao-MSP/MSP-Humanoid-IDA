@@ -14,8 +14,8 @@ Step constraints for each motor: Base (Range)
     Wrist: 860 (0-1023)
 """
 # Limb measurements in mm
-L1 = 300        # Height, equivalent to l0 matlab
-L2 = 30         # Depth, equivalent to d0 matlab
+L1 = 375        # Height, equivalent to l0 matlab
+L2 = 70         # Depth, equivalent to d0 matlab
 L3 = 265        # Shoulder to elbow, equivalent to l1 matlab
 L4 = 235        # Elbow to end effector, equivalent to l2 matlab
 
@@ -24,9 +24,9 @@ DOF = 5         # Degrees of freedom
 DIM = 4         # Dimension of arrays
 STEPS = 100     # Motor steps
 ORIGIN = mat.Matrix([[0], [0], [0], [1]])
-REST_X = 235
-REST_Y = -30
-REST_Z = 35
+REST_X = L4
+REST_Y = -L2
+REST_Z = L1-L3
 
 # Boundary conditions - Not sure how to implement
 # [min max]
@@ -181,6 +181,7 @@ def get_angles(pos_matrix, x: float = REST_X, y: float = REST_Y, z: float = REST
     # Special case where y is matching
     elif (y == REST_Y):
         y_chk = True
+        y += 1
     # Special case where z is same as rest and distance is same as forearm
     elif (z == REST_Z) and (np.linalg.norm(effector_co-np.array([[0], [-L2], [REST_Z]]))==L4):
         z_chk = True

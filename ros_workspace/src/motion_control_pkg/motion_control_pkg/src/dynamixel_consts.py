@@ -58,7 +58,7 @@ MM_SHOULDER_ROT = {    "min": 0,
                     "zero": 0}
 MM_ELBOW_FLEX_EX = {   "min": 0,
                     "max": 2000,
-                    "zero": 10}
+                    "zero": 1023}
 MM_PRO_SUP = { "min": 0,
             "max": 4095,
             "zero": 2000}

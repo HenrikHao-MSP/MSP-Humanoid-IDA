@@ -9,8 +9,8 @@ DECI_PLACE = 1
 ORIGIN = np.array([[0], [0], [0], [1]], dtype=float)  # [X, Y, Z, 1]
 
 ## Arm Lengths in mm
-L1 = 300    # Origin to motor 1 of shoulder
-L2 = 30     # Shoulder to motor 2 of shoulder
+L1 = 375    # Origin to motor 1 of shoulder
+L2 = 70     # Shoulder to motor 2 of shoulder
 L3 = 265    # Upper arm length
 L4 = 235    # Elbow to wrist length
 
@@ -137,7 +137,7 @@ def fk_end(angles: list):
     alpha = ALPHA    # in radians
     d = D                                          # in mm
     theta = np.array([0, m.radians(angles[0]-90), m.radians(-angles[1]-90), 
-                    m.radians(angles[2]-90), m.radians(angles[3]-90), m.radians(angles[4])], dtype=float)          # in radians
+                    m.radians(angles[2]-90), m.radians(angles[3]-180), m.radians(angles[4])], dtype=float)          # in radians
 
     otm = trans_matrix(a, alpha, d, theta)
     pos = get_joints(otm)

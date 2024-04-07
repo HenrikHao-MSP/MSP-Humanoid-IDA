@@ -1,3 +1,10 @@
+import sys
+import os
+src_dir = os.path.join(os.path.dirname(__file__), '..', 'src')
+src_dir = os.path.abspath(src_dir)
+
+sys.path.append(src_dir)
+
 import kinematics as k
 import dynamixel_2_0 as d
 
@@ -77,16 +84,17 @@ def get_angles() -> list:
     for i in range(len(coords)):
         entry = input(f'Enter {coords[i]} Position or <Q> to Quit:\n')
         if entry.capitalize() == 'Q':
-            raise ValueError('Quitting...')
-        #elif entry.isnumeric(): 
-        #    coords[i] = float(entry)
+            raise ValueError('Quitting...') 
         else:
-            coords[i] = float(entry)
-            #raise ValueError('Invalid Entry.')
+            try:
+                int(entry)
+                coords[i] = float(entry)
+            except:
+                raise ValueError('Invalid Entry.')
     return coords
 
 def main():
-    arm = Arm()
+    # arm = Arm()
     while True:
         try:
             coords = get_angles()

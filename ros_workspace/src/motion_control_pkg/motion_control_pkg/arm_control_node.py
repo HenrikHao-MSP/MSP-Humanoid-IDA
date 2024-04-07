@@ -20,7 +20,7 @@ z_dotf = z_dot0
 # main arm 
 DOF = 5
 # Change to device appropriate device/com port
-DEVICENAME = "COM11"
+DEVICENAME = "/dev/ttyUSB0"
 
 MINIMUM = [dyna.MM_SHOULDER_FLEX_EX["min"],
            dyna.MM_SHOULDER_ABDUCTION["min"],

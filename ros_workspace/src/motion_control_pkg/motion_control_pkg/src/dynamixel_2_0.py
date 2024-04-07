@@ -157,27 +157,33 @@ class Motors:
     def get_current_pos(self, id: int=None) -> None:
         if id==None:
             for i in range(self.num_motors):
-                self.pos[i] = PACKET_HANDLER.read4ByteTxRx(self._port_handler, i+1, ADDR_PRESENT_POS)[0]
+                self.pos[i] = PACKET_HANDLER.read4ByteTxRx(self._port_handler, i+1, ADDR_PRESENT_POS)
+            print(self.pos)
         else:
-            self.pos[id-1] = PACKET_HANDLER.read4ByteTxRx(self._port_handler, id, ADDR_PRESENT_POS)[0]
+            self.pos[id-1] = PACKET_HANDLER.read4ByteTxRx(self._port_handler, id, ADDR_PRESENT_POS)
+            print(self.pos[id-1])
         return 
     
     def get_current_load(self, id: int=None) -> None:
         if id==None:
             for i in range(self.num_motors):
                 self.load[i] = PACKET_HANDLER.read2ByteTxRx(self._port_handler, i+1, ADDR_PRESENT_CURRENT)[0]
+            print(self.load)
         else:
             self.load[id-1] = PACKET_HANDLER.read2ByteTxRx(self._port_handler, id, ADDR_PRESENT_CURRENT)[0]
+            print(self.load[id-1])
         return 
     
     def check_moving(self, id: int=None) -> bool:
         if id==None:
             for i in range(self.num_motors):
                 moving = PACKET_HANDLER.read1ByteTxRx(self._port_handler, i+1, ADDR_MOVING)[0]
+                print(moving)
                 if moving:
                     return True
         else:
             moving = PACKET_HANDLER.read1ByteTxRx(self._port_handler, id, ADDR_MOVING)[0]
+            print(moving)
             if moving:
                     return True
         return False
@@ -256,9 +262,21 @@ def setup_arm(ids: list):
     arm._read_id(ELBOW)
     arm._read_id(PRO_SUP)
     arm.port_close()
+
+def read_pos():
+    arm = Motors(5)
+    arm.torque_toggle(0)
+    while True:
+        chk = input('Press <q> to quit otherwise, any to check position:\n')
+        if chk.lower() == 'q':
+            break
+        else:
+            arm.get_current_pos()
+    arm.port_close()
     
 if __name__ == "__main__":
-    ids = detect_devices()
-    if len(ids) > 0:
-        setup_arm(ids)
-        main()
+    read_pos()
+    # ids = detect_devices()
+    # if len(ids) > 0:
+    #     setup_arm(ids)
+    #     main()
