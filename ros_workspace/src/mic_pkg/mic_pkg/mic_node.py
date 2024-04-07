@@ -8,7 +8,7 @@ import random
 import pyttsx3
 
 # Set your OpenAI API key
-openai.api_key = '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'
+openai.api_key =
 
 # Initialize the recognizer
 r = sr.Recognizer()
@@ -137,4 +137,3 @@ def main(args=None):
 
 if __name__ == '__main__':
     main()
-
