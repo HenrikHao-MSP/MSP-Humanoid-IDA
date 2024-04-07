@@ -7,7 +7,7 @@ import speech_recognition as sr
 import random
 import pyttsx3
 # Set your OpenAI API key
-openai.api_key =
+openai.api_key = ''
 # Initialize the recognizer
 r = sr.Recognizer()
 # Initialize the speech recognizer and text-to-speech engine
