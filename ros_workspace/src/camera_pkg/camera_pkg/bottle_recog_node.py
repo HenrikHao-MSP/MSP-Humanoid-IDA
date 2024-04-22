@@ -3,6 +3,8 @@ from rclpy.node import Node
 from interfaces.msg import RobotStatus
 from interfaces.msg import BottleInfo
 from constants import RobotStatuses
+import re
+from nltk import edit_distance
 
 class BottleRecognitionNode(Node):
     def __init__(self):
@@ -59,6 +61,31 @@ class BottleRecognitionNode(Node):
         # Don't know how to implement the Camera
         return 1
 
+    
+    # Regex string to alphabets and lowercase
+    def preprocess_string(text):
+        # Lowercase the text
+        text = text.lower()
+        # Remove non-alphabetic characters
+        text = re.sub(r'[^a-z]+', '', text)
+        return text
+
+    # Using Levenshtein Distance
+    def normalised_edit_sim(s1, s2):
+        return 1-(edit_distance(s1,s2)/max(len(s1),len(s2)))
+
+    def getHighestProbableWord(self,string):
+        # Input String starts here
+        accuracy = []
+        string = self.preprocess_string(string)
+        for target in self.target_string:
+            target = self.preprocess_string(target)
+            similarity = self.normalised_edit_sim(string, target)
+            print(f"Similarity between '{string}' and '{target}': {similarity}")
+            accuracy.append((target, similarity))
+        max_value = max(accuracy, key = lambda row: row[1])
+        return max_value 
+
     def get_word(image):
         open_cv_image = np.array(image)
     
@@ -68,9 +95,13 @@ class BottleRecognitionNode(Node):
         image = imutils.resize(image, width=2000)
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)[1]
-
         # Perform text extraction
-        return pytesseract.image_to_string(thresh, lang='eng',config='--psm 6')
+        detect_text = pytesseract.image_to_string(thresh, lang='eng',config='--psm 6')
+
+        return self.getHighestProbableWord(detect_text)
+
+
+    
 
     def recognize_bottle(self):
         # Placeholder for actual recognition logic  
@@ -91,6 +122,9 @@ def main(args=None):
 
     # Word Recognition Tesseract relative path
     #pytesseract.pytesseract.tesseract_cmd = r"ros_workspace\src\camera_pkg\resource\Tesseract\tesseract.exe"
+
+    # Possible words
+    target_string = ["sprite", "vodka", "gin"]
 
     node = BottleRecognitionNode()
     rclpy.spin(node)
