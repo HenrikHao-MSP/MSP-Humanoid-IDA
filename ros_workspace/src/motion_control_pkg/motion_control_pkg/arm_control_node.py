@@ -116,7 +116,8 @@ class ArmControlNode(Node):
             return False    
         
     def pour(self):
-        # set angle of motor to tilt from upright to below 90 
+        # set angle of motor to tilt from upright to belo
+        # w 90 
         c_pos = self.get_current_pos()
         self._target_pos[DOF-1] = self._target_pos[DOF-1] - round(100*dyna.ANGLE_TO_DYNA)
         self._motors.set_goal(self._target_pos)
