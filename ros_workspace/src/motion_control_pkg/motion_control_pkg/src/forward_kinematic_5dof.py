@@ -9,8 +9,8 @@ DECI_PLACE = 1
 ORIGIN = np.array([[0], [0], [0], [1]], dtype=float)  # [X, Y, Z, 1]
 
 ## Arm Lengths in mm
-L1 = 300    # Origin to motor 1 of shoulder
-L2 = 30     # Shoulder to motor 2 of shoulder
+L1 = 375    # Origin to motor 1 of shoulder
+L2 = 70     # Shoulder to motor 2 of shoulder
 L3 = 265    # Upper arm length
 L4 = 235    # Elbow to wrist length
 
@@ -33,22 +33,22 @@ def get_theta():
         m.radians(angles[2]-90), m.radians(angles[3]-90), m.radians(angles[4])], dtype=float)          # in radians
 
 ## DH Table (Global)
-a = np.array([0, 0, 0, 0, 0, 0], dtype=float)                                               # in mm
-alpha = np.array([(m.pi/2), -(m.pi/2), -(m.pi/2), -(m.pi/2), -(m.pi/2), 0], dtype=float)    # in radians
-d = np.array([L1, L2, 0, L3, 0, L4], dtype=float)   
+A = np.array([0, 0, 0, 0, 0, 0], dtype=float)                                               # in mm
+ALPHA = np.array([(m.pi/2), -(m.pi/2), -(m.pi/2), -(m.pi/2), -(m.pi/2), 0], dtype=float)    # in radians
+D = np.array([L1, L2, 0, L3, 0, L4], dtype=float)   
 if __name__ == "__main__":                                        # in mm
     theta = get_theta()
 else:
     theta = np.zeros((DOF+1, 1), dtype=float)
 
 ## Transformation Matrix from DH Table
-def trans_matrix(a_t: np.ndarray = a, alpha_t: np.ndarray = alpha, d_t: np.ndarray = d, theta_t: np.ndarray = theta, dof = DOF):
+def trans_matrix(a_t: np.ndarray = A, alpha_t: np.ndarray = ALPHA, d_t: np.ndarray = D, theta_t: np.ndarray = theta, dof = DOF):
     transform_matrix = np.zeros((dof+1, DIM, DIM), dtype=float)
 
     # Initial transformation matrix
     transform_matrix[0, :, :] = np.array([[1, 0, 0, 0],
                             [0, 0, -1, 0],
-                            [0, 1, 0, d[0]],
+                            [0, 1, 0, D[0]],
                             [0, 0, 0, 1]], dtype=float)
 
     # Update transform matrix for each position
@@ -120,9 +120,9 @@ def get_joints(transformation_matrix: np.ndarray):
 
 def fk_all(angles: list):
     ## DH Table (Local)
-    a = np.array([0, 0, 0, 0, 0, 0], dtype=float)                                               # in mm
-    alpha = np.array([(m.pi/2), -(m.pi/2), -(m.pi/2), -(m.pi/2), -(m.pi/2), 0], dtype=float)    # in radians
-    d = np.array([L1, L2, 0, L3, 0, L4], dtype=float)                                           # in mm
+    a = A                                             # in mm
+    alpha = ALPHA    # in radians
+    d = D                                           # in mm
     theta = np.array([0, m.radians(angles[0]-90), m.radians(-angles[1]-90), 
                     m.radians(angles[2]-90), m.radians(angles[3]-90), m.radians(angles[4])], dtype=float)          # in radians
 
@@ -133,11 +133,11 @@ def fk_all(angles: list):
 
 def fk_end(angles: list):
     ## DH Table (Local)
-    a = np.array([0, 0, 0, 0, 0, 0], dtype=float)                                               # in mm
-    alpha = np.array([(m.pi/2), -(m.pi/2), -(m.pi/2), -(m.pi/2), -(m.pi/2), 0], dtype=float)    # in radians
-    d = np.array([L1, L2, 0, L3, 0, L4], dtype=float)                                           # in mm
+    a = A                                            # in mm
+    alpha = ALPHA    # in radians
+    d = D                                          # in mm
     theta = np.array([0, m.radians(angles[0]-90), m.radians(-angles[1]-90), 
-                    m.radians(angles[2]-90), m.radians(angles[3]-90), m.radians(angles[4])], dtype=float)          # in radians
+                    m.radians(angles[2]-90), m.radians(angles[3]-180), m.radians(angles[4])], dtype=float)          # in radians
 
     otm = trans_matrix(a, alpha, d, theta)
     pos = get_joints(otm)

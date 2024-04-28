@@ -14,8 +14,8 @@ Step constraints for each motor: Base (Range)
     Wrist: 860 (0-1023)
 """
 # Limb measurements in mm
-L1 = 300        # Height, equivalent to l0 matlab
-L2 = 30         # Depth, equivalent to d0 matlab
+L1 = 375        # Height, equivalent to l0 matlab
+L2 = 70         # Depth, equivalent to d0 matlab
 L3 = 265        # Shoulder to elbow, equivalent to l1 matlab
 L4 = 235        # Elbow to end effector, equivalent to l2 matlab
 
@@ -24,9 +24,21 @@ DOF = 5         # Degrees of freedom
 DIM = 4         # Dimension of arrays
 STEPS = 100     # Motor steps
 ORIGIN = mat.Matrix([[0], [0], [0], [1]])
-REST_X = 235
-REST_Y = -30
-REST_Z = 35
+REST_X = L4
+REST_Y = -L2
+REST_Z = L1-L3
+
+# Boundary conditions - Not sure how to implement
+# [min max]
+c_q1 = [-(np.pi/3), np.pi]
+c_q2 = [0, np.pi]
+c_q3 = [-(np.pi/2), np.pi/3]
+c_q4 = [-(np.pi/2), np.pi/3]
+
+min = [c_q1[0], c_q1[0], c_q1[0], c_q1[0], 0]
+max = [c_q1[1], c_q1[1], c_q1[1], c_q1[1], 2*np.pi]
+MIN = [round(m.degrees(rad)) for rad in min]
+MAX = [round(m.degrees(rad)) for rad in max]
 
 # Get input positions
 def get_position():
@@ -156,15 +168,6 @@ def get_angles(pos_matrix, x: float = REST_X, y: float = REST_Y, z: float = REST
     shoulder_co = np.array([[0], [-L2], [L1]])
     effector_co = np.array([[x], [y], [z]])
 
-    """
-    Boundary conditions - Not sure how to implement
-    [min max]
-    c_q1 = [-(sym.pi/3), sym.pi]
-    c_q2 = [0, sym.pi]
-    c_q3 = [-(sym.pi/2), sym.pi/3]
-    c_q4 = [-(sym.pi/2), sym.pi/3]
-    """
-
     # Required length of arm
     ef_length = np.linalg.norm(effector_co-shoulder_co)
 
@@ -178,6 +181,7 @@ def get_angles(pos_matrix, x: float = REST_X, y: float = REST_Y, z: float = REST
     # Special case where y is matching
     elif (y == REST_Y):
         y_chk = True
+        y += 1
     # Special case where z is same as rest and distance is same as forearm
     elif (z == REST_Z) and (np.linalg.norm(effector_co-np.array([[0], [-L2], [REST_Z]]))==L4):
         z_chk = True
@@ -240,21 +244,17 @@ def get_angles(pos_matrix, x: float = REST_X, y: float = REST_Y, z: float = REST
         print("No valid solutions.")
         return
     
-    # Get angles
+    # Get angles - 90 deg added to elbow
     angle = [answer[0].get(q1), answer[0].get(q2), answer[0].get(q3), answer[0].get(q4)]
     angle = [m.degrees((float(rad)))%360 for rad in angle]
     
     # Get angle in range -180 to 180 degrees
     chk_ang = lambda ang: ang - 360 if (ang > 180) else (ang + 360 if ang < -180 else ang)
-    angle = [chk_ang(ang) for ang in angle]
+    angle = [round(chk_ang(ang), 1) for ang in angle]
 
     angle.append(-angle[1])     # q5 where q5 = -q2
 
     return angle
-
-def calc_angles(angles):        # Convert angles for dynamixel motors
-    steps = [(angle/(360/4096)) for angle in angles]   # Anti-clockwise Positive 
-    return [np.rint(step) for step in steps]
 
 def fk_check(angles: list, input_coord: list = [REST_X, REST_Y, REST_Z]):
     print("FK CHECK")
@@ -270,8 +270,15 @@ def print_list(lists: list):
         strings += str(item)+"\t"
     print(strings)
 
+def range_check(angles: list) -> bool:
+    for i in range(len(angles)):
+        if int(angles[i]) not in range(MIN[i], MAX[i]):
+            print('q%d angle out of bounds' % (i+1))
+            return True
+    return False
+
 # Test Coordinates - Change HERE
-TEST_COORD = [370, -350, 360]
+TEST_COORD = [300, -200.6, 200]
 TEST = True
 
 # Automated Transformation Matrices
@@ -279,24 +286,18 @@ def main():
     tm = trans_matrix()
     pos = position_matrix(tm)
     write_matrix(str(pos), "position_matrices_main")
-    origin_reset = False
     if TEST:
         coord = TEST_COORD
     else:
         coord = get_position()
+    print(coord)
     angles = get_angles(pos, coord[0], coord[1], coord[2])    
     if angles is not None:
         print("q1\tq2\tq3\tq4\tq5")
         print_list(angles)
         fk_check(angles, coord)
         # checking if angle is within constraints (hasn't been applied yet)
-        cons_min = [-60, 0, -90, -90, -180]
-        cons_max = [180, 180, 60, 60, 180]
-        for i in range(len(angles)):
-            if angles[i] not in range(cons_min[i], cons_max[i]):
-                origin_reset = True
-                print('q%d angle out of bounds' % (i+1))
-    if origin_reset:
+    if range_check(angles):
         angles = [0,0,0,0,0]
         print('Arm has been reset to origin')
 
@@ -310,25 +311,19 @@ def hard_main():
         coord = TEST_COORD
     else:
         coord = get_position()
+    print(coord)
     angles = get_angles(pos, coord[0], coord[1], coord[2])    
     if angles is not None:
         print("q1\tq2\tq3\tq4\tq5")
         print_list(angles)
         fk_check(angles, coord)
-        cons_min = [-60, 0, -90, -90, -180]
-        cons_max = [180, 180, 60, 60, 180]
-        for i in range(len(angles)):
-            if angles[i] not in range(cons_min[i], cons_max[i]):
-                origin_reset = True
-                print('q%d angle out of bounds' % (i+1))
-    
-    if origin_reset:
+    if range_check(angles):
         angles = [0,0,0,0,0]
         print('Arm has been reset to origin')
 
 if __name__ == "__main__":
-    print("Main")
-    main()
-    print("====================")
+    # print("Main")
+    # main()
+    # print("====================")
     print("Hard Main")
     hard_main()

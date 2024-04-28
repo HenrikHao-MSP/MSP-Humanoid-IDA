@@ -10,6 +10,8 @@ XW_540 = 1180
 ID_BROADCAST = 254
 
 ADDR_TORQUE_ENABLE = 64     # <0> off <1> on
+ADDR_DRIVE_MODE = 10
+ADDR_PROFILE_MODE = 11
 ADDR_GOAL_POS = 116         # Position 0-4095 * 0.088 deg     
 ADDR_VELOCITY_PROF = 112
 ADDR_ACCELERATION_PROF = 108
@@ -22,6 +24,12 @@ ADDR_PRESENT_CURRENT = 126
 ADDR_MOVING = 122
 
 CONTROL_METHOD = 0     # <0> Velocity Control <1> Time Control
+REVERSE_DRIVE = 0x01    
+FORWARD_DRIVE = 0x00
+
+VEL_CON = 1
+POS_CON = 3
+EXT_POS_CON = 4     # Allow multiturn
 
 # MX64 Prot 1
 MX_ADDR_ID = 3
@@ -49,18 +57,18 @@ PRO_SUP = 5
 # Joint constraints for Dynamixels 0-4095
 MM_SHOULDER_FLEX_EX = {    "min": 980,
                         "max": 2600,
-                        "zero": 1200}
+                        "zero": 1300}
 MM_SHOULDER_ABDUCTION = {  "min": 0,
-                        "max": 1780,
+                        "max": 2048,
                         "zero": 0}
-MM_SHOULDER_ROT = {    "min": 0,
-                    "max": 2000,
-                    "zero": 0}
-MM_ELBOW_FLEX_EX = {   "min": 0,
-                    "max": 2000,
-                    "zero": 10}
+MM_SHOULDER_ROT = {    "min": 1024,
+                    "max": 3072,
+                    "zero": 2048}
+MM_ELBOW_FLEX_EX = {   "min": 2100,
+                    "max": 3072,
+                    "zero": 3072}
 MM_PRO_SUP = { "min": 0,
             "max": 4095,
-            "zero": 2000}
+            "zero": 0}
 
 ANGLE_TO_DYNA = 4095/360    # Converting from angle to dynamixel

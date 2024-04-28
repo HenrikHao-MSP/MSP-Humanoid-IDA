@@ -2,8 +2,8 @@ import DynamixelSDK.python.src.dynamixel_sdk as dxl
 from dynamixel_consts import * 
 
 # Control table values - will need to find safe values
-PROF_VEL = 50           # Max speed 0-32767 * 1.374 deg/s
-PROF_ACC = 50           # Max accel 0-32767 * 21.4577 deg/s^2
+PROF_VEL = 20           # Max speed 0-32767 * 1.374 deg/s
+PROF_ACC = 20           # Max accel 0-32767 * 21.4577 deg/s^2
 MX_ACCEL = 60           # Max accel 0-254 * 8.583 deg/s^2
 
 # Default settings for U2D2
@@ -87,10 +87,16 @@ class Motors:
     # Motor Functions    
     def set_goal(self, target_pos: list) -> None:
         for i in range(len(target_pos)):
-            PACKET_HANDLER.write4ByteTxRx(self._port_handler, i+1, ADDR_GOAL_POS, target_pos[i]) 
+            PACKET_HANDLER.write4ByteTxRx(self._port_handler, i+1, ADDR_GOAL_POS, target_pos[i])
+            print(f'Moving joint {i+1}...')
+            while self.check_moving(i)==1:
+                print(self.check_moving)
+                continue
+        print('Movement complete...')
         return
     
-    #def set_goal(self, id: int, target_pos: int) -> None:
+    # Comment out on Jetson
+    # def set_goal(self, id: int, target_pos: int) -> None:
     #    PACKET_HANDLER.write4ByteTxRx(self._port_handler, id, ADDR_GOAL_POS, target_pos)
     #    return
 
@@ -136,7 +142,9 @@ class Motors:
                 PACKET_HANDLER.write1ByteTxRx(self._port_handler, id, ADDR_TORQUE_ENABLE, set)
                 self.torque_status[id-1] = set
         return
-            
+    """
+    Profiles at start of file - to edit there
+    """        
     def _set_profile(self, vel: int=PROF_VEL, accel: int=PROF_ACC, id: int=None) -> None:
         if id==None:
             for i in range(self.num_motors):
@@ -148,30 +156,37 @@ class Motors:
         return
 
     # Read functions
+    # Only works for extended position control
     def get_current_pos(self, id: int=None) -> None:
         if id==None:
             for i in range(self.num_motors):
-                self.pos[i] = PACKET_HANDLER.read4ByteTxRx(self._port_handler, i+1, ADDR_PRESENT_POS)[0]
+                self.pos[i] = PACKET_HANDLER.read4ByteTxRx(self._port_handler, i+1, ADDR_PRESENT_POS)
+            print(self.pos)
         else:
-            self.pos[id-1] = PACKET_HANDLER.read4ByteTxRx(self._port_handler, id, ADDR_PRESENT_POS)[0]
+            self.pos[id-1] = PACKET_HANDLER.read4ByteTxRx(self._port_handler, id, ADDR_PRESENT_POS)
+            print(self.pos[id-1])
         return 
     
     def get_current_load(self, id: int=None) -> None:
         if id==None:
             for i in range(self.num_motors):
                 self.load[i] = PACKET_HANDLER.read2ByteTxRx(self._port_handler, i+1, ADDR_PRESENT_CURRENT)[0]
+            print(self.load)
         else:
             self.load[id-1] = PACKET_HANDLER.read2ByteTxRx(self._port_handler, id, ADDR_PRESENT_CURRENT)[0]
+            print(self.load[id-1])
         return 
     
     def check_moving(self, id: int=None) -> bool:
         if id==None:
             for i in range(self.num_motors):
                 moving = PACKET_HANDLER.read1ByteTxRx(self._port_handler, i+1, ADDR_MOVING)[0]
+                print(moving)
                 if moving:
                     return True
         else:
             moving = PACKET_HANDLER.read1ByteTxRx(self._port_handler, id, ADDR_MOVING)[0]
+            print(moving)
             if moving:
                     return True
         return False
@@ -200,9 +215,11 @@ class Motors:
     #     return id
     
 # Will need to change to something valid
-TEST_POSITION = [2000, 2000, 2000, 2000, 2000]
+TEST_POSITION = [200, 200, 200, 200, 200]
 
-# Test Angles
+"""
+Test - be careful with chosen angles - motors can break mounts due to torque 
+"""
 def main():
     arm = Motors(5)
     while True:
@@ -248,9 +265,22 @@ def setup_arm(ids: list):
     arm._read_id(ELBOW)
     arm._read_id(PRO_SUP)
     arm.port_close()
+
+def read_pos():
+    arm = Motors(5)
+    arm.torque_toggle(0)
+    while True:
+        chk = input('Press <q> to quit otherwise, any to check position:\n')
+        if chk.lower() == 'q':
+            break
+        else:
+            arm.get_current_pos()
+            arm.check_moving()
+    arm.port_close()
     
 if __name__ == "__main__":
-    ids = detect_devices()
-    if len(ids) > 0:
-        setup_arm(ids)
-        main()
+    read_pos()
+    # ids = detect_devices()
+    # if len(ids) > 0:
+    #     setup_arm(ids)
+    #     main()

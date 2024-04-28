@@ -50,7 +50,7 @@ class SpatialDetectionSubscriber(Node):
             dominant_color = self.find_dominant_color(roi)
             word = self.get_word(roi)
         else:  # For other objects, you might have different processing logic
-            dominant_color = None
+            dominant_color = [0, 0, 0]
             word = None
             if object_name == 'cup':
                 image_filename = '/home/henrik/MSP-Humanoid-IDA/ros_workspace/src/camera_pkg/resource/baseimg.jpg'
@@ -62,9 +62,9 @@ class SpatialDetectionSubscriber(Node):
         detection_info.x = float(detection.position.x)
         detection_info.y = float(detection.position.y)
         detection_info.z = float(detection.position.z)
-        detection_info.text = word
+        detection_info.text = str(word)
         detection_info.color = dominant_color
-
+        self.get_logger().info(f'Bottle Position: x: {detection_info.x}, y: {detection_info.y}, z: {detection_info.z}')
         return detection_info
 
     def detection_listener_callback(self, msg):
