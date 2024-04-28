@@ -52,12 +52,17 @@ class ArmControlNode(Node):
             'bottle_info',
             self.bottle_info_callback,
             10)
+        #self.subscription = self.create_subscription(
+        #    Bool, 
+        #    'pouring_complete', 
+        #    self.pouring_complete_callback,
+        #    10
+        #)
         self.subscription = self.create_subscription(
-            Bool, 
-            'pouring_complete', 
-            self.pouring_complete_callback,
-            10
-        )
+            Float32,
+            'liquid_level',
+            self.liquid_level_callback,
+            10)
         self.publisher_ = self.create_publisher(
             Bool,
             'arm_move_success',  # Topic name for the success flag
@@ -68,6 +73,8 @@ class ArmControlNode(Node):
         self._motors = dyna.Motors(DOF, DEVICENAME)
         self._target_pos = []
         self._start_motors()
+        self.liquid_level_threshold = 80.0  # Example threshold, adjust as needed
+        self.finish_pour = False
 
     def bottle_info_callback(self, msg):
         self.get_logger().info(f'Received bottle info: {msg.position}')
@@ -79,10 +86,10 @@ class ArmControlNode(Node):
         self.publisher_.publish(success_msg)
         self.get_logger().info(f'Published move success flag: {success}')
 
-    def pouring_complete_callback(self, msg):
-        self.get_logger().info(f'Pouring is complete: {msg}')
-        self.finish_pour = Bool()
-        self.finish_pour = msg
+    #def pouring_complete_callback(self, msg):
+    #    self.get_logger().info(f'Pouring is complete: {msg}')
+    #    self.finish_pour = Bool()
+    #    self.finish_pour = msg
     
     ### Main function call to move arm ###
     def move_to_coord(self, coord: list) -> bool:
@@ -119,7 +126,25 @@ class ArmControlNode(Node):
         # set angle back to previous value 
         self._target_pos = c_pos
         self._motors.set_goal(self._target_pos)
+        self.finish_pour = False
         pass
+
+    # copied from pouring_node
+    def liquid_level_callback(self, msg):
+        current_level = msg.data
+        self.get_logger().info(f'Current liquid level: {current_level}%')
+        if current_level > self.liquid_level_threshold:
+            #self.stop_pouring()
+            self.finish_pour = True
+
+    # copied from pouring_node
+    #def stop_pouring(self):
+    #    # Placeholder for actual arm stop command
+    #    self.get_logger().info('Liquid level threshold exceeded. Stopping pouring...')
+    #    # Insert your arm control logic here to stop pouring
+    #    pour_msg = Bool()
+    #    pour_msg.data = True
+    #    self.publisher_.publish(pour_msg)
 
     def grip(self):
         # implemented by EE
