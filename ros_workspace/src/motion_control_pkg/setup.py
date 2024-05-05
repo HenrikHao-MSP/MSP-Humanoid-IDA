@@ -21,7 +21,6 @@ setup(
     entry_points={
         'console_scripts': [
             'arm_control_node = motion_control_pkg.arm_control_node:main',
-            'pouring_node = motion_control_pkg.pouring_node:main',
         ],
     },
 )
