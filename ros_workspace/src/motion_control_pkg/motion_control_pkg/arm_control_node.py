@@ -52,12 +52,6 @@ class ArmControlNode(Node):
             'bottle_info',
             self.bottle_info_callback,
             10)
-        #self.subscription = self.create_subscription(
-        #    Bool, 
-        #    'pouring_complete', 
-        #    self.pouring_complete_callback,
-        #    10
-        #)
         self.subscription = self.create_subscription(
             Float32,
             'liquid_level',
@@ -75,10 +69,14 @@ class ArmControlNode(Node):
         self._start_motors()
         self.liquid_level_threshold = 80.0  # Example threshold, adjust as needed
         self.finish_pour = False
+        # states of the arm: 0- waiting, 1 - grab, 2 - pour, 3 - release
+        self.action_state = 0
 
     def bottle_info_callback(self, msg):
         self.get_logger().info(f'Received bottle info: {msg.position}')
         # Control logic to move the arm to the bottle's position
+        # assuming message includes state of robot
+        self.action_state = msg.state
         success = self.move_to_coord(msg.position)
         # Publish the success flag
         success_msg = Bool()
@@ -86,11 +84,6 @@ class ArmControlNode(Node):
         self.publisher_.publish(success_msg)
         self.get_logger().info(f'Published move success flag: {success}')
 
-    #def pouring_complete_callback(self, msg):
-    #    self.get_logger().info(f'Pouring is complete: {msg}')
-    #    self.finish_pour = Bool()
-    #    self.finish_pour = msg
-    
     ### Main function call to move arm ###
     def move_to_coord(self, coord: list) -> bool:
         # IK function
@@ -110,14 +103,30 @@ class ArmControlNode(Node):
             if c_pos != self._target_pos:
                 self.get_logger().info(f'Unable to reach position: {coord[0]} {coord[1]} {coord[2]}')
                 return False
+            
+            # action after movement
+            if self.action_state == 1:
+                self.grab()
+            elif self.action_state == 2:
+                self.pour()
+            elif self.action_state == 3:
+                self.release()
+
             return True     # successful movement
         else:
             self.get_logger().info(f'Unable to reach position: {coord[0]} {coord[1]} {coord[2]}')
             return False    
-        
+    
+    def grab(self):
+        # turn EE motor by some fixed amount from the current position
+        pass
+
+    def release(self):
+        # opposite to grab
+        pass
+
     def pour(self):
-        # set angle of motor to tilt from upright to belo
-        # w 90 
+        # set angle of motor to tilt from upright to below 90 
         c_pos = self.get_current_pos()
         self._target_pos[DOF-1] = self._target_pos[DOF-1] - round(100*dyna.ANGLE_TO_DYNA)
         self._motors.set_goal(self._target_pos)
@@ -137,19 +146,6 @@ class ArmControlNode(Node):
         if current_level > self.liquid_level_threshold:
             #self.stop_pouring()
             self.finish_pour = True
-
-    # copied from pouring_node
-    #def stop_pouring(self):
-    #    # Placeholder for actual arm stop command
-    #    self.get_logger().info('Liquid level threshold exceeded. Stopping pouring...')
-    #    # Insert your arm control logic here to stop pouring
-    #    pour_msg = Bool()
-    #    pour_msg.data = True
-    #    self.publisher_.publish(pour_msg)
-
-    def grip(self):
-        # implemented by EE
-        pass
 
     ###### general helpers ######
     ### IK Function - Updates _kinematics.angles ###
