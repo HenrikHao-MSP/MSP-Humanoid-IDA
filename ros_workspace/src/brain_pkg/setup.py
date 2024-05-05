@@ -1,6 +1,6 @@
 from setuptools import setup
 
-package_name = 'motion_control_pkg'
+package_name = 'brain_pkg'
 
 setup(
     name=package_name,
@@ -14,13 +14,13 @@ setup(
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='henrik',
-    maintainer_email='henrik@todo.todo',
+    maintainer_email='hhao@melbournespace.com.au',
     description='TODO: Package description',
     license='TODO: License declaration',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'arm_control_node = motion_control_pkg.arm_control_node:main',
+            'brain_node = brain_pkg.brain_node:main', 
         ],
     },
 )
