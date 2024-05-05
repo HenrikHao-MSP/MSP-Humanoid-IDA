@@ -64,7 +64,8 @@ class SpatialDetectionSubscriber(Node):
         detection_info.z = float(detection.position.z)
         detection_info.text = str(word)
         detection_info.color = dominant_color
-        self.get_logger().info(f'Bottle Position: x: {detection_info.x}, y: {detection_info.y}, z: {detection_info.z}')
+        if object_name == 'bottle':
+            self.get_logger().info(f'Bottle Position: x: {detection_info.x}, y: {detection_info.y}, z: {detection_info.z}, color: {detection_info.color}')
         return detection_info
 
     def detection_listener_callback(self, msg):
