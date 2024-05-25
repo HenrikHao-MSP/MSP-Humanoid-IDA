@@ -6,7 +6,7 @@ import math as m
 import numpy as np
 import time as t
 from rclpy.node import Node
-from interfaces.msg import BottleInfo
+from interfaces.msg import DetectionInfoArray, RobotStatus
 from std_msgs.msg import Bool
 
 
@@ -43,20 +43,27 @@ RESTING = [dyna.MM_SHOULDER_FLEX_EX["zero"],
 ERR = 0
 STEP_NUM = 20
 ARM_ORIGIN = [k.L4, k.L2, k.L1-k.L3]
+GRIP_TURN = 45
 
 class ArmControlNode(Node):
     def __init__(self):
         super().__init__('arm_control_node')
         self.subscription = self.create_subscription(
-            BottleInfo,
-            'bottle_info',
-            self.bottle_info_callback,
+            DetectionInfoArray,
+            'detection_info',
+            self.detection_info_callback,
             10)
         self.subscription = self.create_subscription(
             Float32,
             'liquid_level',
             self.liquid_level_callback,
             10)
+        self.subscription = self.create_subscription(
+            RobotStatus,
+            'robot_status',
+            self.robot_status_callback,
+            10
+        )
         self.publisher_ = self.create_publisher(
             Bool,
             'arm_move_success',  # Topic name for the success flag
@@ -72,17 +79,33 @@ class ArmControlNode(Node):
         # states of the arm: 0- waiting, 1 - grab, 2 - pour, 3 - release
         self.action_state = 0
 
-    def bottle_info_callback(self, msg):
-        self.get_logger().info(f'Received bottle info: {msg.position}')
-        # Control logic to move the arm to the bottle's position
-        # assuming message includes state of robot
-        self.action_state = msg.state
-        success = self.move_to_coord(msg.position)
+    # detection_info contains list of: string name (either cup or bottle), float64 x, float64 y, float64 z, string text (text on bottle), unit8[] color (RGB color represented as 3 unit8 values)
+    def detection_info_callback(self, msg):
+        self.get_logger().info(f'Received bottle info: {msg[0]}')
+
+        # offset to account for the pouring motion --> hand should not be directly in the same spot as the cup when trying to pour
+        cup_offset = [0, 0, 0]
+        x = msg[1]
+        y = msg[2]
+        z = msg[3]
+        if msg[0] == 'cup':
+            x += cup_offset[0]
+            y += cup_offset[1]
+            z += cup_offset[2]
+
+        # move to given position
+        success = self.move_to_coord([x, y, z])
+
         # Publish the success flag
         success_msg = Bool()
         success_msg.data = success
         self.publisher_.publish(success_msg)
         self.get_logger().info(f'Published move success flag: {success}')
+
+    # recieving status of robot from the brain node
+    def robot_status_callback(self, msg):
+        self.action_state = msg
+
 
     ### Main function call to move arm ###
     def move_to_coord(self, coord: list) -> bool:
@@ -118,12 +141,16 @@ class ArmControlNode(Node):
             return False    
     
     def grab(self):
-        # turn EE motor by some fixed amount from the current position
-        pass
+        # assuming end effector motor corresponds to motor 5
+
+        # turn by an additional angle of GRIP_TURN in the end effector motor 
+        self._target_pos[DOF] = self._target_pos[DOF] + round(GRIP_TURN*dyna.ANGLE_TO_DYNA)
+        self._motors.set_goal(self._target_pos)
 
     def release(self):
         # opposite to grab
-        pass
+        self._target_pos[DOF] = self._target_pos[DOF] - round(GRIP_TURN*dyna.ANGLE_TO_DYNA)
+        self._motors.set_goal(self._target_pos)
 
     def pour(self):
         # set angle of motor to tilt from upright to below 90 
