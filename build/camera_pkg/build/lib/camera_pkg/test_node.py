@@ -2,11 +2,12 @@ import rclpy
 from rclpy.node import Node
 from depthai_ros_msgs.msg import SpatialDetectionArray  # Make sure you have the correct import for the message type
 from interfaces.msg import DetectionInfo
+from interfaces.msg import DetectionInfoArray
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
 import numpy as np
 import cv2
-
+import difflib
 # Word
 import pytesseract
 import imutils
@@ -29,43 +30,65 @@ class SpatialDetectionSubscriber(Node):
             self.image_listener_callback,
             10)
 
-        self.info_publisher = self.create_publisher(DetectionInfo, 'detection_info', 10)
+        self.info_publisher = self.create_publisher(DetectionInfoArray, 'detection_info', 10)
+        self.beverage_list = ['Milk', 'Vodka']
+    
     def image_listener_callback(self, msg):
         # Convert ROS Image message to CV image
         cv_image = self.bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8')
         self.latest_image = cv_image
 
+    def process_detection(self, detection, object_name):
+        bbox = detection.bbox
+        center_x, center_y = int(bbox.center.x), int(bbox.center.y)
+        size_x, size_y = int(bbox.size_x), int(bbox.size_y)
+        x_start, x_end = max(0, center_x - size_x // 2), min(self.latest_image.shape[1], center_x + size_x // 2)
+        y_start, y_end = max(0, center_y - size_y // 2), min(self.latest_image.shape[0], center_y + size_y // 2)
+        
+        # Extract the region of interest
+        roi = self.latest_image[y_start:y_end, x_start:x_end]
+
+        if object_name == 'bottle':
+            dominant_color = self.find_dominant_color(roi)
+            word = self.get_word(roi)
+        else:  # For other objects, you might have different processing logic
+            dominant_color = [0, 0, 0]
+            word = None
+            if object_name == 'cup':
+                image_filename = '/home/henrik/MSP-Humanoid-IDA/ros_workspace/src/camera_pkg/resource/baseimg.jpg'
+                cv2.imwrite(image_filename, roi)
+
+        # Create DetectionInfo object
+        detection_info = DetectionInfo()
+        detection_info.name = object_name
+        detection_info.x = float(detection.position.x)
+        detection_info.y = float(detection.position.y)
+        detection_info.z = float(detection.position.z)
+        detection_info.text = str(word)
+        detection_info.color = dominant_color
+        if object_name == 'bottle':
+            self.get_logger().info(f'Bottle Position: x: {detection_info.x}, y: {detection_info.y}, z: {detection_info.z}, color: {detection_info.color}, name: {detection_info.text}')
+        return detection_info
+
     def detection_listener_callback(self, msg):
         if self.latest_image is not None:
+            all_detections = []
+
             for detection in msg.detections:
                 for result in detection.results:
-                    if result.id == '39':  # Check if the id is 'bottle'
-                        # Process detection's bounding box to find dominant color
-                        bbox = detection.bbox
-                        center_x, center_y = int(bbox.center.x), int(bbox.center.y)
-                        size_x, size_y = int(bbox.size_x), int(bbox.size_y)
-                        x_start, x_end = max(0, center_x - size_x // 2), min(self.latest_image.shape[1], center_x + size_x // 2)
-                        y_start, y_end = max(0, center_y - size_y // 2), min(self.latest_image.shape[0], center_y + size_y // 2)
-                        
-                        # Extract the region of interest
-                        roi = self.latest_image[y_start:y_end, x_start:x_end]
-                        
-                        # Determine the dominant color
-                        dominant_color = self.find_dominant_color(roi)
-                        word = self.get_word(roi)
-                        info_msg = DetectionInfo()
-                        info_msg.x = center_x
-                        info_msg.y = center_y
-                        info_msg.text = word
-                        info_msg.color = dominant_color
-                        cv_image_with_bbox = cv2.rectangle(self.latest_image.copy(), (x_start, y_start), (x_end, y_end), (0, 255, 0), 2)
-                        image_filename = f'/home/henrik/MSP-Humanoid-IDA/ros_workspace/src/camera_pkg/resource/detection_{center_x}_{center_y}.jpg'
-                        cv2.imwrite(image_filename, cv_image_with_bbox)
-                        # Publish the message
-                        self.info_publisher.publish(info_msg)
-                        self.get_logger().info(f'Published detection info: {info_msg}')
-                    #if result.id == '41':
-                    #    bbox = detection.bbox
+                    if result.id == '39':  # Bottle
+                        detection_info = self.process_detection(detection, 'bottle')
+                        all_detections.append(detection_info)
+                    elif result.id == '41':  # Cup
+                        detection_info = self.process_detection(detection, 'cup')
+                        all_detections.append(detection_info)
+
+            # Publish all detections as a list
+            if all_detections:
+                detection_info_array = DetectionInfoArray()
+                detection_info_array.detections = all_detections
+                self.info_publisher.publish(detection_info_array)
+                self.get_logger().info(f'Published {len(all_detections)} detections')
 
     def find_dominant_color(self, image):
         # Convert image to RGB (OpenCV uses BGR)
@@ -88,11 +111,18 @@ class SpatialDetectionSubscriber(Node):
         image = imutils.resize(image, width=2000)
         # Convert the image to grayscale
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-        # Apply thresholding to binarize the image
-        thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)[1]
-
+        # Apply Gaussian Blur to reduce noise
+        blurred = cv2.GaussianBlur(gray, (5, 5), 0)
+        # Use adaptive thresholding
+        thresh = cv2.adaptiveThreshold(blurred, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
+                                    cv2.THRESH_BINARY_INV, 11, 2)
+        # Configuration for Tesseract
+        custom_config = r'--oem 3 --psm 6'
+        word = pytesseract.image_to_string(thresh, lang='eng', config=custom_config)
+        # Find the closest match from the beverage list
+        matches = difflib.get_close_matches(word.strip(), self.beverage_list, n=1, cutoff=0)
         # Perform text extraction
-        return pytesseract.image_to_string(thresh, lang='eng', config='--psm 6')
+        return matches[0] if matches else None
 
 
 def main(args=None):

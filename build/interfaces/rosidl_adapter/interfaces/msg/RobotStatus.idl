@@ -9,7 +9,9 @@ module interfaces {
       " RobotStatus.msg" "\n"
       " Enumerated statuses for the robot's current state" "\n"
       " 0: Waiting" "\n"
-      " 1: Pouring" "\n"
+      " 1: Pickup" "\n"
+      " 2: Pour" "\n"
+      " 3: Put down" "\n"
       " ... etc.")
     struct RobotStatus {
       int8 status;

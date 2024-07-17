@@ -56,6 +56,7 @@ include CMakeFiles/interfaces.dir/progress.make
 CMakeFiles/interfaces: /home/henrik/MSP-Humanoid-IDA/ros_workspace/src/interfaces/msg/RobotStatus.msg
 CMakeFiles/interfaces: /home/henrik/MSP-Humanoid-IDA/ros_workspace/src/interfaces/msg/BottleInfo.msg
 CMakeFiles/interfaces: /home/henrik/MSP-Humanoid-IDA/ros_workspace/src/interfaces/msg/DetectionInfo.msg
+CMakeFiles/interfaces: /home/henrik/MSP-Humanoid-IDA/ros_workspace/src/interfaces/msg/DetectionInfoArray.msg
 
 
 interfaces: CMakeFiles/interfaces

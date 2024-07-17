@@ -2,5 +2,7 @@ msg/BottleInfo.idl
 msg/BottleInfo.msg
 msg/DetectionInfo.idl
 msg/DetectionInfo.msg
+msg/DetectionInfoArray.idl
+msg/DetectionInfoArray.msg
 msg/RobotStatus.idl
 msg/RobotStatus.msg

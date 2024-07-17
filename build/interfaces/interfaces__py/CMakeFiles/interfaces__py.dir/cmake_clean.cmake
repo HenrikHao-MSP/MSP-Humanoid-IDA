@@ -6,6 +6,8 @@ file(REMOVE_RECURSE
   "../rosidl_generator_py/interfaces/msg/_bottle_info.py"
   "../rosidl_generator_py/interfaces/msg/_bottle_info_s.c"
   "../rosidl_generator_py/interfaces/msg/_detection_info.py"
+  "../rosidl_generator_py/interfaces/msg/_detection_info_array.py"
+  "../rosidl_generator_py/interfaces/msg/_detection_info_array_s.c"
   "../rosidl_generator_py/interfaces/msg/_detection_info_s.c"
   "../rosidl_generator_py/interfaces/msg/_robot_status.py"
   "../rosidl_generator_py/interfaces/msg/_robot_status_s.c"

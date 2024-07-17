@@ -7,7 +7,7 @@ from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
 import numpy as np
 import cv2
-
+import difflib
 # Word
 import pytesseract
 import imutils
@@ -31,6 +31,8 @@ class SpatialDetectionSubscriber(Node):
             10)
 
         self.info_publisher = self.create_publisher(DetectionInfoArray, 'detection_info', 10)
+        self.beverage_list = ['Milk', 'Vodka']
+    
     def image_listener_callback(self, msg):
         # Convert ROS Image message to CV image
         cv_image = self.bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8')
@@ -65,7 +67,7 @@ class SpatialDetectionSubscriber(Node):
         detection_info.text = str(word)
         detection_info.color = dominant_color
         if object_name == 'bottle':
-            self.get_logger().info(f'Bottle Position: x: {detection_info.x}, y: {detection_info.y}, z: {detection_info.z}, color: {detection_info.color}')
+            self.get_logger().info(f'Bottle Position: x: {detection_info.x}, y: {detection_info.y}, z: {detection_info.z}, color: {detection_info.color}, name: {detection_info.text}')
         return detection_info
 
     def detection_listener_callback(self, msg):
@@ -109,11 +111,18 @@ class SpatialDetectionSubscriber(Node):
         image = imutils.resize(image, width=2000)
         # Convert the image to grayscale
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-        # Apply thresholding to binarize the image
-        thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)[1]
-
+        # Apply Gaussian Blur to reduce noise
+        blurred = cv2.GaussianBlur(gray, (5, 5), 0)
+        # Use adaptive thresholding
+        thresh = cv2.adaptiveThreshold(blurred, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
+                                    cv2.THRESH_BINARY_INV, 11, 2)
+        # Configuration for Tesseract
+        custom_config = r'--oem 3 --psm 6'
+        word = pytesseract.image_to_string(thresh, lang='eng', config=custom_config)
+        # Find the closest match from the beverage list
+        matches = difflib.get_close_matches(word.strip(), self.beverage_list, n=1, cutoff=0)
         # Perform text extraction
-        return pytesseract.image_to_string(thresh, lang='eng', config='--psm 6')
+        return matches[0] if matches else None
 
 
 def main(args=None):

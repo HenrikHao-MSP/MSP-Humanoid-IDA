@@ -56,20 +56,26 @@ class DetectionInfo(metaclass=Metaclass_DetectionInfo):
     """Message class 'DetectionInfo'."""
 
     __slots__ = [
+        '_name',
         '_x',
         '_y',
+        '_z',
         '_text',
         '_color',
     ]
 
     _fields_and_field_types = {
+        'name': 'string',
         'x': 'double',
         'y': 'double',
+        'z': 'double',
         'text': 'string',
         'color': 'sequence<uint8>',
     }
 
     SLOT_TYPES = (
+        rosidl_parser.definition.UnboundedString(),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
         rosidl_parser.definition.BasicType('double'),  # noqa: E501
         rosidl_parser.definition.BasicType('double'),  # noqa: E501
         rosidl_parser.definition.UnboundedString(),  # noqa: E501
@@ -80,8 +86,10 @@ class DetectionInfo(metaclass=Metaclass_DetectionInfo):
         assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
             'Invalid arguments passed to constructor: %s' % \
             ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        self.name = kwargs.get('name', str())
         self.x = kwargs.get('x', float())
         self.y = kwargs.get('y', float())
+        self.z = kwargs.get('z', float())
         self.text = kwargs.get('text', str())
         self.color = array.array('B', kwargs.get('color', []))
 
@@ -114,9 +122,13 @@ class DetectionInfo(metaclass=Metaclass_DetectionInfo):
     def __eq__(self, other):
         if not isinstance(other, self.__class__):
             return False
+        if self.name != other.name:
+            return False
         if self.x != other.x:
             return False
         if self.y != other.y:
+            return False
+        if self.z != other.z:
             return False
         if self.text != other.text:
             return False
@@ -128,6 +140,19 @@ class DetectionInfo(metaclass=Metaclass_DetectionInfo):
     def get_fields_and_field_types(cls):
         from copy import copy
         return copy(cls._fields_and_field_types)
+
+    @property
+    def name(self):
+        """Message field 'name'."""
+        return self._name
+
+    @name.setter
+    def name(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, str), \
+                "The 'name' field must be of type 'str'"
+        self._name = value
 
     @property
     def x(self):
@@ -154,6 +179,19 @@ class DetectionInfo(metaclass=Metaclass_DetectionInfo):
                 isinstance(value, float), \
                 "The 'y' field must be of type 'float'"
         self._y = value
+
+    @property
+    def z(self):
+        """Message field 'z'."""
+        return self._z
+
+    @z.setter
+    def z(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'z' field must be of type 'float'"
+        self._z = value
 
     @property
     def text(self):

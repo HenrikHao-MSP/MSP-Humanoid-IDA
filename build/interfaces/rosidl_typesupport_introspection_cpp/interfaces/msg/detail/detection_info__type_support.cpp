@@ -64,7 +64,22 @@ void resize_function__DetectionInfo__color(void * untyped_member, size_t size)
   member->resize(size);
 }
 
-static const ::rosidl_typesupport_introspection_cpp::MessageMember DetectionInfo_message_member_array[4] = {
+static const ::rosidl_typesupport_introspection_cpp::MessageMember DetectionInfo_message_member_array[6] = {
+  {
+    "name",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_STRING,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(interfaces::msg::DetectionInfo, name),  // bytes offset in struct
+    nullptr,  // default value
+    nullptr,  // size() function pointer
+    nullptr,  // get_const(index) function pointer
+    nullptr,  // get(index) function pointer
+    nullptr  // resize(index) function pointer
+  },
   {
     "x",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_DOUBLE,  // type
@@ -89,6 +104,21 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember DetectionInfo
     0,  // array size
     false,  // is upper bound
     offsetof(interfaces::msg::DetectionInfo, y),  // bytes offset in struct
+    nullptr,  // default value
+    nullptr,  // size() function pointer
+    nullptr,  // get_const(index) function pointer
+    nullptr,  // get(index) function pointer
+    nullptr  // resize(index) function pointer
+  },
+  {
+    "z",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_DOUBLE,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(interfaces::msg::DetectionInfo, z),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer
@@ -130,7 +160,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember DetectionInfo
 static const ::rosidl_typesupport_introspection_cpp::MessageMembers DetectionInfo_message_members = {
   "interfaces::msg",  // message namespace
   "DetectionInfo",  // message name
-  4,  // number of fields
+  6,  // number of fields
   sizeof(interfaces::msg::DetectionInfo),
   DetectionInfo_message_member_array,  // message members
   DetectionInfo_init_function,  // function to initialize message memory (memory has to be allocated)

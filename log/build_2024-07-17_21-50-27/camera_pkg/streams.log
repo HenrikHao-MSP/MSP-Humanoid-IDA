@@ -1,0 +1,26 @@
+[0.863s] Invoking command in '/home/henrik/MSP-Humanoid-IDA/ros_workspace/src/camera_pkg': PYTHONPATH=/home/henrik/MSP-Humanoid-IDA/build/camera_pkg/prefix_override:/home/henrik/MSP-Humanoid-IDA/install/camera_pkg/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../../build/camera_pkg build --build-base /home/henrik/MSP-Humanoid-IDA/build/camera_pkg/build install --record /home/henrik/MSP-Humanoid-IDA/build/camera_pkg/install.log --install-scripts $base/lib/camera_pkg --single-version-externally-managed install_data
+[1.003s] running egg_info
+[1.003s] writing ../../../build/camera_pkg/camera_pkg.egg-info/PKG-INFO
+[1.003s] writing dependency_links to ../../../build/camera_pkg/camera_pkg.egg-info/dependency_links.txt
+[1.004s] writing entry points to ../../../build/camera_pkg/camera_pkg.egg-info/entry_points.txt
+[1.004s] writing requirements to ../../../build/camera_pkg/camera_pkg.egg-info/requires.txt
+[1.004s] writing top-level names to ../../../build/camera_pkg/camera_pkg.egg-info/top_level.txt
+[1.026s] reading manifest file '../../../build/camera_pkg/camera_pkg.egg-info/SOURCES.txt'
+[1.027s] writing manifest file '../../../build/camera_pkg/camera_pkg.egg-info/SOURCES.txt'
+[1.027s] running build
+[1.027s] running build_py
+[1.027s] copying camera_pkg/test_node.py -> /home/henrik/MSP-Humanoid-IDA/build/camera_pkg/build/lib/camera_pkg
+[1.028s] running install
+[1.028s] running install_lib
+[1.029s] copying /home/henrik/MSP-Humanoid-IDA/build/camera_pkg/build/lib/camera_pkg/test_node.py -> /home/henrik/MSP-Humanoid-IDA/install/camera_pkg/lib/python3.8/site-packages/camera_pkg
+[1.030s] running install_data
+[1.030s] copying resource/camera_pkg -> /home/henrik/MSP-Humanoid-IDA/install/camera_pkg/share/ament_index/resource_index/packages
+[1.030s] running install_egg_info
+[1.031s] removing '/home/henrik/MSP-Humanoid-IDA/install/camera_pkg/lib/python3.8/site-packages/camera_pkg-0.0.0-py3.8.egg-info' (and everything under it)
+[1.031s] Copying ../../../build/camera_pkg/camera_pkg.egg-info to /home/henrik/MSP-Humanoid-IDA/install/camera_pkg/lib/python3.8/site-packages/camera_pkg-0.0.0-py3.8.egg-info
+[1.031s] running install_scripts
+[1.044s] Installing bottle_recog_node script to /home/henrik/MSP-Humanoid-IDA/install/camera_pkg/lib/camera_pkg
+[1.044s] Installing pouring_accuracy_node script to /home/henrik/MSP-Humanoid-IDA/install/camera_pkg/lib/camera_pkg
+[1.044s] Installing test_node script to /home/henrik/MSP-Humanoid-IDA/install/camera_pkg/lib/camera_pkg
+[1.044s] writing list of installed files to '/home/henrik/MSP-Humanoid-IDA/build/camera_pkg/install.log'
+[1.073s] Invoked command in '/home/henrik/MSP-Humanoid-IDA/ros_workspace/src/camera_pkg' returned '0': PYTHONPATH=/home/henrik/MSP-Humanoid-IDA/build/camera_pkg/prefix_override:/home/henrik/MSP-Humanoid-IDA/install/camera_pkg/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../../build/camera_pkg build --build-base /home/henrik/MSP-Humanoid-IDA/build/camera_pkg/build install --record /home/henrik/MSP-Humanoid-IDA/build/camera_pkg/install.log --install-scripts $base/lib/camera_pkg --single-version-externally-managed install_data

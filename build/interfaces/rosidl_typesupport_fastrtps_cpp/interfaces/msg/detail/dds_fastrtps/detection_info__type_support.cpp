@@ -32,10 +32,14 @@ cdr_serialize(
   const interfaces::msg::DetectionInfo & ros_message,
   eprosima::fastcdr::Cdr & cdr)
 {
+  // Member: name
+  cdr << ros_message.name;
   // Member: x
   cdr << ros_message.x;
   // Member: y
   cdr << ros_message.y;
+  // Member: z
+  cdr << ros_message.z;
   // Member: text
   cdr << ros_message.text;
   // Member: color
@@ -51,11 +55,17 @@ cdr_deserialize(
   eprosima::fastcdr::Cdr & cdr,
   interfaces::msg::DetectionInfo & ros_message)
 {
+  // Member: name
+  cdr >> ros_message.name;
+
   // Member: x
   cdr >> ros_message.x;
 
   // Member: y
   cdr >> ros_message.y;
+
+  // Member: z
+  cdr >> ros_message.z;
 
   // Member: text
   cdr >> ros_message.text;
@@ -81,6 +91,10 @@ get_serialized_size(
   (void)padding;
   (void)wchar_size;
 
+  // Member: name
+  current_alignment += padding +
+    eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
+    (ros_message.name.size() + 1);
   // Member: x
   {
     size_t item_size = sizeof(ros_message.x);
@@ -90,6 +104,12 @@ get_serialized_size(
   // Member: y
   {
     size_t item_size = sizeof(ros_message.y);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: z
+  {
+    size_t item_size = sizeof(ros_message.z);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -126,6 +146,18 @@ max_serialized_size_DetectionInfo(
   (void)full_bounded;
 
 
+  // Member: name
+  {
+    size_t array_size = 1;
+
+    full_bounded = false;
+    for (size_t index = 0; index < array_size; ++index) {
+      current_alignment += padding +
+        eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
+        1;
+    }
+  }
+
   // Member: x
   {
     size_t array_size = 1;
@@ -135,6 +167,14 @@ max_serialized_size_DetectionInfo(
   }
 
   // Member: y
+  {
+    size_t array_size = 1;
+
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+
+  // Member: z
   {
     size_t array_size = 1;
 

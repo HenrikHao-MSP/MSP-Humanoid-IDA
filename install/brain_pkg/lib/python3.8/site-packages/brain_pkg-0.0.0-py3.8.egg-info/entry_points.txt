@@ -1,0 +1,3 @@
+[console_scripts]
+brain_node = brain_pkg.brain_node:main
+

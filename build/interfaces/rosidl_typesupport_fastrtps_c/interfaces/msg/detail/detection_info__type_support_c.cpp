@@ -36,8 +36,8 @@ extern "C"
 
 #include "rosidl_runtime_c/primitives_sequence.h"  // color
 #include "rosidl_runtime_c/primitives_sequence_functions.h"  // color
-#include "rosidl_runtime_c/string.h"  // text
-#include "rosidl_runtime_c/string_functions.h"  // text
+#include "rosidl_runtime_c/string.h"  // name, text
+#include "rosidl_runtime_c/string_functions.h"  // name, text
 
 // forward declare type support functions
 
@@ -53,6 +53,20 @@ static bool _DetectionInfo__cdr_serialize(
     return false;
   }
   const _DetectionInfo__ros_msg_type * ros_message = static_cast<const _DetectionInfo__ros_msg_type *>(untyped_ros_message);
+  // Field name: name
+  {
+    const rosidl_runtime_c__String * str = &ros_message->name;
+    if (str->capacity == 0 || str->capacity <= str->size) {
+      fprintf(stderr, "string capacity not greater than size\n");
+      return false;
+    }
+    if (str->data[str->size] != '\0') {
+      fprintf(stderr, "string not null-terminated\n");
+      return false;
+    }
+    cdr << str->data;
+  }
+
   // Field name: x
   {
     cdr << ros_message->x;
@@ -61,6 +75,11 @@ static bool _DetectionInfo__cdr_serialize(
   // Field name: y
   {
     cdr << ros_message->y;
+  }
+
+  // Field name: z
+  {
+    cdr << ros_message->z;
   }
 
   // Field name: text
@@ -97,6 +116,22 @@ static bool _DetectionInfo__cdr_deserialize(
     return false;
   }
   _DetectionInfo__ros_msg_type * ros_message = static_cast<_DetectionInfo__ros_msg_type *>(untyped_ros_message);
+  // Field name: name
+  {
+    std::string tmp;
+    cdr >> tmp;
+    if (!ros_message->name.data) {
+      rosidl_runtime_c__String__init(&ros_message->name);
+    }
+    bool succeeded = rosidl_runtime_c__String__assign(
+      &ros_message->name,
+      tmp.c_str());
+    if (!succeeded) {
+      fprintf(stderr, "failed to assign string into field 'name'\n");
+      return false;
+    }
+  }
+
   // Field name: x
   {
     cdr >> ros_message->x;
@@ -105,6 +140,11 @@ static bool _DetectionInfo__cdr_deserialize(
   // Field name: y
   {
     cdr >> ros_message->y;
+  }
+
+  // Field name: z
+  {
+    cdr >> ros_message->z;
   }
 
   // Field name: text
@@ -155,6 +195,10 @@ size_t get_serialized_size_interfaces__msg__DetectionInfo(
   (void)padding;
   (void)wchar_size;
 
+  // field.name name
+  current_alignment += padding +
+    eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
+    (ros_message->name.size + 1);
   // field.name x
   {
     size_t item_size = sizeof(ros_message->x);
@@ -164,6 +208,12 @@ size_t get_serialized_size_interfaces__msg__DetectionInfo(
   // field.name y
   {
     size_t item_size = sizeof(ros_message->y);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name z
+  {
+    size_t item_size = sizeof(ros_message->z);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -206,6 +256,17 @@ size_t max_serialized_size_interfaces__msg__DetectionInfo(
   (void)wchar_size;
   (void)full_bounded;
 
+  // member: name
+  {
+    size_t array_size = 1;
+
+    full_bounded = false;
+    for (size_t index = 0; index < array_size; ++index) {
+      current_alignment += padding +
+        eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
+        1;
+    }
+  }
   // member: x
   {
     size_t array_size = 1;
@@ -214,6 +275,13 @@ size_t max_serialized_size_interfaces__msg__DetectionInfo(
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
   // member: y
+  {
+    size_t array_size = 1;
+
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: z
   {
     size_t array_size = 1;
 

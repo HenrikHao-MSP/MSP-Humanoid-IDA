@@ -12,6 +12,7 @@
 
 
 // Include directives for member types
+// Member `name`
 // Member `text`
 #include "rosidl_runtime_c/string_functions.h"
 // Member `color`
@@ -23,8 +24,14 @@ interfaces__msg__DetectionInfo__init(interfaces__msg__DetectionInfo * msg)
   if (!msg) {
     return false;
   }
+  // name
+  if (!rosidl_runtime_c__String__init(&msg->name)) {
+    interfaces__msg__DetectionInfo__fini(msg);
+    return false;
+  }
   // x
   // y
+  // z
   // text
   if (!rosidl_runtime_c__String__init(&msg->text)) {
     interfaces__msg__DetectionInfo__fini(msg);
@@ -44,8 +51,11 @@ interfaces__msg__DetectionInfo__fini(interfaces__msg__DetectionInfo * msg)
   if (!msg) {
     return;
   }
+  // name
+  rosidl_runtime_c__String__fini(&msg->name);
   // x
   // y
+  // z
   // text
   rosidl_runtime_c__String__fini(&msg->text);
   // color
@@ -58,12 +68,22 @@ interfaces__msg__DetectionInfo__are_equal(const interfaces__msg__DetectionInfo *
   if (!lhs || !rhs) {
     return false;
   }
+  // name
+  if (!rosidl_runtime_c__String__are_equal(
+      &(lhs->name), &(rhs->name)))
+  {
+    return false;
+  }
   // x
   if (lhs->x != rhs->x) {
     return false;
   }
   // y
   if (lhs->y != rhs->y) {
+    return false;
+  }
+  // z
+  if (lhs->z != rhs->z) {
     return false;
   }
   // text
@@ -89,10 +109,18 @@ interfaces__msg__DetectionInfo__copy(
   if (!input || !output) {
     return false;
   }
+  // name
+  if (!rosidl_runtime_c__String__copy(
+      &(input->name), &(output->name)))
+  {
+    return false;
+  }
   // x
   output->x = input->x;
   // y
   output->y = input->y;
+  // z
+  output->z = input->z;
   // text
   if (!rosidl_runtime_c__String__copy(
       &(input->text), &(output->text)))

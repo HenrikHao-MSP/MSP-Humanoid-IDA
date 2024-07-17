@@ -1,0 +1,21 @@
+[0.824s] Invoking command in '/home/henrik/MSP-Humanoid-IDA/ros_workspace/src/brain_pkg': PYTHONPATH=/home/henrik/MSP-Humanoid-IDA/build/brain_pkg/prefix_override:/home/henrik/MSP-Humanoid-IDA/install/brain_pkg/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../../build/brain_pkg build --build-base /home/henrik/MSP-Humanoid-IDA/build/brain_pkg/build install --record /home/henrik/MSP-Humanoid-IDA/build/brain_pkg/install.log --install-scripts $base/lib/brain_pkg --single-version-externally-managed install_data
+[0.944s] running egg_info
+[0.945s] writing ../../../build/brain_pkg/brain_pkg.egg-info/PKG-INFO
+[0.945s] writing dependency_links to ../../../build/brain_pkg/brain_pkg.egg-info/dependency_links.txt
+[0.945s] writing entry points to ../../../build/brain_pkg/brain_pkg.egg-info/entry_points.txt
+[0.945s] writing requirements to ../../../build/brain_pkg/brain_pkg.egg-info/requires.txt
+[0.945s] writing top-level names to ../../../build/brain_pkg/brain_pkg.egg-info/top_level.txt
+[0.965s] reading manifest file '../../../build/brain_pkg/brain_pkg.egg-info/SOURCES.txt'
+[0.965s] writing manifest file '../../../build/brain_pkg/brain_pkg.egg-info/SOURCES.txt'
+[0.965s] running build
+[0.965s] running build_py
+[0.965s] running install
+[0.966s] running install_lib
+[0.966s] running install_data
+[0.967s] running install_egg_info
+[0.968s] removing '/home/henrik/MSP-Humanoid-IDA/install/brain_pkg/lib/python3.8/site-packages/brain_pkg-0.0.0-py3.8.egg-info' (and everything under it)
+[0.968s] Copying ../../../build/brain_pkg/brain_pkg.egg-info to /home/henrik/MSP-Humanoid-IDA/install/brain_pkg/lib/python3.8/site-packages/brain_pkg-0.0.0-py3.8.egg-info
+[0.968s] running install_scripts
+[0.979s] Installing brain_node script to /home/henrik/MSP-Humanoid-IDA/install/brain_pkg/lib/brain_pkg
+[0.981s] writing list of installed files to '/home/henrik/MSP-Humanoid-IDA/build/brain_pkg/install.log'
+[0.998s] Invoked command in '/home/henrik/MSP-Humanoid-IDA/ros_workspace/src/brain_pkg' returned '0': PYTHONPATH=/home/henrik/MSP-Humanoid-IDA/build/brain_pkg/prefix_override:/home/henrik/MSP-Humanoid-IDA/install/brain_pkg/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../../build/brain_pkg build --build-base /home/henrik/MSP-Humanoid-IDA/build/brain_pkg/build install --record /home/henrik/MSP-Humanoid-IDA/build/brain_pkg/install.log --install-scripts $base/lib/brain_pkg --single-version-externally-managed install_data

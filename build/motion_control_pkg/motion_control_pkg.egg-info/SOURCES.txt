@@ -10,7 +10,6 @@ setup.py
 ../../../build/motion_control_pkg/motion_control_pkg.egg-info/zip-safe
 motion_control_pkg/__init__.py
 motion_control_pkg/arm_control_node.py
-motion_control_pkg/pouring_node.py
 resource/motion_control_pkg
 test/test_copyright.py
 test/test_flake8.py

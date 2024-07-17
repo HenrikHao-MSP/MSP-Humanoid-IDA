@@ -37,31 +37,42 @@ struct DetectionInfo_
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
+      this->name = "";
       this->x = 0.0;
       this->y = 0.0;
+      this->z = 0.0;
       this->text = "";
     }
   }
 
   explicit DetectionInfo_(const ContainerAllocator & _alloc, rosidl_runtime_cpp::MessageInitialization _init = rosidl_runtime_cpp::MessageInitialization::ALL)
-  : text(_alloc)
+  : name(_alloc),
+    text(_alloc)
   {
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
+      this->name = "";
       this->x = 0.0;
       this->y = 0.0;
+      this->z = 0.0;
       this->text = "";
     }
   }
 
   // field types and members
+  using _name_type =
+    std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other>;
+  _name_type name;
   using _x_type =
     double;
   _x_type x;
   using _y_type =
     double;
   _y_type y;
+  using _z_type =
+    double;
+  _z_type z;
   using _text_type =
     std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other>;
   _text_type text;
@@ -70,6 +81,12 @@ struct DetectionInfo_
   _color_type color;
 
   // setters for named parameter idiom
+  Type & set__name(
+    const std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other> & _arg)
+  {
+    this->name = _arg;
+    return *this;
+  }
   Type & set__x(
     const double & _arg)
   {
@@ -80,6 +97,12 @@ struct DetectionInfo_
     const double & _arg)
   {
     this->y = _arg;
+    return *this;
+  }
+  Type & set__z(
+    const double & _arg)
+  {
+    this->z = _arg;
     return *this;
   }
   Type & set__text(
@@ -137,10 +160,16 @@ struct DetectionInfo_
   // comparison operators
   bool operator==(const DetectionInfo_ & other) const
   {
+    if (this->name != other.name) {
+      return false;
+    }
     if (this->x != other.x) {
       return false;
     }
     if (this->y != other.y) {
+      return false;
+    }
+    if (this->z != other.z) {
       return false;
     }
     if (this->text != other.text) {

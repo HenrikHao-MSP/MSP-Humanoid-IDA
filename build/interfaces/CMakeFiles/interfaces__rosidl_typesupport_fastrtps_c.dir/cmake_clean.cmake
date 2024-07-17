@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/bottle_info__type_support_c.cpp.o"
   "CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info__type_support_c.cpp.o"
+  "CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info_array__type_support_c.cpp.o"
   "CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/robot_status__type_support_c.cpp.o"
   "libinterfaces__rosidl_typesupport_fastrtps_c.pdb"
   "libinterfaces__rosidl_typesupport_fastrtps_c.so"
@@ -8,6 +9,8 @@ file(REMOVE_RECURSE
   "rosidl_typesupport_fastrtps_c/interfaces/msg/detail/bottle_info__type_support_c.cpp"
   "rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info__rosidl_typesupport_fastrtps_c.h"
   "rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info__type_support_c.cpp"
+  "rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info_array__rosidl_typesupport_fastrtps_c.h"
+  "rosidl_typesupport_fastrtps_c/interfaces/msg/detail/detection_info_array__type_support_c.cpp"
   "rosidl_typesupport_fastrtps_c/interfaces/msg/detail/robot_status__rosidl_typesupport_fastrtps_c.h"
   "rosidl_typesupport_fastrtps_c/interfaces/msg/detail/robot_status__type_support_c.cpp"
 )

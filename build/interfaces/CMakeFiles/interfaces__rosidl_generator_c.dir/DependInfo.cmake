@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "/home/henrik/MSP-Humanoid-IDA/build/interfaces/rosidl_generator_c/interfaces/msg/detail/bottle_info__functions.c" "/home/henrik/MSP-Humanoid-IDA/build/interfaces/CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/bottle_info__functions.c.o"
   "/home/henrik/MSP-Humanoid-IDA/build/interfaces/rosidl_generator_c/interfaces/msg/detail/detection_info__functions.c" "/home/henrik/MSP-Humanoid-IDA/build/interfaces/CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/detection_info__functions.c.o"
+  "/home/henrik/MSP-Humanoid-IDA/build/interfaces/rosidl_generator_c/interfaces/msg/detail/detection_info_array__functions.c" "/home/henrik/MSP-Humanoid-IDA/build/interfaces/CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/detection_info_array__functions.c.o"
   "/home/henrik/MSP-Humanoid-IDA/build/interfaces/rosidl_generator_c/interfaces/msg/detail/robot_status__functions.c" "/home/henrik/MSP-Humanoid-IDA/build/interfaces/CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/robot_status__functions.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
@@ -34,11 +35,16 @@ set(CMAKE_MULTIPLE_OUTPUT_PAIRS
   "/home/henrik/MSP-Humanoid-IDA/build/interfaces/rosidl_generator_c/interfaces/msg/detail/detection_info__functions.h" "/home/henrik/MSP-Humanoid-IDA/build/interfaces/rosidl_generator_c/interfaces/msg/robot_status.h"
   "/home/henrik/MSP-Humanoid-IDA/build/interfaces/rosidl_generator_c/interfaces/msg/detail/detection_info__struct.h" "/home/henrik/MSP-Humanoid-IDA/build/interfaces/rosidl_generator_c/interfaces/msg/robot_status.h"
   "/home/henrik/MSP-Humanoid-IDA/build/interfaces/rosidl_generator_c/interfaces/msg/detail/detection_info__type_support.h" "/home/henrik/MSP-Humanoid-IDA/build/interfaces/rosidl_generator_c/interfaces/msg/robot_status.h"
+  "/home/henrik/MSP-Humanoid-IDA/build/interfaces/rosidl_generator_c/interfaces/msg/detail/detection_info_array__functions.c" "/home/henrik/MSP-Humanoid-IDA/build/interfaces/rosidl_generator_c/interfaces/msg/robot_status.h"
+  "/home/henrik/MSP-Humanoid-IDA/build/interfaces/rosidl_generator_c/interfaces/msg/detail/detection_info_array__functions.h" "/home/henrik/MSP-Humanoid-IDA/build/interfaces/rosidl_generator_c/interfaces/msg/robot_status.h"
+  "/home/henrik/MSP-Humanoid-IDA/build/interfaces/rosidl_generator_c/interfaces/msg/detail/detection_info_array__struct.h" "/home/henrik/MSP-Humanoid-IDA/build/interfaces/rosidl_generator_c/interfaces/msg/robot_status.h"
+  "/home/henrik/MSP-Humanoid-IDA/build/interfaces/rosidl_generator_c/interfaces/msg/detail/detection_info_array__type_support.h" "/home/henrik/MSP-Humanoid-IDA/build/interfaces/rosidl_generator_c/interfaces/msg/robot_status.h"
   "/home/henrik/MSP-Humanoid-IDA/build/interfaces/rosidl_generator_c/interfaces/msg/detail/robot_status__functions.c" "/home/henrik/MSP-Humanoid-IDA/build/interfaces/rosidl_generator_c/interfaces/msg/robot_status.h"
   "/home/henrik/MSP-Humanoid-IDA/build/interfaces/rosidl_generator_c/interfaces/msg/detail/robot_status__functions.h" "/home/henrik/MSP-Humanoid-IDA/build/interfaces/rosidl_generator_c/interfaces/msg/robot_status.h"
   "/home/henrik/MSP-Humanoid-IDA/build/interfaces/rosidl_generator_c/interfaces/msg/detail/robot_status__struct.h" "/home/henrik/MSP-Humanoid-IDA/build/interfaces/rosidl_generator_c/interfaces/msg/robot_status.h"
   "/home/henrik/MSP-Humanoid-IDA/build/interfaces/rosidl_generator_c/interfaces/msg/detail/robot_status__type_support.h" "/home/henrik/MSP-Humanoid-IDA/build/interfaces/rosidl_generator_c/interfaces/msg/robot_status.h"
   "/home/henrik/MSP-Humanoid-IDA/build/interfaces/rosidl_generator_c/interfaces/msg/detection_info.h" "/home/henrik/MSP-Humanoid-IDA/build/interfaces/rosidl_generator_c/interfaces/msg/robot_status.h"
+  "/home/henrik/MSP-Humanoid-IDA/build/interfaces/rosidl_generator_c/interfaces/msg/detection_info_array.h" "/home/henrik/MSP-Humanoid-IDA/build/interfaces/rosidl_generator_c/interfaces/msg/robot_status.h"
   )
 
 

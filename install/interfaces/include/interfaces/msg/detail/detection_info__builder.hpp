@@ -52,16 +52,32 @@ private:
   ::interfaces::msg::DetectionInfo msg_;
 };
 
+class Init_DetectionInfo_z
+{
+public:
+  explicit Init_DetectionInfo_z(::interfaces::msg::DetectionInfo & msg)
+  : msg_(msg)
+  {}
+  Init_DetectionInfo_text z(::interfaces::msg::DetectionInfo::_z_type arg)
+  {
+    msg_.z = std::move(arg);
+    return Init_DetectionInfo_text(msg_);
+  }
+
+private:
+  ::interfaces::msg::DetectionInfo msg_;
+};
+
 class Init_DetectionInfo_y
 {
 public:
   explicit Init_DetectionInfo_y(::interfaces::msg::DetectionInfo & msg)
   : msg_(msg)
   {}
-  Init_DetectionInfo_text y(::interfaces::msg::DetectionInfo::_y_type arg)
+  Init_DetectionInfo_z y(::interfaces::msg::DetectionInfo::_y_type arg)
   {
     msg_.y = std::move(arg);
-    return Init_DetectionInfo_text(msg_);
+    return Init_DetectionInfo_z(msg_);
   }
 
 private:
@@ -71,13 +87,29 @@ private:
 class Init_DetectionInfo_x
 {
 public:
-  Init_DetectionInfo_x()
-  : msg_(::rosidl_runtime_cpp::MessageInitialization::SKIP)
+  explicit Init_DetectionInfo_x(::interfaces::msg::DetectionInfo & msg)
+  : msg_(msg)
   {}
   Init_DetectionInfo_y x(::interfaces::msg::DetectionInfo::_x_type arg)
   {
     msg_.x = std::move(arg);
     return Init_DetectionInfo_y(msg_);
+  }
+
+private:
+  ::interfaces::msg::DetectionInfo msg_;
+};
+
+class Init_DetectionInfo_name
+{
+public:
+  Init_DetectionInfo_name()
+  : msg_(::rosidl_runtime_cpp::MessageInitialization::SKIP)
+  {}
+  Init_DetectionInfo_x name(::interfaces::msg::DetectionInfo::_name_type arg)
+  {
+    msg_.name = std::move(arg);
+    return Init_DetectionInfo_x(msg_);
   }
 
 private:
@@ -95,7 +127,7 @@ template<>
 inline
 auto build<::interfaces::msg::DetectionInfo>()
 {
-  return interfaces::msg::builder::Init_DetectionInfo_x();
+  return interfaces::msg::builder::Init_DetectionInfo_name();
 }
 
 }  // namespace interfaces

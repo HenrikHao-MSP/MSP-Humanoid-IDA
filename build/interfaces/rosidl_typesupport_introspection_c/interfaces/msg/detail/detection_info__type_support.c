@@ -13,6 +13,7 @@
 
 
 // Include directives for member types
+// Member `name`
 // Member `text`
 #include "rosidl_runtime_c/string_functions.h"
 // Member `color`
@@ -37,7 +38,22 @@ void DetectionInfo__rosidl_typesupport_introspection_c__DetectionInfo_fini_funct
   interfaces__msg__DetectionInfo__fini(message_memory);
 }
 
-static rosidl_typesupport_introspection_c__MessageMember DetectionInfo__rosidl_typesupport_introspection_c__DetectionInfo_message_member_array[4] = {
+static rosidl_typesupport_introspection_c__MessageMember DetectionInfo__rosidl_typesupport_introspection_c__DetectionInfo_message_member_array[6] = {
+  {
+    "name",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_STRING,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(interfaces__msg__DetectionInfo, name),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL  // resize(index) function pointer
+  },
   {
     "x",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_DOUBLE,  // type
@@ -62,6 +78,21 @@ static rosidl_typesupport_introspection_c__MessageMember DetectionInfo__rosidl_t
     0,  // array size
     false,  // is upper bound
     offsetof(interfaces__msg__DetectionInfo, y),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
+    "z",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_DOUBLE,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(interfaces__msg__DetectionInfo, z),  // bytes offset in struct
     NULL,  // default value
     NULL,  // size() function pointer
     NULL,  // get_const(index) function pointer
@@ -103,7 +134,7 @@ static rosidl_typesupport_introspection_c__MessageMember DetectionInfo__rosidl_t
 static const rosidl_typesupport_introspection_c__MessageMembers DetectionInfo__rosidl_typesupport_introspection_c__DetectionInfo_message_members = {
   "interfaces__msg",  // message namespace
   "DetectionInfo",  // message name
-  4,  // number of fields
+  6,  // number of fields
   sizeof(interfaces__msg__DetectionInfo),
   DetectionInfo__rosidl_typesupport_introspection_c__DetectionInfo_message_member_array,  // message members
   DetectionInfo__rosidl_typesupport_introspection_c__DetectionInfo_init_function,  // function to initialize message memory (memory has to be allocated)

@@ -1,0 +1,32 @@
+[0.852s] Invoking command in '/home/henrik/MSP-Humanoid-IDA/ros_workspace/src/mic_pkg': PYTHONPATH=/home/henrik/MSP-Humanoid-IDA/build/mic_pkg/prefix_override:/home/henrik/MSP-Humanoid-IDA/install/mic_pkg/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../../build/mic_pkg build --build-base /home/henrik/MSP-Humanoid-IDA/build/mic_pkg/build install --record /home/henrik/MSP-Humanoid-IDA/build/mic_pkg/install.log --install-scripts $base/lib/mic_pkg --single-version-externally-managed install_data
+[0.994s] running egg_info
+[0.994s] writing ../../../build/mic_pkg/mic_pkg.egg-info/PKG-INFO
+[0.994s] writing dependency_links to ../../../build/mic_pkg/mic_pkg.egg-info/dependency_links.txt
+[0.994s] writing entry points to ../../../build/mic_pkg/mic_pkg.egg-info/entry_points.txt
+[0.994s] writing requirements to ../../../build/mic_pkg/mic_pkg.egg-info/requires.txt
+[0.994s] writing top-level names to ../../../build/mic_pkg/mic_pkg.egg-info/top_level.txt
+[1.017s] reading manifest file '../../../build/mic_pkg/mic_pkg.egg-info/SOURCES.txt'
+[1.017s] writing manifest file '../../../build/mic_pkg/mic_pkg.egg-info/SOURCES.txt'
+[1.018s] running build
+[1.018s] running build_py
+[1.018s] copying constants.py -> /home/henrik/MSP-Humanoid-IDA/build/mic_pkg/build/lib
+[1.018s] copying mic_pkg/__init__.py -> /home/henrik/MSP-Humanoid-IDA/build/mic_pkg/build/lib/mic_pkg
+[1.018s] copying mic_pkg/mic_node.py -> /home/henrik/MSP-Humanoid-IDA/build/mic_pkg/build/lib/mic_pkg
+[1.018s] running install
+[1.018s] running install_lib
+[1.019s] copying /home/henrik/MSP-Humanoid-IDA/build/mic_pkg/build/lib/mic_pkg/__init__.py -> /home/henrik/MSP-Humanoid-IDA/install/mic_pkg/lib/python3.8/site-packages/mic_pkg
+[1.019s] copying /home/henrik/MSP-Humanoid-IDA/build/mic_pkg/build/lib/mic_pkg/mic_node.py -> /home/henrik/MSP-Humanoid-IDA/install/mic_pkg/lib/python3.8/site-packages/mic_pkg
+[1.019s] copying /home/henrik/MSP-Humanoid-IDA/build/mic_pkg/build/lib/constants.py -> /home/henrik/MSP-Humanoid-IDA/install/mic_pkg/lib/python3.8/site-packages
+[1.020s] byte-compiling /home/henrik/MSP-Humanoid-IDA/install/mic_pkg/lib/python3.8/site-packages/mic_pkg/__init__.py to __init__.cpython-38.pyc
+[1.020s] byte-compiling /home/henrik/MSP-Humanoid-IDA/install/mic_pkg/lib/python3.8/site-packages/mic_pkg/mic_node.py to mic_node.cpython-38.pyc
+[1.021s] byte-compiling /home/henrik/MSP-Humanoid-IDA/install/mic_pkg/lib/python3.8/site-packages/constants.py to constants.cpython-38.pyc
+[1.021s] running install_data
+[1.021s] copying resource/mic_pkg -> /home/henrik/MSP-Humanoid-IDA/install/mic_pkg/share/ament_index/resource_index/packages
+[1.022s] copying package.xml -> /home/henrik/MSP-Humanoid-IDA/install/mic_pkg/share/mic_pkg
+[1.022s] running install_egg_info
+[1.023s] removing '/home/henrik/MSP-Humanoid-IDA/install/mic_pkg/lib/python3.8/site-packages/mic_pkg-0.0.0-py3.8.egg-info' (and everything under it)
+[1.023s] Copying ../../../build/mic_pkg/mic_pkg.egg-info to /home/henrik/MSP-Humanoid-IDA/install/mic_pkg/lib/python3.8/site-packages/mic_pkg-0.0.0-py3.8.egg-info
+[1.024s] running install_scripts
+[1.036s] Installing mic_node script to /home/henrik/MSP-Humanoid-IDA/install/mic_pkg/lib/mic_pkg
+[1.037s] writing list of installed files to '/home/henrik/MSP-Humanoid-IDA/build/mic_pkg/install.log'
+[1.059s] Invoked command in '/home/henrik/MSP-Humanoid-IDA/ros_workspace/src/mic_pkg' returned '0': PYTHONPATH=/home/henrik/MSP-Humanoid-IDA/build/mic_pkg/prefix_override:/home/henrik/MSP-Humanoid-IDA/install/mic_pkg/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../../build/mic_pkg build --build-base /home/henrik/MSP-Humanoid-IDA/build/mic_pkg/build install --record /home/henrik/MSP-Humanoid-IDA/build/mic_pkg/install.log --install-scripts $base/lib/mic_pkg --single-version-externally-managed install_data

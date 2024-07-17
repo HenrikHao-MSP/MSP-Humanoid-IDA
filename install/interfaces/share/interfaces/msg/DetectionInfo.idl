@@ -6,9 +6,13 @@
 module interfaces {
   module msg {
     struct DetectionInfo {
+      string name;
+
       double x;
 
       double y;
+
+      double z;
 
       string text;
 

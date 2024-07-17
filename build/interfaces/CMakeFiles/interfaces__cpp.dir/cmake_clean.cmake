@@ -9,11 +9,16 @@ file(REMOVE_RECURSE
   "rosidl_generator_cpp/interfaces/msg/detail/detection_info__struct.hpp"
   "rosidl_generator_cpp/interfaces/msg/detail/detection_info__traits.hpp"
   "rosidl_generator_cpp/interfaces/msg/detail/detection_info__type_support.hpp"
+  "rosidl_generator_cpp/interfaces/msg/detail/detection_info_array__builder.hpp"
+  "rosidl_generator_cpp/interfaces/msg/detail/detection_info_array__struct.hpp"
+  "rosidl_generator_cpp/interfaces/msg/detail/detection_info_array__traits.hpp"
+  "rosidl_generator_cpp/interfaces/msg/detail/detection_info_array__type_support.hpp"
   "rosidl_generator_cpp/interfaces/msg/detail/robot_status__builder.hpp"
   "rosidl_generator_cpp/interfaces/msg/detail/robot_status__struct.hpp"
   "rosidl_generator_cpp/interfaces/msg/detail/robot_status__traits.hpp"
   "rosidl_generator_cpp/interfaces/msg/detail/robot_status__type_support.hpp"
   "rosidl_generator_cpp/interfaces/msg/detection_info.hpp"
+  "rosidl_generator_cpp/interfaces/msg/detection_info_array.hpp"
   "rosidl_generator_cpp/interfaces/msg/robot_status.hpp"
 )
 

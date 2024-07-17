@@ -56,6 +56,21 @@ bool interfaces__msg__detection_info__convert_from_py(PyObject * _pymsg, void * 
     assert(strncmp("interfaces.msg._detection_info.DetectionInfo", full_classname_dest, 44) == 0);
   }
   interfaces__msg__DetectionInfo * ros_message = _ros_message;
+  {  // name
+    PyObject * field = PyObject_GetAttrString(_pymsg, "name");
+    if (!field) {
+      return false;
+    }
+    assert(PyUnicode_Check(field));
+    PyObject * encoded_field = PyUnicode_AsUTF8String(field);
+    if (!encoded_field) {
+      Py_DECREF(field);
+      return false;
+    }
+    rosidl_runtime_c__String__assign(&ros_message->name, PyBytes_AS_STRING(encoded_field));
+    Py_DECREF(encoded_field);
+    Py_DECREF(field);
+  }
   {  // x
     PyObject * field = PyObject_GetAttrString(_pymsg, "x");
     if (!field) {
@@ -72,6 +87,15 @@ bool interfaces__msg__detection_info__convert_from_py(PyObject * _pymsg, void * 
     }
     assert(PyFloat_Check(field));
     ros_message->y = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // z
+    PyObject * field = PyObject_GetAttrString(_pymsg, "z");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->z = PyFloat_AS_DOUBLE(field);
     Py_DECREF(field);
   }
   {  // text
@@ -174,6 +198,23 @@ PyObject * interfaces__msg__detection_info__convert_to_py(void * raw_ros_message
     }
   }
   interfaces__msg__DetectionInfo * ros_message = (interfaces__msg__DetectionInfo *)raw_ros_message;
+  {  // name
+    PyObject * field = NULL;
+    field = PyUnicode_DecodeUTF8(
+      ros_message->name.data,
+      strlen(ros_message->name.data),
+      "replace");
+    if (!field) {
+      return NULL;
+    }
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "name", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
   {  // x
     PyObject * field = NULL;
     field = PyFloat_FromDouble(ros_message->x);
@@ -190,6 +231,17 @@ PyObject * interfaces__msg__detection_info__convert_to_py(void * raw_ros_message
     field = PyFloat_FromDouble(ros_message->y);
     {
       int rc = PyObject_SetAttrString(_pymessage, "y", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // z
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->z);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "z", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

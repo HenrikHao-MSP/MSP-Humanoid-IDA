@@ -18,6 +18,7 @@ extern "C"
 // Constants defined in the message
 
 // Include directives for member types
+// Member 'name'
 // Member 'text'
 #include "rosidl_runtime_c/string.h"
 // Member 'color'
@@ -26,8 +27,10 @@ extern "C"
 // Struct defined in msg/DetectionInfo in the package interfaces.
 typedef struct interfaces__msg__DetectionInfo
 {
+  rosidl_runtime_c__String name;
   double x;
   double y;
+  double z;
   rosidl_runtime_c__String text;
   rosidl_runtime_c__uint8__Sequence color;
 } interfaces__msg__DetectionInfo;

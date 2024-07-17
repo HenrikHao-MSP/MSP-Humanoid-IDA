@@ -1,3 +1,4 @@
 /home/henrik/MSP-Humanoid-IDA/build/interfaces/rosidl_adapter/interfaces:msg/RobotStatus.idl
 /home/henrik/MSP-Humanoid-IDA/build/interfaces/rosidl_adapter/interfaces:msg/BottleInfo.idl
 /home/henrik/MSP-Humanoid-IDA/build/interfaces/rosidl_adapter/interfaces:msg/DetectionInfo.idl
+/home/henrik/MSP-Humanoid-IDA/build/interfaces/rosidl_adapter/interfaces:msg/DetectionInfoArray.idl
